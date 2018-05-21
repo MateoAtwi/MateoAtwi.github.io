@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: HP simplified light;
+}
+
+header {
+  background: gray;
+  color: white;
+  margin: 0;
+  padding: 15px 15px 0px 15px
+}
+
+header h1 {
+  margin: 0;
+
+  display: inline;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0 0 0 15px;
+  display: inline;
+}
+
+nav ul li{
+  list-style-type: none;
+  display: inline-block;
+  background: black;
+  color: white;
+  padding: 5px 15px;
+  margin: 0;
+}
+
+nav ul li a{
+  color: inherit;
+}
+
+.row:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.col {
+  background: #234;
+  border-radius: 10px;
+  color: white;
+  float: left;
+  margin: .5%;
+  width: 31%;
+  padding-left: .5%;
+}
+
+footer {
+  clear:both;
+}
+
+
+/*
+h1, h3{
+  color: #555;
+  background: blue;
+  padding: 10px;
+}
+
+.secondary {
+  background: purple;
+  color: #123;
+}
+
+this is for individiual and special cases
+
+#special {
+  background: orange;
+}
+*/
