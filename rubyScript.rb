@@ -1,3 +1,4 @@
+# run this ruby script with the following command to pull data from an xml file from blogger "ruby -rubygems rubyScript.rb" you must install jekyll-importer first with gem install jekyll-import
 require "jekyll-import";
         JekyllImport::Importers::Blogger.run({
           "source"                => "blog-05-26-2018.xml",
