@@ -18,4 +18,4 @@ So first off go [create your website repository][github-setup] on [Github][githu
 [github]: https://github.com/
 [github-setup]: https://jekyllrb.com/docs/home
 [github-desktop]: https://desktop.github.com/
-[godaddy-settings]: {{mateoatwi.com}}/assets/images/tutorials/godaddy.png
+[godaddy-settings]: "{{mateoatwi.com}}/assets/images/tutorials/godaddy_settings.png"
