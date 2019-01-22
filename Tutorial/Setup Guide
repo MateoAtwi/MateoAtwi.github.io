@@ -1,4 +1,8 @@
 Hello, this is Mateo! I'm going to summerize what I did to setup my computer.
+git pull
+git add *
+git commit -m "Your comment here"
+git push
 
 1/21/19
 https://jekyllrb.com/docs/
