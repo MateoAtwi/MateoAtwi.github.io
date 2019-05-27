@@ -1,0 +1,30 @@
+Hello, this is Mateo! I'm going to summerize what I did to setup my computer.
+git pull
+git add *
+git commit -m "Your comment here"
+git push
+
+1/21/19
+https://jekyllrb.com/docs/
+//Install Git
+sudo apt-get update
+sudo apt-get install
+
+sudo apt install git //get and install git
+
+//navigate to directory where you want to clone your website
+cd Website/
+
+//clone your website
+git clone https://github.com/MateoAtwi/MateoAtwi.github.io.git
+
+https://jekyllrb.com/docs/installation/ubuntu/
+sudo apt-get install ruby-full build-essential zlib1g-dev
+
+if you want to see the bashrc then do this:
+nano ~/.bashrc
+of 
+gedit ~/.bashrc
+
+
+once you've setup this program, then you can "bundle exec jekyll serve" to run the server and view your website live!

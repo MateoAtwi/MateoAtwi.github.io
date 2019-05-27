@@ -23,14 +23,28 @@ github_username:  MateoAtwi
 
 # Build settings
 markdown: kramdown
-theme: minima
+# use rouge to highlight the code
+highlighter: rouge
+
+#theme: minima
+
 plugins:
   - jekyll-feed
+
+
+#ended up handling this with a line inside the blog.html
+#excerpt identifier:
+#excerpt_separator:
+#  - <br />
+
+#collections:
+#  authors:
+#  
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
+exclude: [Tutorial/minima-2.5.0]
 #   - Gemfile
 #   - Gemfile.lock
 #   - node_modules
@@ -38,3 +52,4 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+#   - Tutorial/minima-2.5.0

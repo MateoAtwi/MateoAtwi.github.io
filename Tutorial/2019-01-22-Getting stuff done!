@@ -1,0 +1,40 @@
+Getting stuff done!
+1/22/19
+
+Use Liquid to change features
+the format is the following:
+{{ "TEXT" | downcase}}
+
+
+
+.md files are mark down files
+
+created a _layout folder with a layout inside of it
+layouts are templates
+
+This is how you view a theme's location
+bundle show minima
+the README.md file has some interesting information
+
+
+created the _includes file which allows you to create code snippets that are included everywhere!
+For example, a navigation bar will use an include to be included everywhere!
+
+
+YAML
+very useful for making iterative things for better site navigation and other data
+
+assets folder and management
+
+aparently sass is a great css style management thingy
+/*
+empty front matter tells Jekyll to process
+front matter is indicated by "---"
+@import "main"; tells Sass to look for main.scss in the default _sass/ directory
+*/
+
+continue where you left off in assets
+
+It will take some work to develop a good looking website, but if you take the time to do it then you will learn a lot and it will look pretty nice.
+
+https://jekyllrb.com/docs/step-by-step/07-assets/

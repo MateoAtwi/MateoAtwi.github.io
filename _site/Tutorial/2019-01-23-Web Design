@@ -1,0 +1,76 @@
+Hey guys! Hopefully I will get into some more serious web design today.
+
+It is 1/23/19.
+
+Here is the command to have a running local server to see what your website looks like. This command can be kept running with your website to see what your design changes look like in real time. It's pretty sweet.
+
+Run the following command in your folder with your jekyll project
+
+bundle exec jekyll serve
+
+Today, I'm looking at how to allow posts to be in my blog. So far I've created a layout for post in post.html in _layouts. Ideally, I want to have groupings for each of my blogs. So I want to have the China Summer Program be in it's own blog. Alternatively, I can have tags such that you can view all the China Summer Program files individually.
+
+So I successfully got everything into folders so that I could separate my blogs. This is done by the following structure:
+- blogs
+ -- csp
+  --- _posts
+   ---- csp.md
+ -- tutorials
+  --- _posts
+   ---- tut.md
+
+   So I'm trying to figure out how to split up the blogs
+
+   So first off, to access any of the blogs do the following:
+
+   <ul>
+	  {% for post in site.posts %}
+	    <li>
+	      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+	      <p>{{ post.excerpt }}</p>
+	    </li>
+	  {% endfor %}
+	</ul>
+
+The site.posts accesses all the website's posts
+
+Here's how you fix the excerpt problem that was showing the whole post in the list of posts:
+put this in your front matter
+---
+excerpt_separator: <!--more-->
+---
+Then in the body put the following to close the excerpt:
+<!--more-->
+
+This default setting can also be changed in the _config.yml file
+I left an example commented out
+
+
+This is a nifty little trick to make sure there are no images in your excerpt:
+{{ post.excerpt | strip_html | truncatewords:75 }}
+This takes a post and retains the words and only the first 75. This is great. I love it.
+
+
+I'm still trying to figure out how to filter each of the posts
+
+https://shopify.github.io/liquid/basics/introduction/
+
+
+see, now I am starting to realize why liquid is so important
+
+
+So I figured out how to use liquid to filter out my posts. I did it like this:
+I created a variable called categories:
+{% if post.categories contains page.categories%}
+and I checked if the post categoreis matched the page categories.
+
+Now, only the relevent posts show in the blogs. This is awesome!! I'm pretty pumped.
+
+
+Now I stopped in collections with this link:
+
+https://jekyllrb.com/docs/step-by-step/09-collections/
+
+I was editing the _config.yml file.
+Also, I want to read up on liquid. It can be very useful.
+Toodles for now. I'm getting tired, and I've made some great progress today!

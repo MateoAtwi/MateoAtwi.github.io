@@ -1,0 +1,48 @@
+Hello and welcome back.
+
+This is going to be my learning blog for today. I'm starting off by looking into all that can be done with liquid!
+
+https://shopify.github.io/liquid/basics/operators/
+
+So basically, liquid will allow us to do a lot. It allows us to practically code stuff in our website. It's so cool:)
+
+Now I'm going to try to highlight some code. I guess I will do it in my blog tutorial or something.
+Here is a list of codes that you can highlight. This is pretty cool!
+https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers
+
+So I understand how to highlight the code, but I don't understand how to give it color and such... Let's do it!
+
+{% highlight ruby %}
+#OR this following line will add line numbers!
+{% highlight ruby linenos%}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+I got it to work.
+I used this article:
+https://mycyberuniverse.com/syntax-highlighting-jekyll.html
+
+Now I plan on reviewing the minima files to understand the structure that they use.
+
+So just to catch you up with some of the stuff that I did today.
+
+in the _config.yml file I added highlighter: rouge to use rouge to highlight code.
+
+In main.scss, I added an import for the stylesheet for monokai.
+
+So now I want to format the website, and I want to do it the right way. I'm going to follow the minima format.
+
+So first I'm going to edit my main.scss
+I copied over some default values for things so far. It seems pretty straight forward.
+
+We should edit all the defaul values as soon as stuff starts showing up:)
+
+
+
+
+This is something to look into later:
+https://jekyllrb.com/docs/plugins/

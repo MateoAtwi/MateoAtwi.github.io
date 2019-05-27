@@ -1,0 +1,9 @@
+pages:
+- name: Home
+  link: /
+- name: CSP
+  link: /csp/
+- name: Tutorials
+  link: /tutorials/
+- name: About
+  link: /about/

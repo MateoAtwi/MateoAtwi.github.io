@@ -26,3 +26,5 @@ nano ~/.bashrc
 of 
 gedit ~/.bashrc
 
+
+once you've setup this program, then you can "bundle exec jekyll serve" to run the server and view your website live!
