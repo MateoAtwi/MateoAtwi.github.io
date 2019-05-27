@@ -18,7 +18,7 @@ This particular one changes the color of the link-->
       <div class="trigger">
         {% for item in site_structure %}
           <a class="page-link" href="{{ item.link }}" {% if page.url == item.link %}
-            style="color: red;"
+            style="opacity: .3;"
             #change this to your document sass or css
           {% endif %}>{{ item.name | escape }}</a>
         {% endfor %}

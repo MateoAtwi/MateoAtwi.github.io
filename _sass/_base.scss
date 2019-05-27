@@ -207,6 +207,15 @@ pre {
     padding-right: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
   }
+
+
+  .page, .blog {
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 3px 3px 30px 0px #888888;
+    padding: $spacing-unit / 2;
+  }
+  
 }
 
 

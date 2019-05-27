@@ -150,6 +150,11 @@ pre {
       max-width: calc(800px - (30px));
       padding-right: 15px;
       padding-left: 15px; } }
+  .wrapper .page, .wrapper .blog {
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 3px 3px 30px 0px #888888;
+    padding: 15px; }
 
 /**
  * Clearfix
@@ -198,8 +203,9 @@ table {
  * Site header
  */
 .site-header {
-  border-top: 5px solid #424242;
-  border-bottom: 5px solid #e8e8e8;
+  border-top: 5px solid #c8a600;
+  border-bottom: 1px solid #c8a600;
+  background-color: #ffd740;
   min-height: 55.95px;
   position: relative; }
 
@@ -326,6 +332,9 @@ table {
 .page-heading {
   font-size: 40px; }
 
+/**
+ * Posts
+ */
 .post-list-heading {
   font-size: 35px; }
 
@@ -343,9 +352,6 @@ table {
   display: block;
   font-size: 30px; }
 
-/**
- * Posts
- */
 .post-header {
   margin-bottom: 30px; }
 

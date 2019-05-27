@@ -27,7 +27,7 @@ This particular one changes the color of the link-->
           <a class="page-link" href="/csp/" >CSP</a>
         
           <a class="page-link" href="/tutorials/" 
-            style="color: red;"
+            style="opacity: .3;"
             #change this to your document sass or css
           >Tutorials</a>
         
@@ -43,25 +43,26 @@ This particular one changes the color of the link-->
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <!-- This is a file dedicated to what the blog structure should look like-->
-
-<html>
+<article class="page">
   <head>
     <meta charset="utf-8">
     <title>Tutorials Blog</title>
     <!-- style sheet-->
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
-  <body>
-    <h1>Latest Posts</h1>
 
+  <body class="blog">
+    <h1>Latest Posts</h1>
 	<ul>
 	  
 		
 		  <li>
+		  	
 		    <h2><a href="/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll.html">Welcome to Jekyll!</a></h2>
 		    <p>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
 
 </p>
+			
 		  </li>
 	    
 	  
@@ -95,9 +96,8 @@ This particular one changes the color of the link-->
 	  
 	</ul>
   </body>
-</html>
 
-
+</article>
       </div>
     </main>
   </body>
