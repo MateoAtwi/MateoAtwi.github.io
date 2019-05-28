@@ -23,16 +23,16 @@ Checkout my [Work & Education](/work&education/) tab for more detailed informati
 
 <a href='https://photos.google.com/share/AF1QipPXcma2HXJVc1wXmNLYSqzrReAGTpmpkTg9VoSiUcx6UCXcp5Fx2g8FDnbRW3lJVg?key=MThMU05INlhmTEpzS1d2VDRIVFZkcVJWc0xVdUN3&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/LckSD6euePL7ib0pA993QtHsHdseX1oZ3vqIj1ECYUmXMa7i8S8h3UVCX0K4WrFERvOULAvPHloHD5L8bviTqcFvdUl2E7zYBurQK5DvVRzdEEGFZ8LiXO9PAKj2ZFpfAmm6S6UhRiQ=w2400' style=" max-height: 300px; border-radius: 10px; margin-bottom: 10px;"/></a>
 </div>
-I have had experience in team management, hardware development, and software development. Checkout my [Projects](/projects/) tab for more detailed information.
+I have experience in team management, hardware development, and software development. Checkout my [Projects](/projects/) tab for more detailed information.
 
 # **Skills List**
-Although I am a mechanical engineering student, I have tried many different things in different fields. This skills list highlights my ability to learn.
+Although I am a mechanical engineering student, I have tried many different things in different fields highlighting my ability to learn.
 
 |Hardware |Software |
 |------------|----------|
-|CAD (Solidworks, Creo Parametric, Fusion) |Matlab (Post Aquizition Analysis, Lab Analysis)|
+|CAD (Solidworks, Creo Parametric, Fusion) |Matlab (Post-analysis)|
 |Prototyping & Fabrication (Waterjet, Laser Cutters) |Python (Raspberry Pi Sensor Reading, ZMQ, Protobuf)|
-|3D Printing (Test Parts, Mounts) |Labview (Mechatronics, Data Aquizition) |
+|3D Printing (Test Parts, Mounts) |Labview (Mechatronics, Data Aquisition) |
 |Testing (IP-67, Hardware Test Plan) |C# (Unity Game Development)|
 |Design (Sensor and Motor Mounts, Electric Long Board, Model Rockets)|ZMQ (Sending/recieving Data and Commands)|
 |Sensors (I2C, SPI, Analog)|Protobuf (Serializing Data)|
@@ -45,13 +45,13 @@ Although I am a mechanical engineering student, I have tried many different thin
 * Work in the space industry at a fast paced company
 * Give back to communities
 * Challange myself in my work
-* Practice and take on technical leadersip roles
+* Practice and take on technical leadership roles
 
 # **Interests**
 
 * Space industry
 * Challenging development work
-* Data aquizition and sensors
+* Data aquisition and sensors
 * Programming
 * Prototyping & fabrication
 * Design & analysis
