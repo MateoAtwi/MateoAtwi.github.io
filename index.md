@@ -31,12 +31,12 @@ Although I am a mechanical engineering student, I have tried many different thin
 |Hardware |Software |
 |------------|----------|
 |CAD (Solidworks, Creo Parametric, Fusion) |Matlab (Post Aquizition Analysis, Lab Analysis)|
-|Fabrication (Waterjet, Laser Cutters) |Python (Raspberry Pi Sensor Reading, ZMQ, Protobuf)|
+|Prototyping & Fabrication (Waterjet, Laser Cutters) |Python (Raspberry Pi Sensor Reading, ZMQ, Protobuf)|
 |3D Printing (Test Parts, Mounts) |Labview (Mechatronics, Data Aquizition) |
 |Testing (IP-67, Hardware Test Plan) |C# (Unity Game Development)|
 |Design (Sensor and Motor Mounts, Electric Long Board, Model Rockets)|ZMQ (Sending/recieving Data and Commands)|
 |Sensors (I2C, SPI, Analog)|Protobuf (Serializing Data)|
-|Prototyping (Mechatronics, 3D Printing) |Java (Classwork)|
+|Fuel Cell Systems |Java (Classwork)|
 |Analysis (Classwork, Homer, Ansys) |C (Basic Understanding)|
 |Documentation (Test Plan, Gitlab)|Linux OS |
 
@@ -46,3 +46,12 @@ Although I am a mechanical engineering student, I have tried many different thin
 * Give back to communities
 * Challange myself in my work
 * Practice and take on technical leadersip roles
+
+# **Interests**
+
+* Space industry
+* Challenging development work
+* Data aquizition and sensors
+* Programming
+* Prototyping & fabrication
+* Design & analysis
