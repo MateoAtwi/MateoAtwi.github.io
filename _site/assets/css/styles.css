@@ -18,7 +18,7 @@ dl, dd, ol, ul, figure {
  It seems to deal with kerning and the display arraingment of elements known as flex or flexing?...
  */
 body {
-  font: 400 20px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #111;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -66,7 +66,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 17.5px; }
+  font-size: 13.125px; }
 
 /**
  * Lists
@@ -107,7 +107,7 @@ blockquote {
   color: #828282;
   border-left: 4px solid #e8e8e8;
   padding-left: 15px;
-  font-size: 22.5px;
+  font-size: 16.875px;
   letter-spacing: -1px;
   font-style: italic; }
   blockquote > :last-child {
@@ -118,7 +118,7 @@ blockquote {
  */
 pre,
 code {
-  font-size: 18.75px;
+  font-size: 14.0625px;
   border: 1px solid #e8e8e8;
   border-radius: 3px;
   background-color: #eef; }
@@ -203,16 +203,16 @@ table {
  * Site header
  */
 .site-header {
-  border-top: 5px solid #c8a600;
-  border-bottom: 1px solid #c8a600;
-  background-color: #ffd740;
+  border-top: 5px solid #26418f;
+  border-bottom: 1px solid #26418f;
+  background-color: #5c6bc0;
   min-height: 55.95px;
   position: relative; }
 
 .site-title {
-  font-size: 32.5px;
+  font-size: 24.375px;
   font-weight: 300;
-  line-height: 67.5px;
+  line-height: 50.625px;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left; }
@@ -221,7 +221,7 @@ table {
 
 .site-nav {
   float: right;
-  line-height: 67.5px; }
+  line-height: 50.625px; }
   .site-nav .nav-trigger {
     display: none; }
   .site-nav .menu-icon {
@@ -278,7 +278,7 @@ table {
   padding: 30px 0; }
 
 .footer-heading {
-  font-size: 22.5px;
+  font-size: 16.875px;
   margin-bottom: 15px; }
 
 .contact-list,
@@ -287,7 +287,7 @@ table {
   margin-left: 0; }
 
 .footer-col-wrapper {
-  font-size: 18.75px;
+  font-size: 14.0625px;
   color: #828282;
   margin-left: -15px; }
 
@@ -330,13 +330,13 @@ table {
   flex: 1; }
 
 .page-heading {
-  font-size: 40px; }
+  font-size: 30px; }
 
 /**
  * Posts
  */
 .post-list-heading {
-  font-size: 35px; }
+  font-size: 26.25px; }
 
 .post-list {
   margin-left: 0;
@@ -345,41 +345,41 @@ table {
     margin-bottom: 30px; }
 
 .post-meta {
-  font-size: 17.5px;
+  font-size: 13.125px;
   color: #828282; }
 
 .post-link {
   display: block;
-  font-size: 30px; }
+  font-size: 22.5px; }
 
 .post-header {
   margin-bottom: 30px; }
 
 .post-title {
-  font-size: 52.5px;
+  font-size: 39.375px;
   letter-spacing: -1px;
   line-height: 1; }
   @media screen and (max-width: 800px) {
     .post-title {
-      font-size: 45px; } }
+      font-size: 33.75px; } }
 
 .post-content {
   margin-bottom: 30px; }
   .post-content h2 {
-    font-size: 40px; }
+    font-size: 30px; }
     @media screen and (max-width: 800px) {
       .post-content h2 {
-        font-size: 35px; } }
+        font-size: 26.25px; } }
   .post-content h3 {
-    font-size: 32.5px; }
+    font-size: 24.375px; }
     @media screen and (max-width: 800px) {
       .post-content h3 {
-        font-size: 27.5px; } }
+        font-size: 20.625px; } }
   .post-content h4 {
-    font-size: 25px; }
+    font-size: 18.75px; }
     @media screen and (max-width: 800px) {
       .post-content h4 {
-        font-size: 22.5px; } }
+        font-size: 16.875px; } }
 
 /*
 * Syntax highlighting styles

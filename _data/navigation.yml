@@ -1,9 +1,30 @@
 pages:
-- name: Home
-  link: /
-- name: CSP
-  link: /csp/
-- name: Tutorials
-  link: /tutorials/
-- name: About
-  link: /about/
+  - name: Home
+    link: /
+  - name: Work & Education
+    link: /work&education/
+  - name: Projects
+    link: /projects/
+  - name: Collections
+    link: /collections/
+  - name: About
+    link: /about/
+
+collections:
+  - subject: Projects
+    modules:
+      - name: Website Tutorials
+        link: /tutorials/
+  - subject: Personal
+    modules:
+      - name: Books
+        link: /books/
+      - name: Movies
+        link: /movies/
+      - name: Quotes
+        link: /quotes/
+    link: /tutorials/
+  - subject: Travel
+    modules:
+      - name: CSP
+        link: /csp/

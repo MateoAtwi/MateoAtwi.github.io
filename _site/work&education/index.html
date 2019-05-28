@@ -24,7 +24,10 @@ This particular one changes the color of the link-->
         
           <a class="page-link" href="/" >Home</a>
         
-          <a class="page-link" href="/work&education/" >Work &amp; Education</a>
+          <a class="page-link" href="/work&education/" 
+            style="opacity: .3;"
+            #change this to your document sass or css
+          >Work &amp; Education</a>
         
           <a class="page-link" href="/projects/" >Projects</a>
         
@@ -41,27 +44,18 @@ This particular one changes the color of the link-->
   
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <article class="page">
+	  <head>
+	    <meta charset="utf-8">
+	    <title>Work&Education</title>
+	    <!-- style sheet-->
+	    <link rel="stylesheet" href="/assets/css/styles.css">
+	  </head>
+	  <body>
+	    
 
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
-
+	  </body>
+</article>
       </div>
     </main>
   </body>
