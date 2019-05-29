@@ -62,8 +62,12 @@ main {
  */
 img {
   max-width: 100%;
+  height: auto;
   vertical-align: middle;
   border-radius: 10px; }
+  @media screen and (max-width: 600px) {
+    img {
+      max-width: 90%; } }
 
 em {
   opacity: .7; }
@@ -237,6 +241,9 @@ table {
   .site-nav .page-link {
     color: white;
     line-height: 1.5; }
+    @media screen and (max-width: 600px) {
+      .site-nav .page-link {
+        color: black; } }
     .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
   @media screen and (max-width: 600px) {
