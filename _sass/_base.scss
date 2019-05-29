@@ -16,7 +16,6 @@ dl, dd, ol, ul, figure {
 }
 
 
-
 /**
  * Basic styling
  Mateo: So this call on a lot of the defaults set in the main to set the fonts used in the website.
@@ -52,7 +51,13 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {//http://thesassway.com/intermediate/understanding-placeholder-selectors
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: 0;
+}
+
+hr {
+  height: 2px;
+  border: 0;
+  background-color: $header-border-color;
 }
 
 
@@ -75,9 +80,12 @@ main {
 img {
   max-width: 100%;
   vertical-align: middle;
+  border-radius: 10px;
 }
 
-
+em {
+  opacity: .7;
+}
 
 /**
  * Figures
@@ -147,10 +155,11 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $header-border-color;
+  border-left: 4px solid $header-background-color;
   padding-left: $spacing-unit / 2;
-  @include relative-font-size(1.125);
+  opacity: .7;
+  @include relative-font-size(1.1);
   letter-spacing: -1px;
   font-style: italic;
 
@@ -167,9 +176,7 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
-  border-radius: 3px;
-  background-color: #eef;
+  border-radius: 10px;
 }
 
 code {
@@ -210,9 +217,9 @@ pre {
 
 
   .page, .blog {
-    background-color: #fafafa;
+    background-color: #e2f1f8;
     border-radius: 10px;
-    box-shadow: 3px 3px 30px 0px #888888;
+    box-shadow: 3px 3px 30px 0px $gradient;
     padding: $spacing-unit / 2;
   }
   

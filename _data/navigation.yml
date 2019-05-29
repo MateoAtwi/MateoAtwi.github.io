@@ -23,6 +23,8 @@ collections:
         link: /movies/
       - name: Quotes
         link: /quotes/
+      - name: Recepies
+        link: /recepies/
     link: /tutorials/
   - subject: Travel
     modules:

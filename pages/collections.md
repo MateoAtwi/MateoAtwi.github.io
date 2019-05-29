@@ -15,7 +15,8 @@ The following are collections of things and different blogs that document the th
 <body>
 	<div class="trigger">
 		{% for item in collections %}
-			<h1>{{ item.subject}}</h1>
+			<h2>{{ item.subject}}</h2>
+			<hr>
 			<ul style="padding-left: 3%;">
 			{% for page in item.modules %}
 				<li>
