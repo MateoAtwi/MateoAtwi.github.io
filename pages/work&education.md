@@ -3,6 +3,8 @@ layout: page
 title: Work&Education
 permalink: /work&education/
 ---
+This is a summary of all my work and education. Checkout [my projects page](/projects/) for more fleshed out descriptions and examples from my projects of the last few years.
+
 
 * TOC
 {:toc}
@@ -274,6 +276,10 @@ the software that managed revision histories.
 		* Bassist
 
 <br>
+<details><summary><h3 style="margin: 0px; display: inline">Description</h3></summary>
+<p>
+
+<br>
 At Georgia Tech, I have taken up to senior level classes in Mechanical Engineering which includes the following classes: Circuits and Electronics, Statics,
 Dynamics, Fluid Dynamics, Thermodynamics, Numerical Methods with Matlab, Heat Transfer, Deformable Bodies, System Dynamics, and a design and build
 class. In the design and build class, I worked with a team of 3 other students to create a mechatronics robot to compete with other team's robots. I learned to
@@ -282,3 +288,5 @@ science major. The classes are Introduction to Java and course that covered comp
 Assembly and the circuitry of computers. Currently, I am taking an Experimental Methods class for data acquisition skills, Machine Design, and Design and
 Manufacturing. In addition to analytical skills, I have learned and used a lot of design and prototyping skills both in and out of the classroom. My work with the
 Invention Studio Maker Space and Georgia Tech Off Road develops and hones my engineering acuity.
+</p>
+</details>

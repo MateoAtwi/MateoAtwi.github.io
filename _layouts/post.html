@@ -3,9 +3,10 @@ layout: default
 ---
 
 <!-- This is a file dedicated to what the post structure should look like-->
-
+<article class="post">
 <h1>{{ page.title }}</h1>
 <link rel="stylesheet" href="/assets/css/styles.css">
 <p>{{ page.date | date_to_string }} - {{ page.author }}</p>
 
 {{ content }}
+</article>

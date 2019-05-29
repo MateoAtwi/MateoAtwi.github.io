@@ -11,10 +11,6 @@ pages:
     link: /about/
 
 collections:
-  - subject: Projects
-    modules:
-      - name: Website Tutorials
-        link: /tutorials/
   - subject: Personal
     modules:
       - name: Books
@@ -30,3 +26,47 @@ collections:
     modules:
       - name: CSP
         link: /csp/
+  - subject: Personal Projects
+    modules:
+      - name: Website Tutorials
+        link: /tutorials/
+      - name: Longboard
+        link: /calvinHobbes/
+      - name: Pen Turning
+        link: /penTurning/
+      - name: Cutting Board
+        link: /cuttingBoard/
+      - name: Wooden Bowties
+        link: /woodenTies/
+      - name: Website Project
+        link: /websiteProject/
+      - name: Light Ring
+        link: /lightRing/
+
+projects:
+  - name: Intern Rocketry Club Lead
+    link: /internSpaceProgram/
+  - name: Video Games for NEEMO 23
+    link: /kibosh/
+  - name: Hopper 3 Test Plan
+    link: /testPlan/
+  - name: Hall Effect Sensor Test Rig
+    link: /testRig/
+  - name: GTOR Data Aquisition
+    link: /dataAquisition/
+  - name: Video Games for CS 2110
+    link: /mazeRunner/
+  - name: Intern Rocketry Club Recovery Subsystem Lead
+    link: /rocketryRecovery/
+  - name: MED-2 Rowing Tower
+    link: /rowingTower/
+  - name: ME 2110
+    link: /me2110/
+  - name: Electric Longboard
+    link: /electricLongboard/
+  - name: IP-67 Testing
+    link: /underwater/
+  - name: Car Project
+    link: /project818/
+  - name: ME 1770
+    link: /spyPlane/
