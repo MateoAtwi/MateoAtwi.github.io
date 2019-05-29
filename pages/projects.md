@@ -18,7 +18,7 @@ This is a chronological summary of all my projects. Checkout [my work and educat
 	  	{% elsif project.categories contains page.categories%}
 	    	<details><summary><h3 style="margin: 0px; display: inline">{{ project.title }}</h3></summary>
 			<p>
-			{{ project.content }}
+			{{ project.content | truncatewords:75 }}
 			<a href="{{ project.permalink }}">More on this project</a>
 			</p>
 			</details>

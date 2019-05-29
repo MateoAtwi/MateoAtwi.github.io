@@ -267,8 +267,18 @@
   }
 }
 
+.seperator {
+  margin: 0px;
+}
+
 .post-content {
   margin-bottom: $spacing-unit;
+
+  img {
+    border-radius: 30px;
+    max-width: 80%;
+
+  }
 
   h2 {
     @include relative-font-size(2);

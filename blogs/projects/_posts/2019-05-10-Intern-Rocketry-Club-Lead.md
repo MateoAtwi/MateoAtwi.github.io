@@ -1,10 +1,7 @@
 ---
 layout: post
-title: Intern Space Program
+title: Intern Rocketry Club Lead
 categories: projects
 permalink: /internSpaceProgram/
+author: Mateo Atwi
 ---
-
-# Dummy Header
-
-Dummy content

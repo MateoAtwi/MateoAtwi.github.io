@@ -285,8 +285,7 @@ Dynamics, Fluid Dynamics, Thermodynamics, Numerical Methods with Matlab, Heat Tr
 class. In the design and build class, I worked with a team of 3 other students to create a mechatronics robot to compete with other team's robots. I learned to
 use and program a myRIO with LabView and work with various sensors to collect data. Outside of my major, I have taken a couple of classes in the computer
 science major. The classes are Introduction to Java and course that covered computers from transistors to programming in C including programming in
-Assembly and the circuitry of computers. Currently, I am taking an Experimental Methods class for data acquisition skills, Machine Design, and Design and
-Manufacturing. In addition to analytical skills, I have learned and used a lot of design and prototyping skills both in and out of the classroom. My work with the
+Assembly and the circuitry of computers. In addition to analytical skills, I have learned and used a lot of design and prototyping skills both in and out of the classroom. My work with the
 Invention Studio Maker Space and Georgia Tech Off Road develops and hones my engineering acuity.
 </p>
 </details>

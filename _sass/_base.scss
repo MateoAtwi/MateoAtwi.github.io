@@ -78,12 +78,14 @@ main {
  It will be interesting to play around with as I work on my blogs more.
  */
 img {
-  max-width: 100%;
+  max-width: 99%;
   height: auto;
   vertical-align: middle;
   border-radius: 10px;
   @include media-query($on-palm) {
-    max-width: 90%;
+    max-width: -webkit-calc(100% - 1em * 2);
+    max-width:         calc(100% - 1em * 2);
+    margin-bottom: 10px;
   }
 }
 
@@ -224,8 +226,7 @@ pre {
     background-color: #e2f1f8;
     border-radius: 10px;
     box-shadow: 3px 3px 30px 0px $gradient;
-    padding: $spacing-unit / 2;
-  }
+    padding: $spacing-unit / 2;  }
   
 }
 
