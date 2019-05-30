@@ -1,0 +1,19 @@
+First I created a python script that reads a csv file and creates the headers and front matter for posts. That was fun.
+
+https://docs.python-guide.org/scenarios/scrape/
+
+Now I want to write a scraper for my images
+
+First I had to get pip
+
+`sudo apt install python-pip`
+
+Then I had to install lxml and requests
+
+```
+pip install lxml
+pip install requests
+
+```
+
+pip install --user pyperclip

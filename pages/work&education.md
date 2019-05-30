@@ -35,7 +35,7 @@ No information because I haven't started yet.
 
 <br>
 ### Summary
-* Game development in Unity with C#
+* Game development in Unity with C# ([Link to project](/kibosh/))
 * Integrated with Minature Exercise Device 2 (MED-2) and Modular Bluetooth Integrator (MoBI)
 * Test plan for Hopper 3 hardware from IHMC
 * NASA Extreme Environment Mission Operations (NEEMO) 23 preperation
@@ -201,7 +201,7 @@ class HeartRateMeasurement(object):
 
 <br>
 <div class="separator" style="clear: both; text-align: center;">
-<a href='https://photos.google.com/share/AF1QipOv7u9SQpfJVo_DFKJFrT0T2P5NJLjSePt1DRpmz9Zr_3HHiCSTXpr8W-UnJMTXhA?key=UWtjbm9PNlBjZEU5dlVpb2dBNk53cG8xX29UNEhB&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/gl8b__6c41mSTILwWTsF6lBQW8n2tdg69Ax-hKSa5_3PNYRGeaba4gc-yaAhZidsHHoEp4BDXoG74nuSzkmVdzcF0RvjTC-avu6L1RJKZoMawJ2tZnmgNDIJb4VSla0a1UKYheWDy0Y=w2400' style="max-width: 49%; position: relative;"/></a>
+<a href='https://photos.google.com/share/AF1QipOv7u9SQpfJVo_DFKJFrT0T2P5NJLjSePt1DRpmz9Zr_3HHiCSTXpr8W-UnJMTXhA?key=UWtjbm9PNlBjZEU5dlVpb2dBNk53cG8xX29UNEhB&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/ERzSGNXqC8YCEsgkIUQWP2MX8nUW9nwFH3ayoNIgLJOclq4ckg842pqnJm347hqIbX4uL4WHkG_q-kUeslZcOhOKs7HfDgqelq4l_5wKkmclmBzDiqyty6iA6NgSlcAXHkyZeIn4fm4=w2400' style="max-width: 49%; position: relative;"/></a>
 <a href='https://photos.google.com/share/AF1QipOn8-58uW6O-VgotFAZdHjaPgwHo83AW8KnlVCQfL_KO7zgeHOK6_9Krxytg4Nc5Q?key=cktvX3Q1ZFJqSWV1R3dRLWZIb1FINFY3ODhZWnRR&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/PSIgBabIXNqQAmnZoQN_PD3gy877pplVjFJrbtvXWqfAehbfNq4C4i8NhM0mzA3B9JXHNti-lgzU35B8ESSf93dyuVcM6jF4tvDGlkGmbzYWjYbBbLJkt7qYeO7QW7x6yaw-zSiPuLM=w2400' style="max-width: 49%; position: relative;"/></a>
 </div>
 
