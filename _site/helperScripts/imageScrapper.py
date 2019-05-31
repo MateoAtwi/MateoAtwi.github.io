@@ -19,5 +19,5 @@ contentURL = photo[0].get("content")
 finalAddress = contentURL[0:contentURL.index("=w")] + "=w2400"
 print finalAddress
 pyperclip.copy("<div class=\"separator\" style=\"clear: both; text-align: center;\">\n<a href='" + photoURL +"'><img src='" + finalAddress + "' style=\"max-width: 49%; position: relative;\"/></a>\n</div>")
-print "Done!"
+print "Copied to clipboard! Have a good one!"
 

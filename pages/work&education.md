@@ -21,7 +21,7 @@ This is a summary of all my work and education. Checkout [my projects page](/pro
 *Summer 2019*
 
 <br>
-No information because I haven't started yet.
+More information after I am finished with the internship.
 
 <br>
 ## Advanced Exercise Intern at NASA Johnson Space Center (Spring 2019)

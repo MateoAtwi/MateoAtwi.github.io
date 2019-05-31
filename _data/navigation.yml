@@ -28,6 +28,8 @@ collections:
         link: /csp/
   - subject: Personal Projects
     modules:
+      - name: 3D Printing
+        link: /3dprinting/
       - name: Website Tutorials
         link: /tutorials/
       - name: Longboard
