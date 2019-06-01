@@ -8,15 +8,15 @@
 <meta property="og:title" content="GTOR Data Aquisition" />
 <meta name="author" content="Mateo Atwi" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This website is here for me to summarize and collect all that I’ve done and worked on. Enjoy!" />
-<meta property="og:description" content="This website is here for me to summarize and collect all that I’ve done and worked on. Enjoy!" />
+<meta name="description" content="In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data." />
+<meta property="og:description" content="In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data." />
 <link rel="canonical" href="http://localhost:4000/dataAquisition/" />
 <meta property="og:url" content="http://localhost:4000/dataAquisition/" />
 <meta property="og:site_name" content="Mateo Atwi" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-11-20T00:00:00-06:00" />
 <script type="application/ld+json">
-{"description":"This website is here for me to summarize and collect all that I’ve done and worked on. Enjoy!","author":{"@type":"Person","name":"Mateo Atwi"},"@type":"BlogPosting","url":"http://localhost:4000/dataAquisition/","headline":"GTOR Data Aquisition","dateModified":"2018-11-20T00:00:00-06:00","datePublished":"2018-11-20T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dataAquisition/"},"@context":"http://schema.org"}</script>
+{"description":"In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data.","author":{"@type":"Person","name":"Mateo Atwi"},"@type":"BlogPosting","url":"http://localhost:4000/dataAquisition/","headline":"GTOR Data Aquisition","dateModified":"2018-11-20T00:00:00-06:00","datePublished":"2018-11-20T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dataAquisition/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Mateo Atwi" /></head>
 <body>
@@ -62,7 +62,60 @@
 <link rel="stylesheet" href="/assets/css/styles.css">
 <p>20 Nov 2018 - Mateo Atwi</p>
 
+<p><br />
+In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data.</p>
 
+<p><br /></p>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://photos.app.goo.gl/CBo89hCGVrjREooB8"><img src="https://lh3.googleusercontent.com/-xPSbxPmCXSmiOEUU-GuTUuSVhsFzuh1PRHNzlldgMbKkTq4RmCMwVXmammgft4B3GkYAsUnmCSXfZ-SKlr80U-oa5aZcu_BYv8iKC-ifpQwUvMPFrf_BMY-FMKiUDiDkva0OotTExg=w2400" style="max-width: 49%; position: relative;" /></a>
+</div>
+
+<p><br /></p>
+
+<h3 id="background">Background</h3>
+
+<p><br />
+Data collection (as I’ve discovered) is a very tricky business. Here’s my list of things you need to do to get meaningful results from data collection:</p>
+
+<p><br /></p>
+
+<ol>
+  <li>Good sensors with adequate resolution</li>
+  <li>Mounting the sensors to your system</li>
+  <li>Wiring the sensors to a computer or a small portable computer for a moving system like ours</li>
+  <li>Program the computer to collect data fast enough</li>
+  <li>Reliably store data</li>
+  <li>Analyize the data</li>
+  <li>Make changes and adjustments based off of the data</li>
+</ol>
+
+<p><br />
+Here’s a parallel project that I did to work with a <a href="/testRig/">hall effect sensor as research</a> for the group and as part of a class project.</p>
+
+<p><br /></p>
+
+<h3 id="development-work">Development Work</h3>
+
+<p><br />
+Before the Fall of 2019, GTOR had a few students working on measuring RPMs and setting up data aquisition systems. Their work was several years old by the time I got around to joining. The first thing we had to do was decide what kind of data we wanted to gather. We opted to get IMUs and place them on the suspension. Additionally, we had some linear potentiometers that we could mount to the shocks on the car. We used a MyRio to collect data.</p>
+
+<p><br /></p>
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://photos.app.goo.gl/r7tfavzBz8yW75HL8"><img src="https://lh3.googleusercontent.com/6IQ0gmRmLJUxVfN0y9P3Pbz0hMecVxR9uZVhIN5UHd1NY9_EDxnWABfMWWL5SOc4TrMRERXOgNvmB3Be2aVtK1IaIKrjYVvIM6cSL_hVndYNMxcEB-i8ScJ9Cwblp-b_VLSyC7uGynU=w2400" style="max-width: 49%; position: relative;" /></a>
+</div>
+
+<p><br />
+We mounted our parts and coded the program. I learned how to use I2C on the accelerometers with labview. That was a cool experience to learn how to send values to the registers. Unfortunately, I didn’t have a good grasp of how to increase the data collection rate, so the accelerometers did not gather useful data.</p>
+
+<p><br /></p>
+
+<h3 id="lessons-learned">Lessons Learned</h3>
+
+<p><br />
+Data collection with sensors is very tricky. I would reccomend really understand what are the best computers to use for this process. Additionally, I think that it would be nice to consult industry experience to see how they measure things. I want to learn better how to do data measurement with python and C as well as FPGA stuff.</p>
+
+<p>…</p>
 
 </article>
       </div>

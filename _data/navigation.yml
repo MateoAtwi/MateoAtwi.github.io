@@ -13,14 +13,14 @@ pages:
 collections:
   - subject: Personal
     modules:
-      - name: Books
-        link: /books/
-      - name: Movies
-        link: /movies/
+      - name: Books & Movies!
+        link: /books&movies/
       - name: Quotes
         link: /quotes/
       - name: Recepies
         link: /recepies/
+      - name: Websites
+        link: /websites/
     link: /tutorials/
   - subject: Travel
     modules:
