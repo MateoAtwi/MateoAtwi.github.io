@@ -75,7 +75,7 @@ var x = setInterval(function() {
 
 <br>
 
-# Sneek peak into my past:) 6/2/19
+# Sneak peek into my past:) 6/2/19
 
 \\
 Hey Miss Anna!
