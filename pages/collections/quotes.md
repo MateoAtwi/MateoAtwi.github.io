@@ -9,8 +9,6 @@ This page contains some of my favorite quotes from different books and people.
 * TOC
 {:toc}
 
-❤️:heart:
-
 # Random Quotes
 
 * One question I teed up: What had driven him against all odds? “Never feeling one damn moment of doubt,” he shot back. “I am who I am, the hell with it.” - Jack Bogle

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Invention Studio Prototyping Instructor
-categories: projects
+categories: personal projects
 permalink: /inventionstudio/
 author: Mateo Atwi
 summary: Coming soon

@@ -18,8 +18,19 @@ function myFunction() {
 </head>
 <body>
 
-<input name="searchTxt" type="text" maxlength="512" id="passwordTxt" class="searchField" placeholder="Password"/>
-<button type="button" onclick="myFunction()">Unlock</button>
+<input name="searchTxt" type="text" maxlength="512" id="passwordTxt" class="searchField" placeholder="Password" autofocus="autofocus" />
+<button id="submit" type="button" onclick="myFunction()">Unlock</button>
+
+<script>
+var input = document.getElementById("passwordTxt");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   myFunction();
+  }
+});
+</script>
+
 </body>
 
 
@@ -27,6 +38,64 @@ function myFunction() {
 
 * TOC
 {:toc}
+
+<!-- Display the countdown timer in an element -->
+<p id="demo" style="text-align: center; color: #008080; font-size: 30px; font-weight: bold;"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jul 10, 2019 20:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s " + "till Anna returns to the US!";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Anna is home!";
+  }
+}, 1000);
+</script>
+
+<br>
+
+# Sneek peak into my past:) 6/2/19
+
+\\
+Hey Miss Anna!
+
+\\
+Here's a little video from my past if you're curious what I was like 6 years ago!
+
+<br>
+
+<div class="separator" style="clear: both; text-align: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KQv-GpMAU3k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<br>
+
+Love, &hearts;
+
+Mateo
+
+<br>
 
 # Missing you! 6/1/19
 

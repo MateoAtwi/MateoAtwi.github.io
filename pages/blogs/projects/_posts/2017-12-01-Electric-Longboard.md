@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Electric Longboard
-categories: projects
+categories: personal projects
 permalink: /electricLongboard/
 author: Mateo Atwi
 summary: Coming soon

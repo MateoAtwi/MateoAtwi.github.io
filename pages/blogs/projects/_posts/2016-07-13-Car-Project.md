@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Car Project
-categories: projects
+categories: personal projects
 permalink: /project818/
 author: Mateo Atwi
 summary: Coming soon
