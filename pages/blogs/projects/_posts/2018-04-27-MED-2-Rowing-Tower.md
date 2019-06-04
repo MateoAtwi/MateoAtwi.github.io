@@ -19,6 +19,16 @@ thumbnail: https://lh3.googleusercontent.com/DLuD1HV43sSFl_t4C-M474_4zG0JJGX4Zo5
 
 <br>
 
+### Skills Learned and Used
+
+<br>
+* CAD
+* Mechanical Design
+* Prototyping
+* Quick Design/Assembly
+
+<br>
+
 ### Background
 
 \\

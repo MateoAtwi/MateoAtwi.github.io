@@ -83,8 +83,11 @@ Hello Anna,
 \\
 Here's a video that I made a while back. We need to make more art together:)
 
-<div class="separator" style="clear: both; text-align: center;">
-<iframe src="https://www.youtube.com/embed/iikrpfsC8fA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+
+
+<div class="container" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+<iframe src="https://www.youtube.com/embed/iikrpfsC8fA" frameborder="0" allowfullscreen class="video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 \\
@@ -110,8 +113,8 @@ Here's a little video from my past if you're curious what I was like 6 years ago
 
 <br>
 
-<div class="separator" style="clear: both; text-align: center;">
-<iframe src="https://www.youtube.com/embed/KQv-GpMAU3k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="container" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+<iframe src="https://www.youtube.com/embed/KQv-GpMAU3k" frameborder="0" allowfullscreen class="video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 <br>

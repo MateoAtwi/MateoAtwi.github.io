@@ -15,7 +15,7 @@ Together with another intern, we considered software, electrical, and mechanical
 
 <br>
 
-### Lessons Learned
+### Lessons and Skills Learned
 
 \\
 This was a challening task because I had to think about ways to test a device and what parameters can be recorded for comparison between exercise hardware. Test plans are very valuable for selecting from a growing list of available devices. Having clear objectives for a test plan are imperative; otherwise, the test plan create will find themselves with too many aspects to test.

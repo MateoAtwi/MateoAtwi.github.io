@@ -19,6 +19,15 @@ thumbnail: https://lh3.googleusercontent.com/dD5EoJ5BsAfUCFta7iQwriicFZTmu9qFngY
 
 <br>
 
+### Skills Learned and Used
+
+* Building a parachute from scratch
+* Model rocket design
+* 3D printing
+* Teamwork
+
+<br>
+
 ### Background
 
 \\
@@ -65,8 +74,6 @@ Here's some more testing:
     <source src="https://lh3.googleusercontent.com/tsQ0PlHqPLENvIzPQ7pWtd4kg0kfxWN017rzGBEeG0FN22610cu8ixqVsLptT6HGzDin7Q836u8lqzRy-S_Ls7_11bWj6WmRQ8Bd0Baw6geSbVq8bd7ZuITooq-oiqsYhC3spi8Dtpo=w600-h315-k-no-m18" type="video/mp4">
   </video>
 </div>
-
-<br>
 
 ### Lessons Learned
 

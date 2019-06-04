@@ -16,6 +16,18 @@ thumbnail: https://lh3.googleusercontent.com/Cbmrc8F1Ao1XPzyBhq5GreNGpWejB78jsHW
 </div>
 
 <br>
+
+### Skills Learned and Used
+
+<br>
+
+* Mechanical testing
+* Test rig construction
+* Motor setup and testing
+* Sensor application and testing
+
+<br>
+
 ### Background
 
 \\
@@ -76,4 +88,4 @@ The lab went very well. I was able to adapt code from a vibrations lab to be use
 ### Lessons Learned
 
 \\
-Measuring RPMs is very tricky.
+Measuring RPMs is very tricky. Learning how to record the data and analyize it is no small task. There is a lot that goes in from designing a proper rig to writing helpful code to measure data.

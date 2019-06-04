@@ -1,11 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-03T20:52:05-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mateo Atwi</title><subtitle>This website is here for me to summarize and collect all that I've done and worked on. Enjoy!</subtitle><entry><title type="html">Video Games for NEEMO 23</title><link href="http://localhost:4000/kibosh/" rel="alternate" type="text/html" title="Video Games for NEEMO 23" /><published>2019-05-24T00:00:00-05:00</published><updated>2019-05-24T00:00:00-05:00</updated><id>http://localhost:4000/Video-Games-for-NEEMO-23</id><content type="html" xml:base="http://localhost:4000/kibosh/">&lt;p&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-03T22:24:05-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mateo Atwi</title><subtitle>This website is here for me to summarize and collect all that I've done and worked on. Enjoy!</subtitle><entry><title type="html">Video Games for NEEMO 23</title><link href="http://localhost:4000/kibosh/" rel="alternate" type="text/html" title="Video Games for NEEMO 23" /><published>2019-05-24T00:00:00-05:00</published><updated>2019-05-24T00:00:00-05:00</updated><id>http://localhost:4000/Video-Games-for-NEEMO-23</id><content type="html" xml:base="http://localhost:4000/kibosh/">&lt;p&gt;&lt;br /&gt;
 At NASA in the Spring of 2019, I was tasked with creating &lt;a href=&quot;/work&amp;amp;education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2019&quot;&gt;video games to be tested at NEEMO 23&lt;/a&gt;. I created two games. The first game used the position telemetry from the MED-2 to map to a character position in the game. The second game received heart rate data from MoBI and used that to control the character’s position vertically.&lt;/p&gt;
 
 &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
 &lt;a href=&quot;https://photos.app.goo.gl/8nWTaaU3VXTfLWTi8&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/ytBDPB4UZ2CCjqQUd0dNAnlLMuENwnDz6Dj-Rn4EspAvUd80m-xOdANectbyrQ7pXO8NWRBP4EC4knzqAslEkjNVD25NXNAAzE0W3E-Tyvvz2KJBLxULd-hQcebip_sOGwhJ5MvqB8w=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
 &lt;/div&gt;
 
-&lt;p&gt;…&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;skills-learned-and-used&quot;&gt;Skills Learned and Used&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C#&lt;/li&gt;
+  &lt;li&gt;Unity&lt;/li&gt;
+  &lt;li&gt;MED-2&lt;/li&gt;
+  &lt;li&gt;MoBI&lt;/li&gt;
+  &lt;li&gt;Protobuf&lt;/li&gt;
+  &lt;li&gt;ZMQ&lt;/li&gt;
+  &lt;li&gt;Game Testing&lt;/li&gt;
+  &lt;li&gt;UI&lt;/li&gt;
+  &lt;li&gt;Data storage&lt;/li&gt;
+  &lt;li&gt;Rule making&lt;/li&gt;
+  &lt;li&gt;Gamification&lt;/li&gt;
+  &lt;li&gt;Game planning&lt;/li&gt;
+  &lt;li&gt;game mechanics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+…&lt;/p&gt;
 &lt;h2 id=&quot;to-be-continued&quot;&gt;To Be Continued:&lt;/h2&gt;
 
 &lt;h3 id=&quot;using-unity&quot;&gt;Using Unity&lt;/h3&gt;
@@ -19,6 +42,20 @@ At NASA JSC I had the honor of leading the intern effort to build and fly model 
 &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
 &lt;a href=&quot;https://photos.app.goo.gl/NKaWcyNLNVWJVT1FA&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/_qNgmfYvtn2PJ3feoesPVS698iB-m7Bgg0JBcV22KBhIRWMQAUKW7ZUAv5NAz1T52Yx7k0HnWYrVY0n85SyidAuT6bAQxsX0ib0cEf5CQd6WgPLMrqNpqCOtsGt1-k3g_rf6dOsyDeI=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;skills-learned-and-used&quot;&gt;Skills Learned and Used&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Design&lt;/li&gt;
+  &lt;li&gt;CAD, group leadersip, holding meetings, scheduling, problem solving, teamwork&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;p&gt;…&lt;/p&gt;
 &lt;h2 id=&quot;to-be-continued&quot;&gt;To Be Continued:&lt;/h2&gt;
 
@@ -34,7 +71,7 @@ Together with another intern, we considered software, electrical, and mechanical
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
+&lt;h3 id=&quot;lessons-and-skills-learned&quot;&gt;Lessons and Skills Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
 This was a challening task because I had to think about ways to test a device and what parameters can be recorded for comparison between exercise hardware. Test plans are very valuable for selecting from a growing list of available devices. Having clear objectives for a test plan are imperative; otherwise, the test plan create will find themselves with too many aspects to test.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">This was one of my projects at NASA during the spring of 2019. My branch, ER3, received new exercise hardware from a company called IHMC. ER3 is setting up a database of exercise equipment as it comes through to be able to quickly compare and contrast hardware to each other. I created a test plan to catalogue new devices.</summary></entry><entry><title type="html">Hall Effect Sensor Test Rig</title><link href="http://localhost:4000/testRig/" rel="alternate" type="text/html" title="Hall Effect Sensor Test Rig" /><published>2018-11-30T00:00:00-06:00</published><updated>2018-11-30T00:00:00-06:00</updated><id>http://localhost:4000/Hall-Effect-Sensor-Test-Rig</id><content type="html" xml:base="http://localhost:4000/testRig/">&lt;p&gt;&lt;br /&gt;
@@ -45,6 +82,20 @@ Fall of 2019 I designed a test rig to mount a hall effect sensor near an electri
 &lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;skills-learned-and-used&quot;&gt;Skills Learned and Used&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mechanical testing&lt;/li&gt;
+  &lt;li&gt;Test rig construction&lt;/li&gt;
+  &lt;li&gt;Motor setup and testing&lt;/li&gt;
+  &lt;li&gt;Sensor application and testing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
@@ -107,13 +158,28 @@ The lab went very well. I was able to adapt code from a vibrations lab to be use
 &lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-Measuring RPMs is very tricky.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Fall of 2019 I designed a test rig to mount a hall effect sensor near an electric motor with toothed wheel attached to the output shaft. The goal was to find ways to measure RPM on a spinning system. I created this both for GTOR and for a mechanical engineering class called Experimental Methods. It was a lot of fun to CAD then create a fully functioning rig with a powerful electrical motor.</summary></entry><entry><title type="html">GTOR Data Aquisition</title><link href="http://localhost:4000/dataAquisition/" rel="alternate" type="text/html" title="GTOR Data Aquisition" /><published>2018-11-20T00:00:00-06:00</published><updated>2018-11-20T00:00:00-06:00</updated><id>http://localhost:4000/GTOR-Data-Aquisition</id><content type="html" xml:base="http://localhost:4000/dataAquisition/">&lt;p&gt;&lt;br /&gt;
+Measuring RPMs is very tricky. Learning how to record the data and analyize it is no small task. There is a lot that goes in from designing a proper rig to writing helpful code to measure data.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Fall of 2019 I designed a test rig to mount a hall effect sensor near an electric motor with toothed wheel attached to the output shaft. The goal was to find ways to measure RPM on a spinning system. I created this both for GTOR and for a mechanical engineering class called Experimental Methods. It was a lot of fun to CAD then create a fully functioning rig with a powerful electrical motor.</summary></entry><entry><title type="html">GTOR Data Aquisition</title><link href="http://localhost:4000/dataAquisition/" rel="alternate" type="text/html" title="GTOR Data Aquisition" /><published>2018-11-20T00:00:00-06:00</published><updated>2018-11-20T00:00:00-06:00</updated><id>http://localhost:4000/GTOR-Data-Aquisition</id><content type="html" xml:base="http://localhost:4000/dataAquisition/">&lt;p&gt;&lt;br /&gt;
 In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
 &lt;a href=&quot;https://photos.app.goo.gl/CBo89hCGVrjREooB8&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/-xPSbxPmCXSmiOEUU-GuTUuSVhsFzuh1PRHNzlldgMbKkTq4RmCMwVXmammgft4B3GkYAsUnmCSXfZ-SKlr80U-oa5aZcu_BYv8iKC-ifpQwUvMPFrf_BMY-FMKiUDiDkva0OotTExg=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;skills-learned-and-used&quot;&gt;Skills Learned and Used&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sensors and reading sensor documentation&lt;/li&gt;
+  &lt;li&gt;I2C&lt;/li&gt;
+  &lt;li&gt;Data storage&lt;/li&gt;
+  &lt;li&gt;Sensor mounting&lt;/li&gt;
+  &lt;li&gt;Mobile data collection system&lt;/li&gt;
+  &lt;li&gt;Data analysis methods (FFT, peak to peak calculations)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -153,14 +219,10 @@ Before the Fall of 2019, GTOR had a few students working on measuring RPMs and s
 &lt;p&gt;&lt;br /&gt;
 We mounted our parts and coded the program. I learned how to use I2C on the accelerometers with labview. That was a cool experience to learn how to send values to the registers. Unfortunately, I didn’t have a good grasp of how to increase the data collection rate, so the accelerometers did not gather useful data.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-Data collection with sensors is very tricky. I would reccomend really understand what are the best computers to use for this process. Additionally, I think that it would be nice to consult industry experience to see how they measure things. I want to learn better how to do data measurement with python and C as well as FPGA stuff.&lt;/p&gt;
-
-&lt;p&gt;…&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-05-26T15:46:18-05:00</published><updated>2018-05-26T15:46:18-05:00</updated><id>http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+Data collection with sensors is very tricky. I would reccomend really understand what are the best computers to use for this process. Additionally, I think that it would be nice to consult industry experience to see how they measure things. I want to learn better how to do data measurement with python and C as well as FPGA stuff.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-05-26T15:46:18-05:00</published><updated>2018-05-26T15:46:18-05:00</updated><id>http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
@@ -185,6 +247,17 @@ My &lt;a href=&quot;/work&amp;amp;education/#advanced-exercise-intern-at-nasa-jo
 &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
 &lt;a href=&quot;https://photos.app.goo.gl/2H8qJCPPh3U8Trnn9&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/dD5EoJ5BsAfUCFta7iQwriicFZTmu9qFngYLtPg2_F3QChwHrjOW661YyUZ2UFjh1IzH5p7lFd_AoB1nvg6ORn8uq6I-pJc0z_tvr8Efsrh1bOq0w9RjnpIu412dhrqkFsIOV0ChYdQ=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;skills-learned-and-used&quot;&gt;Skills Learned and Used&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Building a parachute from scratch&lt;/li&gt;
+  &lt;li&gt;Model rocket design&lt;/li&gt;
+  &lt;li&gt;3D printing&lt;/li&gt;
+  &lt;li&gt;Teamwork&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -237,8 +310,6 @@ Here’s some more testing:&lt;/p&gt;
   &lt;/video&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
@@ -250,6 +321,18 @@ At &lt;a href=&quot;/work&amp;amp;education/#advanced-exercise-intern-at-nasa-jo
 &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
 &lt;a href=&quot;https://photos.app.goo.gl/qnVSvqFCgn3gUCPB9&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/DLuD1HV43sSFl_t4C-M474_4zG0JJGX4Zo5yyvE4n5dsDMHqie6oUndwhhBrzQVAKZue_yJU2nRwjFGRmBcSFlYmFBaL_KbwdangHN1DmKjfey61hMF0trnxrB22jSChh6TGKTEwYl0=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;skills-learned-and-used&quot;&gt;Skills Learned and Used&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;CAD&lt;/li&gt;
+  &lt;li&gt;Mechanical Design&lt;/li&gt;
+  &lt;li&gt;Prototyping&lt;/li&gt;
+  &lt;li&gt;Quick Design/Assembly&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -269,5 +352,57 @@ Without much time, I quickly modeled up a system where one side is a mounting sy
 
 &lt;p&gt;&lt;br /&gt;
 After getting to see footage of people testing the device, I realized a huge design mistake that I didn’t think of earlier. The whole device and platform lurches upward when a user tried to row on it. This is because the device and platform is not secured in a way that prevents pivoting around the track that the user sits on.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">At NASA in the Spring of 2018, I was tasked with designing a rig that would transform the MED-2 into a rowing machine on earth. Currently, the MED-2 can we be used in zero-g to row, but we would like to be able to test that here on the ground. This projet was really fun, and even though I started it pretty late into the semester the interns of the next few semesters built it.</summary></entry><entry><title type="html">ME 2110</title><link href="http://localhost:4000/me2110/" rel="alternate" type="text/html" title="ME 2110" /><published>2017-12-20T00:00:00-06:00</published><updated>2017-12-20T00:00:00-06:00</updated><id>http://localhost:4000/ME-2110</id><content type="html" xml:base="http://localhost:4000/me2110/">&lt;p&gt;&lt;br /&gt;
-Coming soon&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Coming soon</summary></entry><entry><title type="html">Electric Longboard</title><link href="http://localhost:4000/electricLongboard/" rel="alternate" type="text/html" title="Electric Longboard" /><published>2017-12-01T00:00:00-06:00</published><updated>2017-12-01T00:00:00-06:00</updated><id>http://localhost:4000/Electric-Longboard</id><content type="html" xml:base="http://localhost:4000/electricLongboard/">&lt;p&gt;&lt;br /&gt;
+Junior year of my time at Georgia Tech in 2017, I took an infamous class called ME 2110 (Creative Decisions and Design). This class is infamous because it culminates in a competition between the teams of 3 or 4. Each team builds and programs a mechatronics robot to compete in an arena with 3 other teams. There are several different ways to gain or lose points, and the objective is to get the highest score. I highlight this as one of my projects because it was formative for my engineering experience. My team placed in the top 20 of seventy teams. This class was one of funnest and toughest classes I’ve taken.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;a href=&quot;https://photos.app.goo.gl/J7gVR5CPtin47szE7&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/XgnlTO0TOqc2XkbojIgJGiWlljRrYbKPsVHWPgnQ0pL4pj_ZmkvTXuPzK56l7XAZ1zZnNJWbgjeKa7-jUQTAHsZ3xxIPtmBTGmsufes_QMRWgFTybjdXyu1LaxMkXjkLS0Yhpx-_bgU=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;skills-learned-and-used&quot;&gt;Skills Learned and Used&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;LabView&lt;/li&gt;
+  &lt;li&gt;Design&lt;/li&gt;
+  &lt;li&gt;Technical writing&lt;/li&gt;
+  &lt;li&gt;Prototyping&lt;/li&gt;
+  &lt;li&gt;Presenting&lt;/li&gt;
+  &lt;li&gt;Teamwork&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Here is an &lt;a href=&quot;https://www.youtube.com/watch?v=iS1xqo3VCAA&quot;&gt;explanitory video from Georgia Tech&lt;/a&gt;. All the teams are given a mechatronics kit including some pneumatic valves, motors, solenoids, and various other objects like mouse traps. Throughout the semester we prototype and build a final machine to compete with. Meanwhile, we write a bunch of technical peices and present our work. We learn about project timelines and design processes. This is one of the most intense classes at Georgia Tech. It is very easy to get sucked into the competition.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;our-design&quot;&gt;Our Design&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Rather than explain to you in depth. I think the following video of the competition explains the work we did. In this round of the competition we accomplished our highest point total and did a few tasks that other groups did not do like grabbing the character in the center.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;container&quot; style=&quot;position: relative; width: 100%; height: 0; padding-bottom: 56.25%;&quot;&gt;
+&lt;iframe src=&quot;https://www.youtube.com/embed/MukhViVJfMY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; class=&quot;video&quot; style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;my-participation&quot;&gt;My Participation&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+I absolutely loved this project. It was a lot of fun. I did all the coding. I helped build, CAD, and write technical papers. I worked really hard, and I think this was one of the most valuable projects I’ve ever done. Teamwork was essential. No one person could do as much as the team of four could. The almost weekly papers made sure that we were documenting and writing down information about our project constantly. There was a lot of pressure, but that’s what formed us as a group.&lt;/p&gt;
+
+&lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Teamwork is essential for…&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Junior year of my time at Georgia Tech in 2017, I took an infamous class called ME 2110 (Creative Decisions and Design). This class is infamous because it culminates in a competition between the teams of 3 or 4. Each team builds and programs a mechatronics robot to compete in an arena with 3 other teams. There are several different ways to gain or lose points, and the objective is to get the highest score. I highlight this as one of my projects because it was formative for my engineering experience. My team placed in the top 20 of seventy teams. This class was one of funnest and toughest classes I’ve taken.</summary></entry><entry><title type="html">Electric Longboard</title><link href="http://localhost:4000/electricLongboard/" rel="alternate" type="text/html" title="Electric Longboard" /><published>2017-12-01T00:00:00-06:00</published><updated>2017-12-01T00:00:00-06:00</updated><id>http://localhost:4000/Electric-Longboard</id><content type="html" xml:base="http://localhost:4000/electricLongboard/">&lt;p&gt;&lt;br /&gt;
 Coming soon&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Coming soon</summary></entry></feed>
