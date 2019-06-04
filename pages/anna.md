@@ -75,6 +75,31 @@ var x = setInterval(function() {
 
 <br>
 
+# Video if you need a study break 6/3/19
+
+\\
+Hello Anna,
+
+\\
+Here's a video that I made a while back. We need to make more art together:)
+
+<div class="separator" style="clear: both; text-align: center;">
+<iframe src="https://www.youtube.com/embed/iikrpfsC8fA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+\\
+Thanks for being such a good friend!
+
+\\
+Cheers!
+
+Love,
+
+Mateo
+
+
+<br>
+
 # Sneak peek into my past:) 6/2/19
 
 \\
@@ -86,7 +111,7 @@ Here's a little video from my past if you're curious what I was like 6 years ago
 <br>
 
 <div class="separator" style="clear: both; text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KQv-GpMAU3k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/KQv-GpMAU3k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <br>
@@ -108,7 +133,7 @@ I really miss you! You are beautiful. Beautiful smile. Beautiful eyes. Beautiful
 <br>
 
 <div class="separator" style="clear: both; text-align: center;">
-<a href='https://photos.app.goo.gl/kY9XwSnEcpQYntjTA'><img src='https://lh3.googleusercontent.com/g8XnnNrKlPn6sD6nUI5e1wMNkQML1ssta2j1iW4O_fSaoEI_eIbumUcSXAez3PHTNcaR59nQYZ7SfasntF-1KDXvo_1ZoWyLWt8JIbIOizUqvx_xg3R7YmAiDN8aoYPCxD753sACXnA=w2400' style="max-width: 49%; position: relative;"/></a>
+<a href='https://photos.app.goo.gl/kY9XwSnEcpQYntjTA'><img src='https://lh3.googleusercontent.com/g8XnnNrKlPn6sD6nUI5e1wMNkQML1ssta2j1iW4O_fSaoEI_eIbumUcSXAez3PHTNcaR59nQYZ7SfasntF-1KDXvo_1ZoWyLWt8JIbIOizUqvx_xg3R7YmAiDN8aoYPCxD753sACXnA=w2400' style="max-width: 90%; position: relative;"/></a>
 </div>
 <br>
 
@@ -127,7 +152,7 @@ Mateo
 Hello Anna,
 
 <div class="separator" style="clear: both; text-align: center;">
-<a href='https://photos.app.goo.gl/pNUU5oaLwTtAdQqU7'><img src='https://lh3.googleusercontent.com/GuZ4lGcjYFWPHq_EpRNUlLeGEQvkQDWqXOUZe4AnthY90mnv1CSd328yL64qYACrb-9YNwG_gJ6jdJyyb8GmRANHG9wBNKE2iEr1UkefLc_BqrBmJ35VVbPxcWR7D-X-ABukgG-QZa0=w2400' style="max-width: 49%; position: relative;"/></a>
+<a href='https://photos.app.goo.gl/pNUU5oaLwTtAdQqU7'><img src='https://lh3.googleusercontent.com/GuZ4lGcjYFWPHq_EpRNUlLeGEQvkQDWqXOUZe4AnthY90mnv1CSd328yL64qYACrb-9YNwG_gJ6jdJyyb8GmRANHG9wBNKE2iEr1UkefLc_BqrBmJ35VVbPxcWR7D-X-ABukgG-QZa0=w2400' style="max-width: 90%; position: relative;"/></a>
 </div>
 
 \\
@@ -165,10 +190,10 @@ Love,
 Mateo
 
 <div class="separator" style="clear: both; text-align: center;">
-<a href='https://photos.app.goo.gl/xiJP56Mo5WyrT8BaA'><img src='https://lh3.googleusercontent.com/PLOeBUfsoQUY8squbP3RMRMNHCd5witSWqQP-mHeRLEZ37tcOBI7ZlOaEJ7d97Z6E7kmxRkBzQXps1UqDFWFMe2qUTbzjQdp3n616KHu5JO7msa4AJvi-UCmsRBhn4xck2fPH_AHMMA=w2400' style="max-width: 49%; position: relative;"/></a>
+<a href='https://photos.app.goo.gl/xiJP56Mo5WyrT8BaA'><img src='https://lh3.googleusercontent.com/PLOeBUfsoQUY8squbP3RMRMNHCd5witSWqQP-mHeRLEZ37tcOBI7ZlOaEJ7d97Z6E7kmxRkBzQXps1UqDFWFMe2qUTbzjQdp3n616KHu5JO7msa4AJvi-UCmsRBhn4xck2fPH_AHMMA=w2400' style="max-width: 90%; position: relative;"/></a>
 </div>
 <div class="separator" style="clear: both; text-align: center;">
-<a href='https://photos.app.goo.gl/mU2rJQQyoAYj2nUk7'><img src='https://lh3.googleusercontent.com/uZp-LR-gTNTTQt0frrKlLGlND9VBP3iE8FjWeAgnpic_JrGg8G0EKwF1dKA0IVtB2HUus3qK3y2ZLMp8vvgT3pD9FOS1K_d3AJX1xcixfDdTycAVqZNiNuHahlI4kREqOzo6EXS49Xw=w2400' style="max-width: 49%; position: relative;"/></a>
+<a href='https://photos.app.goo.gl/mU2rJQQyoAYj2nUk7'><img src='https://lh3.googleusercontent.com/uZp-LR-gTNTTQt0frrKlLGlND9VBP3iE8FjWeAgnpic_JrGg8G0EKwF1dKA0IVtB2HUus3qK3y2ZLMp8vvgT3pD9FOS1K_d3AJX1xcixfDdTycAVqZNiNuHahlI4kREqOzo6EXS49Xw=w2400' style="max-width: 90%; position: relative;"/></a>
 </div>
 
 
