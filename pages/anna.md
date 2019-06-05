@@ -75,6 +75,36 @@ var x = setInterval(function() {
 
 <br>
 
+# You are special 6/4/19
+
+Dear Anna,
+
+\\
+You are special.
+
+* You are special because Jesus loves you for who you are in him.
+* You are special because of your loving parents and your caring brothers.
+* You are special for the ways that you care about the Hungarian group you are working for.
+* You are special because of the love you have for your friends.
+* You are special because of the way you want to have deep connections to others.
+* You are special because of the way God made you unique.
+* God made you special in the way he created your cute curly hair.
+* God made you special in the way he created your cute face.
+* God made you special in the way he created you to walk quickly.
+* God made you special in all the ways he called you to serve him.
+* God made you special because of the opportunity we have grow closer to him and each other.
+
+\\
+I could go on:) Maybe I will compile a list of ways you are special.
+
+\\
+Love,
+
+\\
+Mateo Atwi
+
+<br>
+
 # Video if you need a study break 6/3/19
 
 \\
