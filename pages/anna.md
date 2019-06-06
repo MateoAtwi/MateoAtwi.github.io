@@ -33,6 +33,26 @@ input.addEventListener("keyup", function(event) {
 
 </body>
 
+<!--
+# Day one 6/13/19
+
+\\
+Dear Anna,
+
+\\
+Can you believe that I meet you a year ago today:)
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/RUHTaWF4o4GEVWyT9'><img src='https://lh3.googleusercontent.com/Q4DUJXI-EiAmFXhbUnOH7-usj53UkW1OSmJOyf6TbybWnA4CQlqgYpVez50mR_iQ18M_T2HVcN2jnqEUgoA2msGYjnJfxYH8EOZ2UYDK5Pu8Y6QjgH6SyiFqCL5_OfqSp92qLxhADsY=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+\\
+Love,
+
+\\
+Mateo Atwi
+
+-->
 
 <div id="Content" style="display: none;" markdown="1" >
 
@@ -75,8 +95,52 @@ var x = setInterval(function() {
 
 <br>
 
+# Values 6/5/19
+
+\\
+Dearest Anna,
+
+\\
+Carla says, "Hello!"
+
+\\
+I have an interesting list for you today. Here's my list of values. I'd love to hear your list of values.
+
+* Brevity/consise
+* Noble
+* Truthful
+* Integrity
+* Wise
+* Authenticity
+* Dedication
+* Foresight
+* Loyalty
+* Christianity/spirituality
+* Seeking truth
+* Pathetique
+* Hardwork
+* Passion
+* Fun
+* Beauty
+* Art
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/u9H1aTFj7AoeAHJu9'><img src='https://lh3.googleusercontent.com/YW9GXMtOHEMRZUCxKcgyaew-SLAxk7LVt5GdTXoE7qzXhBtDkyhBvsSjf4Zp0r6iMex-4ZY-OdhYByQYYcDLpslfF1-mrSfIYp9U4Yk3-ZEJu9MITLuM0TQ0Xo19ZUilCr9WQmxyr90=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+\\
+Love,
+
+Mateo
+
+
+
+
+<br>
+
 # You are special 6/4/19
 
+\\
 Dear Anna,
 
 \\
@@ -100,7 +164,6 @@ I could go on:) Maybe I will compile a list of ways you are special.
 \\
 Love,
 
-\\
 Mateo Atwi
 
 <br>
