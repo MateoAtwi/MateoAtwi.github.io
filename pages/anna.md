@@ -95,6 +95,38 @@ var x = setInterval(function() {
 
 <br>
 
+# You 6/7/19
+
+\\
+Dearest Anna,
+
+\\
+I thought I was not going to make this post tonight because I was tired. Now I know, I will not let a little bit of being tired stand between me doing something meaningful for you. I value you. I value you your love for Christ. I value his grace that he has bestowed upon you. I value the opportunity that we have to get to know each other.
+
+\\
+Enjoy this art I made and this picture of me driving a tractor when I was 12.
+
+<br>
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/n8kY9fwpm7NL9aoo7'><img src='https://lh3.googleusercontent.com/59a83RdMBlaQuoxpLqCaI8qtvSKJhjSYDoGp3c4TH8Z5sdIWTSsIYe02ACcjjBRCDGhW3ytimjf7xqS1PpU_4rtX7nBv4oNn73zLub09WujMwkkNG8f9ABQksYuktH9yD9EiCdu0t7o=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+<br>
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/ARRrm3GoiZftdNdMA'><img src='https://lh3.googleusercontent.com/3ohodhzFgYqAphAEOIe-tRIE6wSVk_9u5tCV3dQP0a2SnHq-z42BVKhQ6A-7oUM4Z0AzFWPItt4pXu_ajx9K8VeB49YQAEHJ8Z_HfsMRHXeoh-t2NXOjfsycHSuHGan_fXEcWOVbweQ=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+<br>
+
+Love,
+
+Mateo
+
+
+<br>
+
 # Poetry (not my own) 6/6/19
 
 \\
