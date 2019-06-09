@@ -95,6 +95,26 @@ var x = setInterval(function() {
 
 <br>
 
+# Status update 6/8/19
+
+\\
+I made it safely to Florida. Thank God! Miss you Anna. I can't wait to catch up with you.
+
+\\
+Today I flew into Fort Lauderdale. I meetup with Kristina and Vickie and we drove to Key Lago. We are staying in a house by a canal. It is a nice house with iguanas and alligators and a very nice second floor. I look forward to working and relaxing here and enjoying the stay.
+
+\\
+I wish you could join me on this adventure Anna! It makes me miss you so much.
+
+\\
+Love,
+
+Mateo
+
+
+
+<br>
+
 # You 6/7/19
 
 \\
