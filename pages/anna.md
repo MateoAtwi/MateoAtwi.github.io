@@ -95,6 +95,31 @@ var x = setInterval(function() {
 
 <br>
 
+# Key West 6/9/19
+
+\\
+Dearest Anna,
+
+\\
+Today we went to Key West. This city is pretty beautiful, but also very hot. My favorite thing about Key West is that there are chickens everywhere. They just walk around and do chicken things... It is crazy! I love it.
+
+\\
+I also went to the southernmost point of the US, so that was pretty cool.
+
+\\
+Really enjoyed talking to you today. I enjoyed our dreaming and our discussion of intimacy. Wish you could join me here in the Florida Keys.
+
+\\
+Miss you!
+
+\\
+Love,
+
+Mateo
+
+
+<br>
+
 # Status update 6/8/19
 
 \\
@@ -110,7 +135,6 @@ I wish you could join me on this adventure Anna! It makes me miss you so much.
 Love,
 
 Mateo
-
 
 
 <br>
