@@ -95,6 +95,28 @@ var x = setInterval(function() {
 
 <br>
 
+# Ah I skipped a day! 6/11/19
+
+\\
+Dearest Anna,
+
+\\
+I missed a day! Sorry! I was really busy fixing some things that were semi urgent before we send our equipment down.
+
+\\
+Enjoy this really good food I had at a restaurent in Key West. Wish you could have been there to see the chickens and the southernmost point in the US.
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/ziEjzMCWkQuD2z6a9'><img src='https://lh3.googleusercontent.com/4pUi6Ix-s2H69TaDB8OzsJZ6a6kWq_0zkReZumXwr0YR1f2khGDHrxqITV1JBWoqifTjVRuHdTbWuLAGRku7lNnfW35MPgIIq7_2ZjwQZFyT4dw1qWPjamAN_ksD4YViE2tY-x-Z6RU=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+\\
+Love,
+
+Mateo
+
+<br>
+
 # Key West 6/9/19
 
 \\
