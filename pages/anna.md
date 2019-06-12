@@ -95,6 +95,84 @@ var x = setInterval(function() {
 
 <br>
 
+# The Prequel 6/12/19
+
+\\
+Dearest Anna,
+
+\\
+A little memory of the past... Dream with me...
+
+\\
+It was the summer of 2018. I had just finished working with NASA for a semester. I went home, then I went with Tiago to scuba dive in the Gulf. And to top it all off, I went to Georgia Tech to take summer classes after missing the first few days for diving. I did not know what to make of the semester. I planned on taking several challenging classes. I was talking health at the beginning of the semester, and I was talking CS 2110, Heat Transfer, and System Dyanmics for the whole semester. I had to figure out what I wanted to do in my free time.
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/W39tcCaJiUaSG11H7'><img src='https://lh3.googleusercontent.com/N0NC-aFWstASmKhrzZaLIJQ0y1C0znNNq6x_8OGVRd7Xh8ry3o-zYgqL8mkRJa3o1Pef_W4HffMU9Q0845F4B8fdWYNWmQDSPdpzTptUgu4QouDhpcuK3H3oQd8QEOR2Fg2qPvG0i3k=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+<br>
+
+I knew that I wanted to workout. I was going to cook my own food. I was going to be a Prototyping Instructor (PI). Finally, I was going to make things in my free time. I wanted to do a few more things, but these were the major things. I did not have very many friends, so I wanted to make some good friends. Additionally, I wanted to be part of a bible study or help lead one. 
+
+\\
+I was able to workout somewhat consistently. I did a lot of running and some lifting at the CRC. Matt Roelofs and I went running almost every week. He was training for an iron man. That was pretty fun. We'd go running early in the morning around the crc to beat the Georgia heat. I got pretty healthy with a good schedule.
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/8FpLDX4bb1Qo6haa8'><img src='https://lh3.googleusercontent.com/x2-cg8zS3gOmNcXEmb-3QMVMYVWPXf0EitRmW3l2kNkrsa88Pr2t7rZJgpxXWY-DiAYxhkOmZJDddSpqCutXZ4GXVVNfJPrR9Ersnp2VbTpuAizyR_vIMtWR8OPsbUMZQZ-lGrwwdFA=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+<br>
+
+Peter Achi was going to start his PhD in the fall at GT, and he started doing some research over the summer at GT. Instead of getting housing, he shared my room. He slept on my couch for a month. It was really fun to live with Peter. He cooks well. He is a lot of fun to be with. He is quirky. He enjoys good conversations. He works really hard too, so it made for a good study environment when we are both in the room.
+
+<br>
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/mgLqCNvqZPBbgodcA'><img src='https://lh3.googleusercontent.com/jWoFtoi5fqTOKE6uLCG-XVF530JWXBfxD2doa0uxs0an3_7rXw2e868EBVeHLGG1V_mxabCooHIZXM-IqNm5wHA2FKxMlBAMLdwHT5-Lh2lwS5S0sfG-ZgfKbOeZ7g5pl1ram7V5P2o=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+<br>
+
+I enjoyed cooking several dishes over the semester. I made pancakes, banana bread, a lot of salmon, breaded chicken, eggplant paramsan, and other stuff...
+
+<br>
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/wGV5B5ZA29y6XTB1A'><img src='https://lh3.googleusercontent.com/QrmF6i8CBckcdd9ksO8tWeEBrXJBA92zZvMi4auwD89RVq7cWvjGWIat9fnbf6NiZnP8OcQboKroJNKYoxyCf5WqKzaPEd-P10uP65UF5nEVQ5AHeX_2WLRake4izvqg0pEfcLGDsj0=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+<br>
+
+I made a few cutting boards in the Invention Studio.
+
+<br>
+
+<div class="container" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+<iframe src="https://www.youtube.com/embed/m7eoLIepAy0" 
+frameborder="0" allowfullscreen class="video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+<br>
+
+I even made good friends. I became friends with Nathan and Matt. I meet a bunch of new people. I became better friends with Davis and Jake.
+
+<br>
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/GVCNqvPJn59cH7jq6'><img src='https://lh3.googleusercontent.com/66rPpO-iUjX9fMVrxtcjbSg4GECs1UKb0dgWcjsX3wYlPNublIXDvQRNwgZBMpmyHxn7bD8ln2Emwd_J8kF-hiVQQIXHWSn6kF1wEROF3cTEgER4tfahbAD7KbEaq3glQZ3w5lC8hAc=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+<br>
+
+And I co-lead a bible study:) And so one of the biggest events in my life was one of the smallest things that happened to me over the summer.
+
+<br>
+
+Love,
+
+Mateo
+
+<br>
+
 # Ah I skipped a day! 6/11/19
 
 \\
