@@ -33,27 +33,6 @@ input.addEventListener("keyup", function(event) {
 
 </body>
 
-<!--
-# Day one 6/13/19
-
-\\
-Dear Anna,
-
-\\
-Can you believe that I meet you a year ago today:)
-
-<div class="separator" style="clear: both; text-align: center;">
-<a href='https://photos.app.goo.gl/RUHTaWF4o4GEVWyT9'><img src='https://lh3.googleusercontent.com/Q4DUJXI-EiAmFXhbUnOH7-usj53UkW1OSmJOyf6TbybWnA4CQlqgYpVez50mR_iQ18M_T2HVcN2jnqEUgoA2msGYjnJfxYH8EOZ2UYDK5Pu8Y6QjgH6SyiFqCL5_OfqSp92qLxhADsY=w2400' style="max-width: 49%; position: relative;"/></a>
-</div>
-
-\\
-Love,
-
-\\
-Mateo Atwi
-
--->
-
 <div id="Content" style="display: none;" markdown="1" >
 
 * TOC
@@ -92,6 +71,41 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+
+<br>
+
+# Day one 6/13/19
+
+\\
+Dear Anna,
+
+\\
+So to continue the story:
+
+\\
+I knew that I wanted to lead a Bible Study. I had such a good experience with Bible Studies in the past few years, and I didn't want that to end. My best friends all went to Bible Study with me. So I got with Michael Phillips and we discussed starting a Bible Study with Jazhiel and Becca. I got so excited. I started making a nice handout every week with questions on it. I formatted it to look good. I figured that a handout with the passage on it would be inviting to non-christians. We decided to go through Ephesians. I was especially excited to see the new freshman when they started to come to Georgia Tech.
+
+\\
+One of the things that Michael asked me to do was to help out at FASET by tabling. Tabling at FASET as a christian ministry is usually pretty challening I find. Most students will not stop by unless you have some food or if they are really interested. FASET is also conveniently during the summer when it is super hot outside at Georgia Tech. So typically we set up our tent and then bring popsicles or something else. Did I mention that it is hot?
+
+\\
+Well, God has an interesting way of making big things start small. I was tabling on June 13th last year. I was just doing my thing trying to convince freshmen that we were worth their time. This was one of the first times that I had tabled, so I was not very forward about getting in people's way and asking them if they'd like to hear more. It was either towards the beginning or the end of the tabling period, and we barely had anybody coming by. Lo and behold a freshman girl walks up to our table.
+
+\\
+I start rehearsing in my mind the things that we are going to say about RUF and how we will explain to her what we are. I don't remember how the conversation actually goes, but I remember that it was quite awkward because this girl already knew about RUF. It was also awkward because we were trying to figure out who she was. It took us several questions to figure out that she was related to Stephen Montgomery. It had been a while since I interacted with Stephen, so my memory of him was foggy. I can't remember anything else we talked about, but I guess we took a selfie.
+
+\\
+Can you believe that I meet you a year ago today:)
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/RUHTaWF4o4GEVWyT9'><img src='https://lh3.googleusercontent.com/Q4DUJXI-EiAmFXhbUnOH7-usj53UkW1OSmJOyf6TbybWnA4CQlqgYpVez50mR_iQ18M_T2HVcN2jnqEUgoA2msGYjnJfxYH8EOZ2UYDK5Pu8Y6QjgH6SyiFqCL5_OfqSp92qLxhADsY=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+\\
+Love,
+
+\\
+Mateo Atwi
 
 <br>
 
