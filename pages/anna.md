@@ -10,7 +10,7 @@ This website is only for Anna. Please use the password to unlock.
 <script>
 function myFunction() {
   var passwordAttempt = document.getElementById("passwordTxt").value;
-  if (passwordAttempt == "ILoveYou"){
+  if (passwordAttempt == "LikeSoGood"){
   	document.getElementById("Content").style.display = "block";
   }
 }
