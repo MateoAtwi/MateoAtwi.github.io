@@ -1,6 +1,7 @@
 from lxml import html
 import requests
 import pyperclip
+# sudo apt-get install xclip
 
 photoURL = raw_input("Please enter your URL:\n")
 

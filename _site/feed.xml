@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-10T06:51:04-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mateo Atwi</title><subtitle>This website is here for me to summarize and collect all that I've done and worked on. Enjoy!</subtitle><entry><title type="html">Video Games for NEEMO 23</title><link href="http://localhost:4000/kibosh/" rel="alternate" type="text/html" title="Video Games for NEEMO 23" /><published>2019-05-24T00:00:00-07:00</published><updated>2019-05-24T00:00:00-07:00</updated><id>http://localhost:4000/Video-Games-for-NEEMO-23</id><content type="html" xml:base="http://localhost:4000/kibosh/">&lt;p&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-12T07:29:24-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mateo Atwi</title><subtitle>This website is here for me to summarize and collect all that I've done and worked on. Enjoy!</subtitle><entry><title type="html">Video Games for NEEMO 23</title><link href="http://localhost:4000/kibosh/" rel="alternate" type="text/html" title="Video Games for NEEMO 23" /><published>2019-05-24T00:00:00-07:00</published><updated>2019-05-24T00:00:00-07:00</updated><id>http://localhost:4000/Video-Games-for-NEEMO-23</id><content type="html" xml:base="http://localhost:4000/kibosh/">&lt;p&gt;&lt;br /&gt;
 At NASA in the Spring of 2019, I was tasked with creating &lt;a href=&quot;/work&amp;amp;education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2019&quot;&gt;video games to be tested at NEEMO 23&lt;/a&gt;. I created two games. The first game used the position telemetry from the MED-2 to map to a character position in the game. The second game received heart rate data from MoBI and used that to control the character’s position vertically.&lt;/p&gt;
 
 &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
@@ -368,7 +368,7 @@ Junior year of my time at Georgia Tech in 2017, I took an infamous class called 
 
 &lt;ul&gt;
   &lt;li&gt;LabView&lt;/li&gt;
-  &lt;li&gt;Design&lt;/li&gt;
+  &lt;li&gt;Mechanical Design&lt;/li&gt;
   &lt;li&gt;Technical writing&lt;/li&gt;
   &lt;li&gt;Prototyping&lt;/li&gt;
   &lt;li&gt;Presenting&lt;/li&gt;
@@ -404,5 +404,126 @@ I absolutely loved this project. It was a lot of fun. I did all the coding. I he
 &lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-Teamwork is essential for…&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Junior year of my time at Georgia Tech in 2017, I took an infamous class called ME 2110 (Creative Decisions and Design). This class is infamous because it culminates in a competition between the teams of 3 or 4. Each team builds and programs a mechatronics robot to compete in an arena with 3 other teams. There are several different ways to gain or lose points, and the objective is to get the highest score. I highlight this as one of my projects because it was formative for my engineering experience. My team placed in the top 20 of seventy teams. This class was one of funnest and toughest classes I’ve taken.</summary></entry><entry><title type="html">Electric Longboard</title><link href="http://localhost:4000/electricLongboard/" rel="alternate" type="text/html" title="Electric Longboard" /><published>2017-12-01T00:00:00-08:00</published><updated>2017-12-01T00:00:00-08:00</updated><id>http://localhost:4000/Electric-Longboard</id><content type="html" xml:base="http://localhost:4000/electricLongboard/">&lt;p&gt;&lt;br /&gt;
-Coming soon&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Coming soon</summary></entry></feed>
+This project pushes students to try their best. I left the final competition knowing that I’d given it my all. I don’t always want that experience, but I know that I will devliver under pressure. Additionally, during seasons like this I typically learn a lot of skills. I find that I am more creative when I am under pressure to create solutions quickly. This was not an exception. Now I know that it is valuable to put myself into situations where I need to act quickly to create solutions. Teamwork was an essential part of this process. A good team allows each member to be more effective. There is a caviat here. Depending on the team, good leadership makes a big difference. In this project, my teams never established good leadership. I think leadership allows each project to be more sreamlined.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Junior year of my time at Georgia Tech in 2017, I took an infamous class called ME 2110 (Creative Decisions and Design). This class is infamous because it culminates in a competition between the teams of 3 or 4. Each team builds and programs a mechatronics robot to compete in an arena with 3 other teams. There are several different ways to gain or lose points, and the objective is to get the highest score. I highlight this as one of my projects because it was formative for my engineering experience. My team placed in the top 20 of seventy teams. This class was one of funnest and toughest classes I’ve taken.</summary></entry><entry><title type="html">Electric Longboard</title><link href="http://localhost:4000/electricLongboard/" rel="alternate" type="text/html" title="Electric Longboard" /><published>2017-12-01T00:00:00-08:00</published><updated>2017-12-01T00:00:00-08:00</updated><id>http://localhost:4000/Electric-Longboard</id><content type="html" xml:base="http://localhost:4000/electricLongboard/">&lt;p&gt;&lt;br /&gt;
+This is one of my favorite projects. My friend Chris and I jointly developed an electric longboard using a maker grant at the Georgia Tech Invention Studio where we are both prototyping instructors. This longboard had severval innovative design features. Our first design had a lot of flaws, but I attribute this to the extent that we tried to innovate. Our innovations include batteries imbeded into the deck of the longboard and a fiberglass bottom. Additionally, we tried to build most things in house with the motor mounts and the deck.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;a href=&quot;https://photos.app.goo.gl/kTmxCkmnQjE7YTMi6&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/vvG6P-gkoaJ9x_K3ZMgJfLk3DpRCNdKFHRLyPfdg740rMgZhFr4zrOokMUkLOQ4qw6RJRDD1pXCh8JaspXODiWDf9M6OSq3TNfQ77TQ40F4ON0n5a0Z4XGMXX2oO1hmIWhBKsm5TSvs=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;skills-learned-and-used&quot;&gt;Skills Learned and Used&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Woodworking&lt;/li&gt;
+  &lt;li&gt;CAD Design&lt;/li&gt;
+  &lt;li&gt;Waterjet&lt;/li&gt;
+  &lt;li&gt;Motors and Speed Controllers&lt;/li&gt;
+  &lt;li&gt;LiPo Batteries&lt;/li&gt;
+  &lt;li&gt;Laser Cutting&lt;/li&gt;
+  &lt;li&gt;Resin Pouring and Fiber Glass Reinforcing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Sometime my second year at Georgia Tech, me and my friend Chris Louie decided to build an electric longboard and make Georgia Tech pay for it. See, we both work as Prototyping Instructors(PIs) for the Invention Studio at Georgia Tech. PIs are not paid; however, they have perks like 24 hour access to the studio and funding for projects. So we decided to jointly work on some projects. It was really fun!&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Since we had access to the studio, we decided to make as much as we could. Additionally, we didn’t just want to follow a tutorial, so we decided to add features that you don’t see in most boards. This made the project tougher for us especially since we had a lot of work to do with our classes.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;a href=&quot;https://photos.app.goo.gl/yoEMA7jRuppPurQb6&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/WaEzNBlGd4BCzw-hvnI4JrQh6VJt2Eao5jhpSkbqPvnRvdbTXRyqSLyw59_MReZyJzT1cknPBTaAFds92PC7c_8Hpeefv5iQsjgXxlVobuVW7Yk15TfOUv5g40oSwOz-5qVf-Tw7Y2c=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;our-design&quot;&gt;Our Design&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+We designed a pretty standard longboard. The biggest difference was that we wanted to embed all of the electronics and battery stuff into the deck itself. This challenge proved harder than we initial thought it would be. Other than that we designed a pretty standard board. We machined custom motor mounting equipment to use.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;electric-longboard-making-process&quot;&gt;Electric Longboard Making Process&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Build Deck&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Wood glue deck layers together&lt;/li&gt;
+  &lt;li&gt;Press deck while glue is still wet&lt;/li&gt;
+  &lt;li&gt;Cut out shape of the deck with a circular power saw, make multiple cuts&lt;/li&gt;
+  &lt;li&gt;Use router to smooth off edges&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;a href=&quot;https://photos.app.goo.gl/G5RfuxRGjGUAni1D7&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/ugD1kWv_kEGJ2zZhwpT5A8C5cNyCJK780Cfp24-jf1SGTxD5AygW49DA_d3_KMwfSnigiZaFVhnU3weTkyRHBdKe4QE-Tvtk-j4nULEfDJFWjapl09vsvEKe7ZFRTbUDOLXIHKibTu4=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;a href=&quot;https://photos.app.goo.gl/QsC6eecNMc6fzU7TA&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/c4ge1wqTUf8SkTFS0pFIgbaRxsA-xzPSMEvmjDFFR8HPcmCdYm9_Uku1iYh_RM-UXeqRP_M9EWz7Uai55y__ty2qHbSwbXaGf_WDzxgFnLGVgktvspcUKLggystNU1FTwtQN_NYhViE=w2400&quot; style=&quot;max-width: 49%; position: relative;&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Motor Mount System&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Waterjet or mill motor mount out of aluminum&lt;/li&gt;
+  &lt;li&gt;Use drill press or power drill to create additional holes&lt;/li&gt;
+  &lt;li&gt;Set up wheels and attach motor to deck with wrenches and screwdrivers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Create Electronics Pocket in Board&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cut out pockets in the deck to fit electronics within the deck using the Router&lt;/li&gt;
+  &lt;li&gt;Cut out corresponding wood panels to cover the pockets using hand jigsaw&lt;/li&gt;
+  &lt;li&gt;Screw panels into place&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Test then Install Electronics&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Test motors and batteries and speed control system&lt;/li&gt;
+  &lt;li&gt;Test install batteries and speed control system inside deck&lt;/li&gt;
+  &lt;li&gt;Solder electrical components&lt;/li&gt;
+  &lt;li&gt;Test install motor on truckings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div style=&quot;text-align:center;&quot;&gt;
+  &lt;video style=&quot;max-width: 80%; height:100%;&quot; controls=&quot;&quot;&gt;
+    &lt;source src=&quot;https://lh3.googleusercontent.com/9mZHmW5ZPw87ctXlRBZ5OElyRSnJDrGoN4NCgBpPXzc45tIqc1rPwhmgwX4i-lXjNVlkoJewOGaM6fDyBKRLry1XOJTYyME1Y0ODTr6X05wXJZoGL0Zvda2P2CbURtYJzbdMxjlxaNo=w600-h315-k-no-m18&quot; type=&quot;video/mp4&quot; /&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Decorate and Strengthen Board&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fiberglass deck with Epoxy Resin&lt;/li&gt;
+  &lt;li&gt;Coat bare wood with polyurethane&lt;/li&gt;
+  &lt;li&gt;Remove electronics and paint deck&lt;/li&gt;
+  &lt;li&gt;Artistically cut grip tape with Laser Engraver or X-ACTO Knife and apply to deck&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Reassemble all components&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+You need to add the hardener to epoxy to get it to harden. I learned that the hard way when I poured the epoxy without adding the hardener. Also, epoxy on your hands sucks. That happened to me frequently. One of the biggest lessons that I learned was that you need to have really good CAD before you can really build things. This means getting the accurate dimensions of things before you can adequately create a model of your entire system. There are two different methodologies here. I and Chris had a tight schedule, so we opted to model, build, and fix our design as we went. It turned out alright, but I defenitely think we could have had a better design from the get go.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">This is one of my favorite projects. My friend Chris and I jointly developed an electric longboard using a maker grant at the Georgia Tech Invention Studio where we are both prototyping instructors. This longboard had severval innovative design features. Our first design had a lot of flaws, but I attribute this to the extent that we tried to innovate. Our innovations include batteries imbeded into the deck of the longboard and a fiberglass bottom. Additionally, we tried to build most things in house with the motor mounts and the deck.</summary></entry></feed>

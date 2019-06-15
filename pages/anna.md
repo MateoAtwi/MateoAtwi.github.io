@@ -74,6 +74,38 @@ var x = setInterval(function() {
 
 <br>
 
+# Update 6/15/19
+
+\\
+Dearest Anna,
+
+\\
+Sorry for the delay between posts. Things have been so busy here. Really wish I could be with you in Europe or that you could be here in Florida. Enjoy this photo of me in an oldfashioned diving helmet.
+
+<br>
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/WiYEah4whXztZrLV7'><img src='https://lh3.googleusercontent.com/fpgvc3odImWTSWUjNP2ggWnOtrgAn6UmEj5mf9U3zFPDk6X0KRAmeSl9awdkB-17tTgbFwoA6NpTI7N-DrUgk_6CraEDYdF6k7VVQzxhq-XS-od3ObVFD-P-6M73vC2hPGTHEr673AY=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+<br>
+
+Also, enjoy this photo of an iguana chillin on our deck.
+
+<br>
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href='https://photos.app.goo.gl/Nwha1G1SEAZreout6'><img src='https://lh3.googleusercontent.com/dP_f0c4D_xvw8C_b-4IrjFiX5AfjPtAl8Bu8nnuWkvLJKffL5LnrqhVKfkAerTRJNbeyKkdjNbCUQbbRC2JrZ5o9u0ozoGWEQHerw8TLMxia7ZKCMlBVZp1MORIrUBJnt8Y6Y1h8gFI=w2400' style="max-width: 49%; position: relative;"/></a>
+</div>
+
+<br>
+
+Love,
+
+Mateo
+
+<br>
+
 # Day one 6/13/19
 
 \\
