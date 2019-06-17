@@ -46,7 +46,7 @@ input.addEventListener("keyup", function(event) {
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Jul 10, 2019 20:00:00").getTime();
-var annaVisitDate = new Date("Jul 17, 2019 17:35:12").getTime();
+var annaVisitDate = new Date("Jul 18, 2019 17:35:12").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
