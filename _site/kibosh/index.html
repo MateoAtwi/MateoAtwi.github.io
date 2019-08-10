@@ -136,6 +136,10 @@ At NASA in the Spring of 2019, I was tasked with creating <a href="/work&amp;edu
 
 <p><br /></p>
 
+<p><em>Please see the end of this page for code examples</em></p>
+
+<p><br /></p>
+
 <h3 id="mobi-integration">MoBI Integration</h3>
 
 <p><br /></p>
@@ -165,6 +169,501 @@ At NASA in the Spring of 2019, I was tasked with creating <a href="/work&amp;edu
 <p><br /></p>
 
 <p>Go for it. Develop smarter, faster, and harder!</p>
+
+<p><br /></p>
+
+<p>Code to send messages to MED-2:</p>
+
+<p><br /></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//using System.Diagnostics;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Concurrent</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">NetMQ</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">NetMQ.Sockets</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="c1">//using static Request;</span>
+<span class="k">using</span> <span class="nn">Google.Protobuf</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">NetMqRequester</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Thread</span> <span class="n">_requesterWorker</span><span class="p">;</span> <span class="c1">//this thread will handle sending messages</span>
+    <span class="k">private</span> <span class="kt">bool</span> <span class="n">_requesterCancelled</span><span class="p">;</span><span class="c1">//this is a handy on/off switch to have for our loop</span>
+
+    <span class="k">private</span> <span class="kt">byte</span><span class="p">[]</span> <span class="n">message</span><span class="p">;</span> <span class="c1">//this is the message to send</span>
+    <span class="k">private</span> <span class="n">Request</span> <span class="n">req</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Request</span><span class="p">();</span> <span class="c1">//this is our protobuf class for a request</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">reply</span><span class="p">;</span> <span class="c1">//use this to catch the string sent by the device</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ConcurrentQueue</span><span class="p">&lt;</span><span class="n">Request</span><span class="p">&gt;</span> <span class="n">_messageQueue</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConcurrentQueue</span><span class="p">&lt;</span><span class="n">Request</span><span class="p">&gt;();</span>
+
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">hostC</span> <span class="p">=</span> <span class="s">"127.0.0.1"</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">portC</span> <span class="p">=</span> <span class="s">"42025"</span><span class="p">;</span>
+
+    <span class="n">RequestSocket</span> <span class="n">requester</span><span class="p">;</span>
+
+    <span class="c1">//eventually I think you should just pass a message in through here</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">RequesterWork</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">AsyncIO</span><span class="p">.</span><span class="n">ForceDotNet</span><span class="p">.</span><span class="nf">Force</span><span class="p">();</span>
+        <span class="c1">//This is using the lazy pirate method of sending requests</span>
+        <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">requester</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RequestSocket</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">NetMQTimer</span> <span class="n">pollTime</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetMQTimer</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="nf">FromMilliseconds</span><span class="p">(</span><span class="m">100</span><span class="p">));</span>
+
+            <span class="n">requester</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="s">"tcp://"</span> <span class="p">+</span> <span class="n">hostC</span> <span class="p">+</span> <span class="s">":"</span> <span class="p">+</span> <span class="n">portC</span><span class="p">);</span>
+            <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">poller</span> <span class="p">=</span> <span class="k">new</span> <span class="n">NetMQPoller</span> <span class="p">{</span> <span class="n">requester</span><span class="p">,</span> <span class="n">pollTime</span> <span class="p">})</span>
+            <span class="p">{</span>
+                <span class="n">requester</span><span class="p">.</span><span class="n">SendReady</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">_messageQueue</span><span class="p">.</span><span class="nf">TryDequeue</span><span class="p">(</span><span class="k">out</span> <span class="n">req</span><span class="p">))</span>
+                    <span class="p">{</span>
+                        <span class="n">message</span> <span class="p">=</span> <span class="n">req</span><span class="p">.</span><span class="nf">ToByteArray</span><span class="p">();</span>
+                        <span class="n">a</span><span class="p">.</span><span class="n">Socket</span><span class="p">.</span><span class="nf">SendFrame</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+                        <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="s">"Sending message"</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">_requesterCancelled</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">poller</span><span class="p">.</span><span class="nf">Stop</span><span class="p">();</span>
+                    <span class="p">}</span>
+                <span class="p">};</span>
+                <span class="n">requester</span><span class="p">.</span><span class="n">ReceiveReady</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="n">reply</span> <span class="p">=</span> <span class="n">requester</span><span class="p">.</span><span class="nf">ReceiveFrameString</span><span class="p">();</span>
+                    <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="n">reply</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">_requesterCancelled</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">poller</span><span class="p">.</span><span class="nf">Stop</span><span class="p">();</span>
+                    <span class="p">}</span>
+                <span class="p">};</span>
+
+                <span class="c1">//requester.SendFrame(message);</span>
+                <span class="n">poller</span><span class="p">.</span><span class="nf">Run</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="n">requester</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="c1">//NetMQConfig.Cleanup();</span>
+    <span class="p">}</span>
+
+
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">Request</span> <span class="n">rqst</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_messageQueue</span><span class="p">.</span><span class="nf">Enqueue</span><span class="p">(</span><span class="n">rqst</span><span class="p">);</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="s">"Request "</span> <span class="p">+</span> <span class="n">rqst</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="nf">NetMqRequester</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">req</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Request</span><span class="p">();</span>
+        <span class="n">_requesterWorker</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Thread</span><span class="p">(</span><span class="n">RequesterWork</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_requesterCancelled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+        <span class="n">_requesterWorker</span><span class="p">.</span><span class="nf">Start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Stop</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_requesterCancelled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class="n">NetMQConfig</span><span class="p">.</span><span class="nf">Cleanup</span><span class="p">();</span>
+        <span class="n">_requesterWorker</span><span class="p">.</span><span class="nf">Join</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//public class MEDCommander : MonoBehaviour</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">MEDCommander</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">_requesterCancelled</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">NetMqRequester</span> <span class="n">_netMqRequester</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">MEDCommander</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_netMqRequester</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetMqRequester</span><span class="p">();</span>
+        <span class="n">_netMqRequester</span><span class="p">.</span><span class="nf">Start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//think about what you might want in the update function</span>
+        <span class="c1">//get commands from your game here and change the MED based on them</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">Request</span> <span class="n">rqst</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_netMqRequester</span><span class="p">.</span><span class="nf">SendMessage</span><span class="p">(</span><span class="n">rqst</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Stop</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_netMqRequester</span><span class="p">.</span><span class="nf">Stop</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>Code to receive messages from MED-2:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Collections.Concurrent</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">NetMQ</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">NetMQ.Sockets</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">NetMqListenerClone</span> <span class="c1">//We create this class to be a listener</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Thread</span> <span class="n">_listenerWorker</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">_listenerCancelled</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">delegate</span> <span class="k">void</span> <span class="nf">MessageDelegate</span><span class="p">(</span><span class="kt">byte</span><span class="p">[]</span> <span class="n">message</span><span class="p">);</span>
+
+    <span class="k">private</span> <span class="kt">byte</span><span class="p">[]</span> <span class="n">frameByte</span><span class="p">;</span> <span class="c1">//current message</span>
+
+    <span class="k">private</span> <span class="kt">byte</span><span class="p">[]</span> <span class="n">throwAwayMessage</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">MessageDelegate</span> <span class="n">_messageDelegate</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ConcurrentQueue</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">[</span><span class="k">]&gt;</span> <span class="n">_messageQueue</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConcurrentQueue</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">[</span><span class="k">]&gt;</span><span class="p">();</span>
+
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">hostC</span> <span class="p">=</span> <span class="s">"127.0.0.1"</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">portC</span> <span class="p">=</span> <span class="s">"42024"</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">ListenerWork</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">AsyncIO</span><span class="p">.</span><span class="n">ForceDotNet</span><span class="p">.</span><span class="nf">Force</span><span class="p">();</span>
+        <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">subSocket</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SubscriberSocket</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">subSocket</span><span class="p">.</span><span class="n">Options</span><span class="p">.</span><span class="n">ReceiveHighWatermark</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+            <span class="n">subSocket</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="s">"tcp://"</span><span class="p">+</span><span class="n">hostC</span><span class="p">+</span><span class="s">":"</span> <span class="p">+</span> <span class="n">portC</span><span class="p">);</span> <span class="c1">//this is relative to the IP addres of the MoBI or other system you are connecting to</span>
+            <span class="c1">//Debug.Log("tcp://" + hostC + ":" + portC);</span>
+            <span class="n">subSocket</span><span class="p">.</span><span class="nf">Subscribe</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+            <span class="k">while</span> <span class="p">(!</span><span class="n">_listenerCancelled</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">//Thread.Sleep(250);</span>
+                <span class="c1">//Debug.Log("Waiting for message");</span>
+                <span class="k">if</span> <span class="p">(!</span><span class="n">subSocket</span><span class="p">.</span><span class="nf">TryReceiveFrameBytes</span><span class="p">(</span><span class="k">out</span> <span class="n">frameByte</span><span class="p">))</span> <span class="k">continue</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">_messageQueue</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">2</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">_messageQueue</span><span class="p">.</span><span class="nf">TryDequeue</span><span class="p">(</span><span class="k">out</span> <span class="n">throwAwayMessage</span><span class="p">);</span>
+                <span class="p">}</span><span class="c1">//we never want the queue to grow too large</span>
+                <span class="n">_messageQueue</span><span class="p">.</span><span class="nf">Enqueue</span><span class="p">(</span><span class="n">frameByte</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">subSocket</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="c1">//NetMQConfig.Cleanup();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(!</span><span class="n">_messageQueue</span><span class="p">.</span><span class="n">IsEmpty</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">byte</span><span class="p">[]</span> <span class="n">message</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">_messageQueue</span><span class="p">.</span><span class="nf">TryDequeue</span><span class="p">(</span><span class="k">out</span> <span class="n">message</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="nf">_messageDelegate</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="nf">NetMqListenerClone</span><span class="p">(</span><span class="n">MessageDelegate</span> <span class="n">messageDelegate</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_messageDelegate</span> <span class="p">=</span> <span class="n">messageDelegate</span><span class="p">;</span>
+        <span class="n">_listenerWorker</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Thread</span><span class="p">(</span><span class="n">ListenerWork</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span> <span class="c1">//runs on program start</span>
+    <span class="p">{</span>
+        <span class="n">_listenerCancelled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+        <span class="n">_listenerWorker</span><span class="p">.</span><span class="nf">Start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Stop</span><span class="p">()</span> <span class="c1">//runs on program stop</span>
+    <span class="p">{</span>
+        <span class="n">_listenerCancelled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class="n">NetMQConfig</span><span class="p">.</span><span class="nf">Cleanup</span><span class="p">();</span>
+        <span class="n">_listenerWorker</span><span class="p">.</span><span class="nf">Join</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">MEDCommunication</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">NetMqListenerClone</span> <span class="n">_netMqListenerClone</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="n">State</span> <span class="n">medState</span><span class="p">;</span> <span class="c1">//create our MedEdp object that we created with protobuf</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">HandleMessage</span><span class="p">(</span><span class="kt">byte</span><span class="p">[]</span> <span class="n">message</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">medState</span> <span class="p">=</span> <span class="n">State</span><span class="p">.</span><span class="n">Parser</span><span class="p">.</span><span class="nf">ParseFrom</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">float</span> <span class="nf">GetHandleForceDesN</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">medState</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">medState</span><span class="p">.</span><span class="n">HandleForceDesN</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">ExerciseModeT</span> <span class="nf">GetExerciseMode</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">medState</span><span class="p">.</span><span class="n">ExerciseMode</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">State</span> <span class="nf">GetState</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">medState</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">float</span> <span class="nf">GetPosition</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">medState</span><span class="p">.</span><span class="n">HandlePositionM</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">Boolean</span> <span class="nf">isStopped</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">medState</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">medState</span><span class="p">.</span><span class="n">ExerciseMode</span> <span class="p">==</span> <span class="n">ExerciseModeT</span><span class="p">.</span><span class="n">Stop</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="nf">isHome</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">medState</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span><span class="c1">//default state</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">medState</span><span class="p">.</span><span class="n">AtHomePosition</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="nf">MEDCommunication</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_netMqListenerClone</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetMqListenerClone</span><span class="p">(</span><span class="n">HandleMessage</span><span class="p">);</span>
+        <span class="n">_netMqListenerClone</span><span class="p">.</span><span class="nf">Start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_netMqListenerClone</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Stop</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_netMqListenerClone</span><span class="p">.</span><span class="nf">Stop</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>Code to receive from MoBI:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Collections.Concurrent</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Timers</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">NetMQ</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">NetMQ.Sockets</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">NetMqListener</span> <span class="c1">//We create this class to be a listener</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Thread</span> <span class="n">_listenerWorker</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="kt">bool</span> <span class="n">_listenerCancelled</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">delegate</span> <span class="k">void</span> <span class="nf">MessageDelegate</span><span class="p">(</span><span class="kt">byte</span><span class="p">[]</span> <span class="n">message</span><span class="p">);</span>
+
+    <span class="k">private</span> <span class="kt">byte</span><span class="p">[]</span> <span class="n">throwAwayMessage</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">MessageDelegate</span> <span class="n">_messageDelegate</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ConcurrentQueue</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">[</span><span class="k">]&gt;</span> <span class="n">_messageQueue</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConcurrentQueue</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">[</span><span class="k">]&gt;</span><span class="p">();</span>
+
+    <span class="k">private</span> <span class="n">DateTime</span> <span class="n">latest</span><span class="p">;</span>
+
+
+    <span class="c1">//To Do, I think this whole section can go in it's own class so that you only have to give it a host and port and you can connect to anything</span>
+    <span class="c1">//I imagine a system where this is just a node that allows you to zmq</span>
+    <span class="c1">//Then we have a node that allows you to protobuf decode the incoming stream as it comes in</span>
+    <span class="c1">//private string host = "192.168.0.107";</span>
+    <span class="c1">//private string port = "5556";</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">host</span> <span class="p">=</span> <span class="s">"localhost"</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">port</span> <span class="p">=</span> <span class="s">"12345"</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">ListenerWork</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">AsyncIO</span><span class="p">.</span><span class="n">ForceDotNet</span><span class="p">.</span><span class="nf">Force</span><span class="p">();</span>
+        <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">subSocket</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SubscriberSocket</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">subSocket</span><span class="p">.</span><span class="n">Options</span><span class="p">.</span><span class="n">ReceiveHighWatermark</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+            <span class="n">subSocket</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="s">"tcp://"</span><span class="p">+</span> <span class="n">host</span> <span class="p">+</span> <span class="s">":"</span> <span class="p">+</span> <span class="n">port</span><span class="p">);</span> <span class="c1">//this is relative to the IP addres of the MoBI or other system you are connecting to</span>
+            <span class="n">subSocket</span><span class="p">.</span><span class="nf">Subscribe</span><span class="p">(</span><span class="s">""</span><span class="p">);</span> <span class="c1">//Subscribe all</span>
+            <span class="k">while</span> <span class="p">(!</span><span class="n">_listenerCancelled</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">byte</span><span class="p">[]</span> <span class="n">frameByte</span><span class="p">;</span>
+                <span class="n">Thread</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="m">500</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(!</span><span class="n">subSocket</span><span class="p">.</span><span class="nf">TryReceiveFrameBytes</span> <span class="p">(</span><span class="k">out</span> <span class="n">frameByte</span><span class="p">))</span> <span class="k">continue</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">_messageQueue</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">2</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">_messageQueue</span><span class="p">.</span><span class="nf">TryDequeue</span><span class="p">(</span><span class="k">out</span> <span class="n">throwAwayMessage</span><span class="p">);</span>
+                <span class="p">}</span><span class="c1">//we never want the queue to grow too large</span>
+
+                <span class="n">_messageQueue</span><span class="p">.</span><span class="nf">Enqueue</span><span class="p">(</span><span class="n">frameByte</span><span class="p">);</span>
+                <span class="n">latest</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">subSocket</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">NetMQConfig</span><span class="p">.</span><span class="nf">Cleanup</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(!</span><span class="n">_messageQueue</span><span class="p">.</span><span class="n">IsEmpty</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">byte</span><span class="p">[]</span> <span class="n">message</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">_messageQueue</span><span class="p">.</span><span class="nf">TryDequeue</span><span class="p">(</span><span class="k">out</span> <span class="n">message</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="nf">_messageDelegate</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="nf">queueEmpty</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">_messageQueue</span><span class="p">.</span><span class="n">IsEmpty</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="nf">getTimeOfLatest</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="n">latest</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="nf">NetMqListener</span><span class="p">(</span><span class="n">MessageDelegate</span> <span class="n">messageDelegate</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//get ip config file</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="kt">string</span> <span class="n">text</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="nf">ReadAllText</span><span class="p">(</span><span class="s">"config.txt"</span><span class="p">);</span>
+            <span class="n">host</span> <span class="p">=</span> <span class="n">text</span><span class="p">.</span><span class="nf">Substring</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">text</span><span class="p">.</span><span class="nf">IndexOf</span><span class="p">(</span><span class="sc">':'</span><span class="p">));</span>
+            <span class="n">port</span> <span class="p">=</span> <span class="n">text</span><span class="p">.</span><span class="nf">Substring</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="nf">IndexOf</span><span class="p">(</span><span class="sc">':'</span><span class="p">)</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">text</span><span class="p">.</span><span class="n">Length</span> <span class="p">-</span> <span class="n">text</span><span class="p">.</span><span class="nf">IndexOf</span><span class="p">(</span><span class="sc">':'</span><span class="p">)</span> <span class="p">-</span> <span class="m">1</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+        <span class="p">}</span>
+
+
+        <span class="n">_messageDelegate</span> <span class="p">=</span> <span class="n">messageDelegate</span><span class="p">;</span>
+        <span class="n">_listenerWorker</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Thread</span><span class="p">(</span><span class="n">ListenerWork</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span> <span class="c1">//runs on program start</span>
+    <span class="p">{</span>
+        <span class="n">_listenerCancelled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+        <span class="n">_listenerWorker</span><span class="p">.</span><span class="nf">Start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Stop</span><span class="p">()</span> <span class="c1">//runs on program stop</span>
+    <span class="p">{</span>
+        <span class="n">_listenerCancelled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class="n">_listenerWorker</span><span class="p">.</span><span class="nf">Join</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">MoBICommunication</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">NetMqListener</span> <span class="n">_netMqListener</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">BtPacket</span> <span class="n">MoBIPacket</span><span class="p">;</span> <span class="c1">//create our BtPacket object that we created with protobuf</span>
+    <span class="k">private</span> <span class="n">TimeSpan</span> <span class="n">hrDelayTolerance</span> <span class="p">=</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="nf">FromSeconds</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+    <span class="k">private</span> <span class="n">CsvWriter</span> <span class="n">heartRateFile</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">bool</span> <span class="n">collect</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">HandleMessage</span><span class="p">(</span><span class="kt">byte</span><span class="p">[]</span> <span class="n">message</span><span class="p">)</span>
+    <span class="p">{</span>
+
+        <span class="n">MoBIPacket</span> <span class="p">=</span> <span class="n">BtPacket</span><span class="p">.</span><span class="n">Parser</span><span class="p">.</span><span class="nf">ParseFrom</span><span class="p">(</span><span class="n">message</span><span class="p">);</span> <span class="c1">//parse the message into our protobuffer</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">collect</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">heartRateFile</span><span class="p">.</span><span class="nf">AppendRow</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">TimeOfDay</span><span class="p">.</span><span class="nf">ToString</span><span class="p">(),</span> <span class="nf">parseHR</span><span class="p">(</span><span class="n">MoBIPacket</span><span class="p">).</span><span class="nf">ToString</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="nf">getHR</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MoBIPacket</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;</span> <span class="p">((</span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span> <span class="p">-</span> <span class="n">_netMqListener</span><span class="p">.</span><span class="nf">getTimeOfLatest</span><span class="p">())</span> <span class="p">&lt;</span> <span class="n">hrDelayTolerance</span><span class="p">)</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">parseHR</span><span class="p">(</span><span class="n">MoBIPacket</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">-</span><span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="nf">parseHR</span><span class="p">(</span><span class="n">BtPacket</span> <span class="n">packet</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">strData</span> <span class="p">=</span> <span class="n">packet</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="nf">ToStringUtf8</span><span class="p">();</span> <span class="c1">//convert it to a Utf8 string</span>
+        <span class="n">strData</span> <span class="p">=</span> <span class="n">strData</span><span class="p">.</span><span class="nf">Substring</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span> <span class="c1">//grab the HR data</span>
+        <span class="k">return</span> <span class="n">Int16</span><span class="p">.</span><span class="nf">Parse</span><span class="p">(</span><span class="n">strData</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Globalization</span><span class="p">.</span><span class="n">NumberStyles</span><span class="p">.</span><span class="n">HexNumber</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="nf">MoBICommunication</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_netMqListener</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetMqListener</span><span class="p">(</span><span class="n">HandleMessage</span><span class="p">);</span>
+        <span class="n">_netMqListener</span><span class="p">.</span><span class="nf">Start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">//pulls the latest data</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_netMqListener</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Stop</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_netMqListener</span><span class="p">.</span><span class="nf">Stop</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">startCollectingHR</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">collect</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class="n">heartRateFile</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CsvWriter</span><span class="p">(</span><span class="s">"."</span><span class="p">,</span> <span class="s">"HR"</span><span class="p">);</span>
+        <span class="n">heartRateFile</span><span class="p">.</span><span class="nf">CreateHeader</span><span class="p">(</span><span class="s">"Time"</span><span class="p">,</span> <span class="s">"HeartRate"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">stopCollectingHR</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">collect</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">continueCollectingHR</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">collect</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 </article>
       </div>
