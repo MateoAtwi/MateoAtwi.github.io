@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Headcount Camera Project | Mateo Atwi</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Headcount Camera Project" />
+<meta name="author" content="Mateo Atwi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This summer at Stuller, we wanted to see the flow of traffic through our hallways in order to understand the times where there might be higher traffic. I was tasked with coming up with a way to count the heads coming through the hallway. I decided to do so using a Raspberry Pi 3 B+ and a web cam. My $100 solution gave us a reasonable estimate for the traffic through our hallways during the day." />
+<meta property="og:description" content="This summer at Stuller, we wanted to see the flow of traffic through our hallways in order to understand the times where there might be higher traffic. I was tasked with coming up with a way to count the heads coming through the hallway. I decided to do so using a Raspberry Pi 3 B+ and a web cam. My $100 solution gave us a reasonable estimate for the traffic through our hallways during the day." />
+<link rel="canonical" href="http://localhost:4000/headcount/" />
+<meta property="og:url" content="http://localhost:4000/headcount/" />
+<meta property="og:site_name" content="Mateo Atwi" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-08-10T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"This summer at Stuller, we wanted to see the flow of traffic through our hallways in order to understand the times where there might be higher traffic. I was tasked with coming up with a way to count the heads coming through the hallway. I decided to do so using a Raspberry Pi 3 B+ and a web cam. My $100 solution gave us a reasonable estimate for the traffic through our hallways during the day.","author":{"@type":"Person","name":"Mateo Atwi"},"@type":"BlogPosting","url":"http://localhost:4000/headcount/","headline":"Headcount Camera Project","dateModified":"2019-08-10T00:00:00-05:00","datePublished":"2019-08-10T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/headcount/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Mateo Atwi" /></head>
+<body>
+
+    <header class="site-header" role= "banner">
+  
+  <div class="wrapper">
+    
+
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+          </svg>
+        </span>
+      </label>
+    
+      <div class="trigger">
+        
+          <a class="page-link" href="/" >Home</a>
+        
+          <a class="page-link" href="/work&education/" >Work &amp; Education</a>
+        
+          <a class="page-link" href="/projects/" >Projects</a>
+        
+          <a class="page-link" href="/collections/" >Collections</a>
+        
+          <a class="page-link" href="/about/" >About</a>
+        
+      </div>
+    </nav>
+    
+  </div>
+</header>
+  
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!-- This is a file dedicated to what the post structure should look like-->
+<article class="post">
+<h1>Headcount Camera Project</h1>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<p>10 Aug 2019 - Mateo Atwi</p>
+
+<p><br />
+This summer at Stuller, we wanted to see the flow of traffic through our hallways in order to understand the times where there might be higher traffic. I was tasked with coming up with a way to count the heads coming through the hallway. I decided to do so using a Raspberry Pi 3 B+ and a web cam. My $100 solution gave us a reasonable estimate for the traffic through our hallways during the day.</p>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/10FinalFrame.jpg" alt="BFC" /></p>
+
+<p><br /></p>
+
+<h3 id="skills-learned-and-used">Skills Learned and Used</h3>
+
+<p><br /></p>
+
+<ul>
+  <li>OpenCV</li>
+  <li>Logging</li>
+  <li>Frame analysis</li>
+  <li>Computer vision</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="background">Background</h3>
+
+<p><br /></p>
+
+<p>Data driven decisions are a must in engineering, so the question remains: how do you collect good data? The question goes even further: how do you collect good data for relatively low cost? In terms of computers, the cheapest you can pretty much go is a Raspberry Pi. This is an incredible test showing that we can do object tracking and collect data using a very low cost platform.</p>
+
+<p><br /></p>
+
+<h2 id="program-description">Program Description</h2>
+
+<p><br /></p>
+
+<p>This code uses OpenCV to track and count objects as they pass under a webcam. The computer used is a Raspberry Pi 3 B+. The webcam used is a Logitech C525.</p>
+
+<p><br /></p>
+
+<p>I based my initial code and the ideas off of this <a href="https://www.hackster.io/phfbertoleti/counting-objects-in-movement-using-raspberry-pi-opencv-015ba5">tutorial online (https://www.hackster.io/phfbertoleti/counting-objects-in-movement-using-raspberry-pi-opencv-015ba5)</a>.</p>
+
+<p><br /></p>
+
+<p>After initializing and setting up the program, the actual process involves the following steps:</p>
+
+<p><br /></p>
+
+<ol>
+  <li>Grayscale</li>
+  <li>Gaussian blur</li>
+  <li>Difference</li>
+  <li>Thresholding</li>
+  <li>Dilating</li>
+  <li>Frame combination</li>
+  <li>Contour finding</li>
+  <li>Contour processing</li>
+  <li>Tracking</li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="setup">Setup</h2>
+
+<p><br /></p>
+
+<h3 id="packages">Packages</h3>
+
+<p><br /></p>
+
+<p>Run the following set of commands in your terminal to install OpenCV.</p>
+
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install
+sudo </span>apt <span class="nb">install </span>python3-opencv
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="imports">Imports</h3>
+
+<p><br /></p>
+
+<p>First we need to figure out which packages we will use like so:</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="c1">#import datetime to get the date and time
+</span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">from Datetime import datetime</code> is for logging with the date and time.</li>
+  <li><code class="highlighter-rouge">import math</code> is used to do some simple algebra to track an object.</li>
+  <li><code class="highlighter-rouge">import cv2</code> is the OpenCV library for interfacing with the camera and for processing frames. This is probably the most important module here.</li>
+  <li><code class="highlighter-rouge">import numpy as np</code> is the python matrix module used to process matrices.</li>
+  <li><code class="highlighter-rouge">import logging</code> is the python module for logging information as we receive it.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="global-variables">Global Variables</h3>
+
+<p><br /></p>
+
+<p>Once we are finished importing new modules, we can setup our global variables. Each variable is explained in the comment beside it.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#global variables
+</span><span class="n">width</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#width of screen
+</span><span class="n">height</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#height of screen
+</span><span class="n">EntranceCounter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#number of entrances
+</span><span class="n">ExitCounter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#number of exits
+</span><span class="n">LineWidth</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#width of center line
+</span><span class="n">MinContourArea</span> <span class="o">=</span> <span class="mi">9000</span>  <span class="c1">#This is the minimum area of the contour that we are looking at
+</span><span class="n">MovementTolerance</span> <span class="o">=</span> <span class="mi">140</span> <span class="c1">#This is the distance and object can travel in one frame before it will be lost
+</span><span class="n">BinarizationThreshold</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1">#This is a threshold for detection
+</span><span class="n">ReferenceFrame</span> <span class="o">=</span> <span class="bp">None</span> <span class="c1">#This is where the reference frame is stored to be used
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="logging">Logging</h3>
+
+<p><br /></p>
+
+<p>An important aspect of this program is the logging. Logging is handled by the python logging library.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">"Data/"</span> <span class="o">+</span> <span class="n">timeNow</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d_</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"_logfile.log"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Created "</span> <span class="o">+</span> <span class="n">timeNow</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d_</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"-HeadCount.csv"</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Type, Number"</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Entrances, 0"</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Exits, 0"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="helper-functions">Helper Functions</h3>
+
+<p><br /></p>
+
+<p>There are 4 main helper functions being used. I will not go into them here as they are explained lower. The sub-bullets under them are the steps they correspond with.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">ProcessGrayFrame</code>
+    <ul>
+      <li>Grayscale</li>
+      <li>Gaussian blur</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">ProcessThreshFrame</code>
+    <ul>
+      <li>Difference</li>
+      <li>Thresholding</li>
+      <li>Dilating</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">ContourCompare</code>
+    <ul>
+      <li>Tracking</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">ContourTrack</code>
+    <ul>
+      <li>Tracking</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="initialization">Initialization</h3>
+
+<p><br /></p>
+
+<p>The following code serves to prepare our camera and our reference frame and a few other small things so that we can continuously loop and compare frames. The reference frame is critical because we use it to compare to every frame to see changes</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#start capturing footage
+</span><span class="n">camera</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">#force 640x480 webcam resolution
+</span><span class="n">camera</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">720</span><span class="p">)</span>
+<span class="n">camera</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">480</span><span class="p">)</span>
+
+<span class="n">BinaryFrame1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">480</span><span class="p">,</span> <span class="mi">640</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">ContourData</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ActiveContours</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">#The webcam maybe get some time / captured frames to adapt to ambience lighting. For this reason, some frames are grabbed and discarded.
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">ReferenceFrame</span> <span class="o">=</span> <span class="n">ProcessGrayFrame</span><span class="p">(</span><span class="n">Frame</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="steps">Steps</h2>
+
+<p><br /></p>
+
+<p>The following sections explain step by step how we are processing a video frame by frame.</p>
+
+<p><br /></p>
+
+<h3 id="frame-capture">Frame capture</h3>
+
+<p><br /></p>
+
+<p>First thing we need to do is capture a frame from our camera. We can go ahead and check the size of the frame break from our program if we do not find a frame.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#if cannot grab a frame, this program ends here.
+</span><span class="k">if</span> <span class="ow">not</span> <span class="n">grabbed</span><span class="p">:</span>
+    <span class="k">break</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/09Frame.jpg" alt="Frame" /></p>
+
+<p><br /></p>
+
+<h3 id="grayscale">Grayscale</h3>
+
+<p><br /></p>
+
+<p>We remove the RGB data from the image to make it gray scale. Gray scale contains 3x less data than RGB.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/01BGR2Gray.jpg" alt="Grayscale" /></p>
+
+<p><br /></p>
+
+<h3 id="gaussian-blur">Gaussian blur</h3>
+
+<p><br /></p>
+
+<p>Now we apply a gaussian blur to smooth out the image. We don’t want sharp edges when we compare to our reference image that has already been blurred. This decreases the tendency of noise and shadow to be detected in our image.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">GrayFrame</span><span class="p">,</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/02GaussianBlur.jpg" alt="GaussianBlur" /></p>
+
+<p><br /></p>
+
+<h3 id="difference">Difference</h3>
+
+<p><br /></p>
+
+<p>Next we take the difference between the reference frame and the gray frame that was just taken.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FrameDelta</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">absdiff</span><span class="p">(</span><span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">GrayFrame</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/00ReferenceFrame.jpg" alt="ReferenceFrame" /></p>
+
+<p><br /></p>
+
+<p><em>Reference frame</em></p>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/03Difference.jpg" alt="Difference" /></p>
+
+<p><br /></p>
+
+<p><em>Difference frame</em></p>
+
+<p><br /></p>
+
+<h3 id="thresholding">Thresholding</h3>
+
+<p><br /></p>
+
+<p>Now we take the difference frame and we create a threshold that our difference needs to make. This leaves us with a binary (0 or 1) frame where the 1 is a white pixel where change is detected.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FrameThresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">FrameDelta</span><span class="p">,</span> <span class="n">BinarizationThreshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/04Threshold.jpg" alt="Threshold" /></p>
+
+<p><br /></p>
+
+<h3 id="dilating">Dilating</h3>
+
+<p><br /></p>
+
+<p>We take the binary threshold frame and we dilate it and make the white contours slightly larger. This allows us to absorb any parting lines that may exist on a tracked object. Additionally, this allows us to absorb any holes in our contours that might exist.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FrameDilate</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">dilate</span><span class="p">(</span><span class="n">FrameThresh</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/05Dilate.jpg" alt="Dilate" /></p>
+
+<p><br /></p>
+
+<h3 id="frame-combination">Frame combination</h3>
+
+<p><br /></p>
+
+<p>Since we are going to track objects and use motion to count the objects crossing the screen, I decided to add an extra step where we actual save the processing of the previous frame and combine it with the latest frame. Bellow are binary frame 1 and binary frame 2 where binary frame 2 is the latest frame.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BinaryFrameCombo</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_or</span><span class="p">(</span><span class="n">BinaryFrame1</span><span class="p">,</span> <span class="n">BinaryFrame2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/06BinaryFrame1.jpg" alt="BF1" /></p>
+
+<p><br /></p>
+
+<p><em>Binary Frame 1</em></p>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/07BinaryFrame2.jpg" alt="BF2" /></p>
+
+<p><br /></p>
+
+<p><em>Binary Frame 2</em></p>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/08BinaryFrameCombo.jpg" alt="BFC" /></p>
+
+<p><br /></p>
+
+<p><em>Binary Frame Combo</em></p>
+
+<p><br /></p>
+
+<h3 id="contour-finding">Contour finding</h3>
+
+<p><br /></p>
+
+<p>The next thing we want to do is identify the contours in our image. Contours are any edge that can be traced. It is very helpful that we have a binary image, so it is clear where the contours are. All we have to do is use the following line of code and it outputs an area of the contour information.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">BinaryFrameCombo</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="contour-processing">Contour processing</h3>
+
+<p><br /></p>
+
+<p>We take the list of contours, and we run the following loop over all the found contours. We use the minimum contour area global variable to define the minimum size a contour must be. This allows us to throw out smaller objects that we do not want to detect. Additionally, we calculate the center of mass of the contour using a bounding rectangle.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
+    <span class="c1">#if a contour has small area, it'll be ignored
+</span>    <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MinContourArea</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="c1">#draw an rectangle "around" the object
+</span>    <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+    <span class="c1">#find object's centroid
+</span>    <span class="n">CoordXCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">CoordYCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">ObjectCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">CoordXCentroid</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">CoordYCentroid</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="tracking">Tracking</h3>
+
+<p><br /></p>
+
+<p>This was all my code. I decided to track the objects to see what direction each person was going. In order to do this, I needed some information:</p>
+<ul>
+  <li>Object position.</li>
+  <li>List of objects from previous frames.</li>
+  <li>Whether or not a previously tracked object had crossed the center.</li>
+</ul>
+
+<p><br /></p>
+
+<p>It is helpful to look at my helper functions for this section. The first function is <code class="highlighter-rouge">ContourCompare</code>.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This function compares 2 contours to see if they could possibly be the same contours
+</span><span class="k">def</span> <span class="nf">ContourCompare</span><span class="p">(</span><span class="n">contour1</span><span class="p">,</span> <span class="n">contour2</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">contour2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">)</span> <span class="o">=</span> <span class="n">contour1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">cx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">cy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#print(str(distance))
+</span>    <span class="k">return</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">MovementTolerance</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>Using the Pythagorean theorem, we calculate distance between two centroids of two contours. This function returns true if the distance is less that than the movement tolerance we set above. See the final processing image bellow to see the ring of movement.</p>
+
+<p><br /></p>
+
+<p>The next helper function we use is <code class="highlighter-rouge">ContourTrack</code>.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This function compares 1 coutour with a list and returns the first match
+</span><span class="k">def</span> <span class="nf">ContourTrack</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">contourlist</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">contourlist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># if the list is empty, then return -1
+</span>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="c1">#check all the items for a match
+</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">contourlist</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">ContourCompare</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">contourlist</span><span class="p">[</span><span class="n">x</span><span class="p">]):</span>
+            <span class="k">return</span> <span class="n">x</span>
+
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>This function uses our other function to find matching contours. This algorithm can be improved in the future. However, it is not critical right now.</p>
+
+<p><br /></p>
+
+<p><img src="/assets/images/tutorials/headCount/10FinalFrame.jpg" alt="BFC" /></p>
+
+<p><br /></p>
+
+<h2 id="complete-code">Complete Code</h2>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="c1">#import datetime to get the date and time
+</span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="c1">#global variables
+</span><span class="n">width</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">EntranceCounter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ExitCounter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LineWidth</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">MinContourArea</span> <span class="o">=</span> <span class="mi">9000</span>  <span class="c1">#Adjust ths value according to your usage
+</span><span class="n">MovementTolerance</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">BinarizationThreshold</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1">#Adjust ths value according to your usage
+</span><span class="n">ReferenceFrame</span> <span class="o">=</span> <span class="bp">None</span> <span class="c1">#ReferenceFrame
+</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">"Data/"</span> <span class="o">+</span> <span class="n">timeNow</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d_</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"_logfile.log"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Created "</span> <span class="o">+</span> <span class="n">timeNow</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d_</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"-HeadCount.csv"</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Type, Number"</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Entrances, 0"</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Exits, 0"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ProcessGrayFrame</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+    <span class="c1">#gray-scale convertion and Gaussian blur filter applying
+</span>    <span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+    <span class="n">GausFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">GrayFrame</span><span class="p">,</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">GausFrame</span>
+
+<span class="k">def</span> <span class="nf">ProcessThreshFrame</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+    <span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">ProcessGrayFrame</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+    <span class="c1">#Background subtraction and image binarization
+</span>    <span class="n">FrameDelta</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">absdiff</span><span class="p">(</span><span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">GrayFrame</span><span class="p">)</span>
+    <span class="n">FrameThresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">FrameDelta</span><span class="p">,</span> <span class="n">BinarizationThreshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">FrameDilate</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">dilate</span><span class="p">(</span><span class="n">FrameThresh</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="c1">#Dilate image and find all the contours
+</span>    <span class="k">return</span> <span class="n">FrameDilate</span>
+
+<span class="c1"># This function compares 2 contours to see if they could possibly be the same contours
+</span><span class="k">def</span> <span class="nf">ContourCompare</span><span class="p">(</span><span class="n">contour1</span><span class="p">,</span> <span class="n">contour2</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">contour2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">)</span> <span class="o">=</span> <span class="n">contour1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">cx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">cy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#print(str(distance))
+</span>    <span class="k">return</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">MovementTolerance</span>
+
+<span class="c1"># This function compares 1 coutour with a list and returns the first match
+</span><span class="k">def</span> <span class="nf">ContourTrack</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">contourlist</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">contourlist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># if the list is empty, then return -1
+</span>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="c1">#check all the items for a match
+</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">contourlist</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">ContourCompare</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">contourlist</span><span class="p">[</span><span class="n">x</span><span class="p">]):</span>
+            <span class="k">return</span> <span class="n">x</span>
+
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="c1">#start capturing footage
+</span><span class="n">camera</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">#force 640x480 webcam resolution
+</span><span class="n">camera</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">720</span><span class="p">)</span>
+<span class="n">camera</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">480</span><span class="p">)</span>
+
+<span class="n">BinaryFrame1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">480</span><span class="p">,</span> <span class="mi">640</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">ContourData</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ActiveContours</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">#The webcam maybe get some time / captured frames to adapt to ambience lighting. For this reason, some frames are grabbed and discarted.
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">ReferenceFrame</span> <span class="o">=</span> <span class="n">ProcessGrayFrame</span><span class="p">(</span><span class="n">Frame</span><span class="p">)</span>
+
+<span class="c1">#encapsulate infinite while block inside a try statement
+</span><span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="n">timeNow</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+        <span class="n">height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1">#if cannot grab a frame, this program ends here.
+</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">grabbed</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="n">BinaryFrame2</span> <span class="o">=</span> <span class="n">ProcessThreshFrame</span><span class="p">(</span><span class="n">Frame</span><span class="p">)</span>
+
+        <span class="n">BinaryFrameCombo</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_or</span><span class="p">(</span><span class="n">BinaryFrame1</span><span class="p">,</span> <span class="n">BinaryFrame2</span><span class="p">)</span>
+
+        <span class="c1"># combine the last two frames and fine the contours
+</span>        <span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">BinaryFrameCombo</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+        <span class="n">BinaryFrame1</span> <span class="o">=</span> <span class="n">BinaryFrame2</span>
+
+        <span class="c1">#plot reference lines (entrance and exit lines)
+</span>        <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">LineWidth</span><span class="p">)</span>
+
+
+        <span class="c1">#check all found countours
+</span>        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
+            <span class="c1">#if a contour has small area, it'll be ignored
+</span>            <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MinContourArea</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="c1">#draw an rectangle "around" the object
+</span>            <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+            <span class="n">rectBounds</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+            <span class="c1">#find object's centroid
+</span>            <span class="n">CoordXCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+            <span class="n">CoordYCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+            <span class="n">ObjectCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">CoordXCentroid</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">CoordYCentroid</span><span class="p">))</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">ObjectCentroid</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">ObjectCentroid</span><span class="p">,</span> <span class="n">MovementTolerance</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+
+            <span class="n">crossedBoundary</span> <span class="o">=</span> <span class="bp">False</span>
+
+            <span class="c1">#create new tuple of object
+</span>            <span class="n">ContourTuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">ObjectCentroid</span><span class="p">,</span> <span class="n">crossedBoundary</span><span class="p">)</span>
+
+            <span class="c1">#compare to list
+</span>            <span class="n">cResult</span> <span class="o">=</span> <span class="n">ContourTrack</span><span class="p">(</span><span class="n">ContourTuple</span><span class="p">,</span> <span class="n">ContourData</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">cResult</span> <span class="ow">is</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">ActiveContours</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ContourTuple</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span> <span class="c1"># replace the previous contour data with the new contour data
+</span>                <span class="c1">#Check to see if you crossed the line in the middle
+</span>                <span class="k">if</span> <span class="n">ContourData</span><span class="p">[</span><span class="n">cResult</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span> <span class="c1">#tracked object has already crossed the line
+</span>                    <span class="n">ContourTuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">ContourTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="p">(</span><span class="n">ContourData</span><span class="p">[</span><span class="n">cResult</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span> <span class="ow">and</span> <span class="n">ContourTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">ContourData</span><span class="p">[</span><span class="n">cResult</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+                        <span class="n">EntranceCounter</span> <span class="o">=</span> <span class="n">EntranceCounter</span> <span class="o">+</span> <span class="mi">1</span>
+                        <span class="n">ContourTuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">ContourTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Entrances, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">EntranceCounter</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="p">(</span><span class="n">ContourData</span><span class="p">[</span><span class="n">cResult</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span> <span class="ow">and</span> <span class="n">ContourTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">ContourData</span><span class="p">[</span><span class="n">cResult</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+                        <span class="n">ExitCounter</span> <span class="o">=</span> <span class="n">ExitCounter</span> <span class="o">+</span> <span class="mi">1</span>
+                        <span class="n">ContourTuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">ContourTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Exits, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ExitCounter</span><span class="p">))</span>
+
+                <span class="n">ActiveContours</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ContourTuple</span><span class="p">)</span>
+
+
+        <span class="n">ContourData</span> <span class="o">=</span> <span class="n">ActiveContours</span>
+        <span class="n">ActiveContours</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1">#Write entrance and exit counter values on frame and shows it
+</span>        <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="s">"Entrances: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">EntranceCounter</span><span class="p">)),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+                    <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="s">"Exits: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ExitCounter</span><span class="p">)),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span>
+                    <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Original Frame"</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span>
+
+        <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">except</span> <span class="nb">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="c1"># cleanup the camera and close any open windows
+</span>    <span class="n">camera</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</code></pre></div></div>
+
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Mateo Atwi</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Mateo Atwi</li><li><a class="u-email" href="mailto:mateoatwi@gmail.com">mateoatwi@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/MateoAtwi"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">MateoAtwi</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This website is here for me to summarize and collect all that I&#39;ve done and worked on. Enjoy!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+</html>
