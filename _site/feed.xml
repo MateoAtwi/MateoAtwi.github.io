@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-15T07:12:45-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mateo Atwi</title><subtitle>This website is here for me to summarize and collect all that I've done and worked on. Enjoy!</subtitle><entry><title type="html">Video Games for NEEMO 23</title><link href="http://localhost:4000/kibosh/" rel="alternate" type="text/html" title="Video Games for NEEMO 23" /><published>2019-05-24T00:00:00-07:00</published><updated>2019-05-24T00:00:00-07:00</updated><id>http://localhost:4000/Video-Games-for-NEEMO-23</id><content type="html" xml:base="http://localhost:4000/kibosh/">&lt;p&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-10T16:39:39-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mateo Atwi</title><subtitle>This website is here for me to summarize and collect all that I've done and worked on. Enjoy!</subtitle><entry><title type="html">Video Games for NEEMO 23</title><link href="http://localhost:4000/kibosh/" rel="alternate" type="text/html" title="Video Games for NEEMO 23" /><published>2019-05-24T00:00:00-05:00</published><updated>2019-05-24T00:00:00-05:00</updated><id>http://localhost:4000/Video-Games-for-NEEMO-23</id><content type="html" xml:base="http://localhost:4000/kibosh/">&lt;p&gt;&lt;br /&gt;
 At NASA in the Spring of 2019, I was tasked with creating &lt;a href=&quot;/work&amp;amp;education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2019&quot;&gt;video games to be tested at NEEMO 23&lt;/a&gt;. I created two games. The first game used the position telemetry from the MED-2 to map to a character position in the game. The second game received heart rate data from MoBI and used that to control the character’s position vertically.&lt;/p&gt;
 
 &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
@@ -36,7 +36,7 @@ At NASA in the Spring of 2019, I was tasked with creating &lt;a href=&quot;/work
 &lt;h3 id=&quot;mobi-integration&quot;&gt;MoBI Integration&lt;/h3&gt;
 &lt;h3 id=&quot;zmq-and-protobuf&quot;&gt;ZMQ and Protobuf&lt;/h3&gt;
 &lt;h3 id=&quot;game-controls&quot;&gt;Game Controls&lt;/h3&gt;
-&lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">At NASA in the Spring of 2019, I was tasked with creating video games to be tested at NEEMO 23. I created two games. The first game used the position telemetry from the MED-2 to map to a character position in the game. The second game received heart rate data from MoBI and used that to control the character’s position vertically.</summary></entry><entry><title type="html">Intern Rocketry Club Lead</title><link href="http://localhost:4000/internSpaceProgram/" rel="alternate" type="text/html" title="Intern Rocketry Club Lead" /><published>2019-05-10T00:00:00-07:00</published><updated>2019-05-10T00:00:00-07:00</updated><id>http://localhost:4000/Intern-Rocketry-Club-Lead</id><content type="html" xml:base="http://localhost:4000/internSpaceProgram/">&lt;p&gt;&lt;br /&gt;
+&lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">At NASA in the Spring of 2019, I was tasked with creating video games to be tested at NEEMO 23. I created two games. The first game used the position telemetry from the MED-2 to map to a character position in the game. The second game received heart rate data from MoBI and used that to control the character’s position vertically.</summary></entry><entry><title type="html">Intern Rocketry Club Lead</title><link href="http://localhost:4000/internSpaceProgram/" rel="alternate" type="text/html" title="Intern Rocketry Club Lead" /><published>2019-05-10T00:00:00-05:00</published><updated>2019-05-10T00:00:00-05:00</updated><id>http://localhost:4000/Intern-Rocketry-Club-Lead</id><content type="html" xml:base="http://localhost:4000/internSpaceProgram/">&lt;p&gt;&lt;br /&gt;
 At NASA JSC I had the honor of leading the intern effort to build and fly model rockets. This Spring we successfully designed and flew a rocket two seperate times. The second launch featured a live stream from the camera and live telemetry streamed down to a launch box. For more information about the team please visit the &lt;a href=&quot;https://www.internspaceprogram.com/&quot;&gt;intern space program website&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
@@ -51,19 +51,182 @@ At NASA JSC I had the honor of leading the intern effort to build and fly model 
 
 &lt;ul&gt;
   &lt;li&gt;Design&lt;/li&gt;
-  &lt;li&gt;CAD, group leadersip, holding meetings, scheduling, problem solving, teamwork&lt;/li&gt;
+  &lt;li&gt;CAD&lt;/li&gt;
+  &lt;li&gt;Group leadership&lt;/li&gt;
+  &lt;li&gt;Holding meetings&lt;/li&gt;
+  &lt;li&gt;Scheduling&lt;/li&gt;
+  &lt;li&gt;Problem solving&lt;/li&gt;
+  &lt;li&gt;Teamwork&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;…&lt;/p&gt;
-&lt;h2 id=&quot;to-be-continued&quot;&gt;To Be Continued:&lt;/h2&gt;
+&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
-&lt;h3 id=&quot;what-it-takes-to-lead&quot;&gt;What it takes to lead&lt;/h3&gt;
-&lt;h3 id=&quot;vision-and-goals&quot;&gt;Vision and goals&lt;/h3&gt;
-&lt;h3 id=&quot;nosecone-design&quot;&gt;Nosecone Design&lt;/h3&gt;
-&lt;h3 id=&quot;outcomes-and-product&quot;&gt;Outcomes and product&lt;/h3&gt;
-&lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">At NASA JSC I had the honor of leading the intern effort to build and fly model rockets. This Spring we successfully designed and flew a rocket two seperate times. The second launch featured a live stream from the camera and live telemetry streamed down to a launch box. For more information about the team please visit the intern space program website.</summary></entry><entry><title type="html">Hopper 3 Test Plan</title><link href="http://localhost:4000/testPlan/" rel="alternate" type="text/html" title="Hopper 3 Test Plan" /><published>2019-03-14T00:00:00-07:00</published><updated>2019-03-14T00:00:00-07:00</updated><id>http://localhost:4000/Hopper-3-Test-Plan</id><content type="html" xml:base="http://localhost:4000/testPlan/">&lt;p&gt;&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Intern Space Program is a group of NASA interns that group together in a committee to design, build, and fly a model rocket in one semester. I had the honor of &lt;a href=&quot;/rocketryRecovery/&quot;&gt;participating in the group&lt;/a&gt; in an earlier semester, so I decided that I wanted to lead the group this time around. We do everything. We self-organize. We pay for the rocket. We work with the existing rocketry club at JSC. There is little to no help from the actual people at the agency unless we engage them and get their advice and support.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;goals&quot;&gt;Goals&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;As lead, I had goals for the group and goals for myself.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Group priorities:
+    &lt;ul&gt;
+      &lt;li&gt;Have fun&lt;/li&gt;
+      &lt;li&gt;Safely build and fly a rocket&lt;/li&gt;
+      &lt;li&gt;Engage all participants&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;As committee lead
+    &lt;ul&gt;
+      &lt;li&gt;Get funding internal to NASA&lt;/li&gt;
+      &lt;li&gt;Create a structure for long term vision&lt;/li&gt;
+      &lt;li&gt;Create exposure at NASA&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;This framework of setting concrete goals really helped me throughout the process of being a lead. I was consistently working to make the group more fun while maintaining safety and engaging all participants. As for my lead goals, I managed to get a design review with engineers as well as incorporate more NASA people with our projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Some areas where I think I could grow more are in allowing more freedom to my team and trusting them better. That is difficult and something I will need to continue to work on.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;design&quot;&gt;Design&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;We ended up designing a pretty standard rocket with some cool innovations. Here’s a list of our innovations:&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Removable thrust mount and fin apparatus (very cool and several versions of it too) designed by Joe Amar&lt;/li&gt;
+  &lt;li&gt;Awesome hand made parachute with 12 gores and 12 shroud lines and a mounting point and redundant mounting point (very cool and reliable too) developed by Amanda Graziosi, Belinda Chang, and Shaurya Gupta&lt;/li&gt;
+  &lt;li&gt;Radical launch box with 2 screens, 5 switches, a big red button, and a key (radical, awesome) developed by Shaun Quinn and Kolten Knesek&lt;/li&gt;
+  &lt;li&gt;Live video and telemetry feed from the rocket (I saw it on snap chat. Great views from the sky! Awesome idea) created by Morgan Novak, Elliot Bryant, and Kathryn Robertson&lt;/li&gt;
+  &lt;li&gt;Launch lug design by Ralf&lt;/li&gt;
+  &lt;li&gt;Double verification with rocketsim and open rocket analysis done by Daniela&lt;/li&gt;
+  &lt;li&gt;Outward pointing camera and nosecone payload integration designed by Lee Cantu&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;We successfully launched twice. The first time we launched and recovered the nosecone. The second time we lost the rocket due to wind.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;launch-1-42019&quot;&gt;Launch 1: 4/20/19&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Pre-launch:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It was a great day to launch. The temperatures were in the mid 70’s to low 80’s with almost no wind. The motor had off-center hole in the grain, but that did not seem to affect the launch. We accidentally drilled in the ejection side of the ejection charge. We needed to drill in the timer side. Remember to remove the charge first and drill in the bottom. With this kind of motor we needed to make sure to push the igniter up the entire motor to the top. The hot gas from the top burns the motor inside out. Additionally, we learned to use dog barf inside the tube to prevent the parachute from the hot gases.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/rocketLaunches/19-04-20_ISP_Launch_1/WeatherScreenShot.png&quot; alt=&quot;Weather Report&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Ascent:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Ascent was nominal with a probably premature ejection of the parachute due to errors in timing the charge. The plastic mount on the nose cone broke upon ejection. Half of the payload and the casing was lost after falling from the parachute. We recommended to use elastic to attach to the payload to ensure that the jerk is not too bad.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Descent:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Nominal minus the nose cone coming off.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Recovery:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;There was most likely a premature ejection of the parachute, but the chute still opened and operated well. The plastic mount on the nose cone broke away from the nose cone upon ejection. As a result, it is recommended to use an elastic line to join the nose cone to the recovery shock cord.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Post-analysis:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/rocketLaunches/19-04-20_ISP_Launch_1/PadAnalysis.png&quot; alt=&quot;Post Analysis 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/rocketLaunches/19-04-20_ISP_Launch_1/PadAnalysis2.png&quot; alt=&quot;Post Analysis 2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;launch-2-5919&quot;&gt;Launch 2: 5/9/19&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Pre-launch:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We had poor launch conditions. Every now and then we had large wind gusts with a huge rainstorm later after the launch Like launch 1, the motor had an off-center hole in the grain. Did not seem to affect launch. We drilled in the correct side of the ejection charge. This helped the parachute deploy later. We ended up using normal wading and used the intern launch pad successfully.&lt;/p&gt;
+
+&lt;p&gt;We launched out in Alvin. There was a lot of trees and we successfully live streamed the rocket and the video feed from the rocket.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Ascent:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Ascent was nominal with a well timed ejection of the parachute. Despite wind, the rocket flew very straight upwards.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Descent:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Nominal.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Recovery:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We lost the rocket. It was hard to see and there was too many clouds.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;I love building rockets. I really do. I learned a lot about leadership and teamwork. It was an honor to work with some of the smartest engineers in this industry. Some of my biggest takeaways are as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Groups can do so much more than individuals&lt;/li&gt;
+  &lt;li&gt;If you want to lead, then lead by serving&lt;/li&gt;
+  &lt;li&gt;Do inspiring things&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;A few design tips and leadership tips would be as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Have fewer general meetings&lt;/li&gt;
+  &lt;li&gt;Have more build/working meetings&lt;/li&gt;
+  &lt;li&gt;Test your designs if possible&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">At NASA JSC I had the honor of leading the intern effort to build and fly model rockets. This Spring we successfully designed and flew a rocket two seperate times. The second launch featured a live stream from the camera and live telemetry streamed down to a launch box. For more information about the team please visit the intern space program website.</summary></entry><entry><title type="html">Hopper 3 Test Plan</title><link href="http://localhost:4000/testPlan/" rel="alternate" type="text/html" title="Hopper 3 Test Plan" /><published>2019-03-14T00:00:00-05:00</published><updated>2019-03-14T00:00:00-05:00</updated><id>http://localhost:4000/Hopper-3-Test-Plan</id><content type="html" xml:base="http://localhost:4000/testPlan/">&lt;p&gt;&lt;br /&gt;
 This was one of my projects at &lt;a href=&quot;/work&amp;amp;education/&quot;&gt;NASA during the spring of 2019&lt;/a&gt;. My branch, ER3, received new exercise hardware from a company called IHMC. ER3 is setting up a database of exercise equipment as it comes through to be able to quickly compare and contrast hardware to each other. I created a test plan to catalogue new devices.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
@@ -74,7 +237,7 @@ Together with another intern, we considered software, electrical, and mechanical
 &lt;h3 id=&quot;lessons-and-skills-learned&quot;&gt;Lessons and Skills Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-This was a challening task because I had to think about ways to test a device and what parameters can be recorded for comparison between exercise hardware. Test plans are very valuable for selecting from a growing list of available devices. Having clear objectives for a test plan are imperative; otherwise, the test plan create will find themselves with too many aspects to test.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">This was one of my projects at NASA during the spring of 2019. My branch, ER3, received new exercise hardware from a company called IHMC. ER3 is setting up a database of exercise equipment as it comes through to be able to quickly compare and contrast hardware to each other. I created a test plan to catalogue new devices.</summary></entry><entry><title type="html">Hall Effect Sensor Test Rig</title><link href="http://localhost:4000/testRig/" rel="alternate" type="text/html" title="Hall Effect Sensor Test Rig" /><published>2018-11-30T00:00:00-08:00</published><updated>2018-11-30T00:00:00-08:00</updated><id>http://localhost:4000/Hall-Effect-Sensor-Test-Rig</id><content type="html" xml:base="http://localhost:4000/testRig/">&lt;p&gt;&lt;br /&gt;
+This was a challening task because I had to think about ways to test a device and what parameters can be recorded for comparison between exercise hardware. Test plans are very valuable for selecting from a growing list of available devices. Having clear objectives for a test plan are imperative; otherwise, the test plan create will find themselves with too many aspects to test.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">This was one of my projects at NASA during the spring of 2019. My branch, ER3, received new exercise hardware from a company called IHMC. ER3 is setting up a database of exercise equipment as it comes through to be able to quickly compare and contrast hardware to each other. I created a test plan to catalogue new devices.</summary></entry><entry><title type="html">Hall Effect Sensor Test Rig</title><link href="http://localhost:4000/testRig/" rel="alternate" type="text/html" title="Hall Effect Sensor Test Rig" /><published>2018-11-30T00:00:00-06:00</published><updated>2018-11-30T00:00:00-06:00</updated><id>http://localhost:4000/Hall-Effect-Sensor-Test-Rig</id><content type="html" xml:base="http://localhost:4000/testRig/">&lt;p&gt;&lt;br /&gt;
 Fall of 2019 I designed a test rig to mount a hall effect sensor near an electric motor with toothed wheel attached to the output shaft. The goal was to find ways to measure RPM on a spinning system. I created this both &lt;a href=&quot;/dataAquisition/&quot;&gt;for GTOR&lt;/a&gt; and for a mechanical engineering class called Experimental Methods. It was a lot of fun to CAD then create a fully functioning rig with a powerful electrical motor.&lt;/p&gt;
 
 &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
@@ -158,7 +321,7 @@ The lab went very well. I was able to adapt code from a vibrations lab to be use
 &lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-Measuring RPMs is very tricky. Learning how to record the data and analyize it is no small task. There is a lot that goes in from designing a proper rig to writing helpful code to measure data.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Fall of 2019 I designed a test rig to mount a hall effect sensor near an electric motor with toothed wheel attached to the output shaft. The goal was to find ways to measure RPM on a spinning system. I created this both for GTOR and for a mechanical engineering class called Experimental Methods. It was a lot of fun to CAD then create a fully functioning rig with a powerful electrical motor.</summary></entry><entry><title type="html">GTOR Data Aquisition</title><link href="http://localhost:4000/dataAquisition/" rel="alternate" type="text/html" title="GTOR Data Aquisition" /><published>2018-11-20T00:00:00-08:00</published><updated>2018-11-20T00:00:00-08:00</updated><id>http://localhost:4000/GTOR-Data-Aquisition</id><content type="html" xml:base="http://localhost:4000/dataAquisition/">&lt;p&gt;&lt;br /&gt;
+Measuring RPMs is very tricky. Learning how to record the data and analyize it is no small task. There is a lot that goes in from designing a proper rig to writing helpful code to measure data.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Fall of 2019 I designed a test rig to mount a hall effect sensor near an electric motor with toothed wheel attached to the output shaft. The goal was to find ways to measure RPM on a spinning system. I created this both for GTOR and for a mechanical engineering class called Experimental Methods. It was a lot of fun to CAD then create a fully functioning rig with a powerful electrical motor.</summary></entry><entry><title type="html">GTOR Data Aquisition</title><link href="http://localhost:4000/dataAquisition/" rel="alternate" type="text/html" title="GTOR Data Aquisition" /><published>2018-11-20T00:00:00-06:00</published><updated>2018-11-20T00:00:00-06:00</updated><id>http://localhost:4000/GTOR-Data-Aquisition</id><content type="html" xml:base="http://localhost:4000/dataAquisition/">&lt;p&gt;&lt;br /&gt;
 In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -222,7 +385,7 @@ We mounted our parts and coded the program. I learned how to use I2C on the acce
 &lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-Data collection with sensors is very tricky. I would reccomend really understand what are the best computers to use for this process. Additionally, I think that it would be nice to consult industry experience to see how they measure things. I want to learn better how to do data measurement with python and C as well as FPGA stuff.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-05-26T13:46:18-07:00</published><updated>2018-05-26T13:46:18-07:00</updated><id>http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+Data collection with sensors is very tricky. I would reccomend really understand what are the best computers to use for this process. Additionally, I think that it would be nice to consult industry experience to see how they measure things. I want to learn better how to do data measurement with python and C as well as FPGA stuff.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-05-26T15:46:18-05:00</published><updated>2018-05-26T15:46:18-05:00</updated><id>http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/pages/blogs/tutorials/jekyll/update/tutorial/2018/05/26/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
@@ -239,8 +402,8 @@ Data collection with sensors is very tricky. I would reccomend really understand
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Intern Rocketry Club Recovery Subsystem Lead</title><link href="http://localhost:4000/rocketryRecovery/" rel="alternate" type="text/html" title="Intern Rocketry Club Recovery Subsystem Lead" /><published>2018-05-10T00:00:00-07:00</published><updated>2018-05-10T00:00:00-07:00</updated><id>http://localhost:4000/Intern-Rocketry-Club-Recovery-Subsystem-Lead</id><content type="html" xml:base="http://localhost:4000/rocketryRecovery/">&lt;p&gt;&lt;br /&gt;
-My &lt;a href=&quot;/work&amp;amp;education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2018&quot;&gt;frist semester at NASA&lt;/a&gt; I worked as the recovery subsystem lead on the intern rocket. My team designed and fabricated our own parachute for a very cheap price. It worked perfectly when we launched.&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Intern Rocketry Club Recovery Subsystem Lead</title><link href="http://localhost:4000/rocketryRecovery/" rel="alternate" type="text/html" title="Intern Rocketry Club Recovery Subsystem Lead" /><published>2018-05-10T00:00:00-05:00</published><updated>2018-05-10T00:00:00-05:00</updated><id>http://localhost:4000/Intern-Rocketry-Club-Recovery-Subsystem-Lead</id><content type="html" xml:base="http://localhost:4000/rocketryRecovery/">&lt;p&gt;&lt;br /&gt;
+My &lt;a href=&quot;/work&amp;amp;education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2018&quot;&gt;first semester at NASA&lt;/a&gt; I worked as the recovery subsystem lead on the intern rocket. My team designed and fabricated our own parachute for a very cheap price. It worked perfectly when we launched.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -282,7 +445,7 @@ Here are my design requirements that I developed with the other people in my tea
 After doing my research, I decided to make my own parachute. It would be more fun to make my own. Once I had a general idea of the size and weight of the rocket, I used &lt;a href=&quot;https://descentratecalculator.onlinetesting.net/&quot;&gt;a website to calculate the radius required&lt;/a&gt; for a descent rate of around 15 feet per second. Because it was easier to cut, I decided to make a hexagonal parachute. Additionally, that made it very simple to find points for mounting the shroud lines.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
-Another intern and I went to Wallmart and purchased a purple tablecloth. We used an exacto knife to cut it into a hexagon. Next, we reinforced the corners with duct tape first then we clamped metal grommits onto the duct tape patches. The duct tape served to destribute the load from the shroud lines that would be tied to the metal grommits.&lt;/p&gt;
+Another intern and I went to Wallmart and purchased a purple tablecloth. We used an exacto knife to cut it into a hexagon. Next, we reinforced the corners with duct tape first then we clamped metal grommets onto the duct tape patches. The duct tape served to distribute the load from the shroud lines that would be tied to the metal grommets.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -313,7 +476,7 @@ Here’s some more testing:&lt;/p&gt;
 &lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-This was a great project. We got to see our product from start to finish. The biggest flaw in our system was that we didn’t have a good way to attach to the 3D printed nosecone. I highly reccomend having a strong tab on your nosecone to tie your shock cable to. It is worth it!&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">My frist semester at NASA I worked as the recovery subsystem lead on the intern rocket. My team designed and fabricated our own parachute for a very cheap price. It worked perfectly when we launched.</summary></entry><entry><title type="html">MED-2 Rowing Tower</title><link href="http://localhost:4000/rowingTower/" rel="alternate" type="text/html" title="MED-2 Rowing Tower" /><published>2018-04-27T00:00:00-07:00</published><updated>2018-04-27T00:00:00-07:00</updated><id>http://localhost:4000/MED-2-Rowing-Tower</id><content type="html" xml:base="http://localhost:4000/rowingTower/">&lt;p&gt;&lt;br /&gt;
+This was a great project. We got to see our product from start to finish. The biggest flaw in our system was that we didn’t have a good way to attach to the 3D printed nosecone. I highly recommend having a strong tab on your nosecone to tie your shock cable to. It is worth it!&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">My first semester at NASA I worked as the recovery subsystem lead on the intern rocket. My team designed and fabricated our own parachute for a very cheap price. It worked perfectly when we launched.</summary></entry><entry><title type="html">MED-2 Rowing Tower</title><link href="http://localhost:4000/rowingTower/" rel="alternate" type="text/html" title="MED-2 Rowing Tower" /><published>2018-04-27T00:00:00-05:00</published><updated>2018-04-27T00:00:00-05:00</updated><id>http://localhost:4000/MED-2-Rowing-Tower</id><content type="html" xml:base="http://localhost:4000/rowingTower/">&lt;p&gt;&lt;br /&gt;
 At &lt;a href=&quot;/work&amp;amp;education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2018&quot;&gt;NASA in the Spring of 2018&lt;/a&gt;, I was tasked with designing a rig that would transform the MED-2 into a rowing machine on earth. Currently, the MED-2 can we be used in zero-g to row, but we would like to be able to test that here on the ground. This projet was really fun, and even though I started it pretty late into the semester the interns of the next few semesters built it.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -351,7 +514,7 @@ Without much time, I quickly modeled up a system where one side is a mounting sy
 &lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-After getting to see footage of people testing the device, I realized a huge design mistake that I didn’t think of earlier. The whole device and platform lurches upward when a user tried to row on it. This is because the device and platform is not secured in a way that prevents pivoting around the track that the user sits on.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">At NASA in the Spring of 2018, I was tasked with designing a rig that would transform the MED-2 into a rowing machine on earth. Currently, the MED-2 can we be used in zero-g to row, but we would like to be able to test that here on the ground. This projet was really fun, and even though I started it pretty late into the semester the interns of the next few semesters built it.</summary></entry><entry><title type="html">ME 2110</title><link href="http://localhost:4000/me2110/" rel="alternate" type="text/html" title="ME 2110" /><published>2017-12-20T00:00:00-08:00</published><updated>2017-12-20T00:00:00-08:00</updated><id>http://localhost:4000/ME-2110</id><content type="html" xml:base="http://localhost:4000/me2110/">&lt;p&gt;&lt;br /&gt;
+After getting to see footage of people testing the device, I realized a huge design mistake that I didn’t think of earlier. The whole device and platform lurches upward when a user tried to row on it. This is because the device and platform is not secured in a way that prevents pivoting around the track that the user sits on.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">At NASA in the Spring of 2018, I was tasked with designing a rig that would transform the MED-2 into a rowing machine on earth. Currently, the MED-2 can we be used in zero-g to row, but we would like to be able to test that here on the ground. This projet was really fun, and even though I started it pretty late into the semester the interns of the next few semesters built it.</summary></entry><entry><title type="html">ME 2110</title><link href="http://localhost:4000/me2110/" rel="alternate" type="text/html" title="ME 2110" /><published>2017-12-20T00:00:00-06:00</published><updated>2017-12-20T00:00:00-06:00</updated><id>http://localhost:4000/ME-2110</id><content type="html" xml:base="http://localhost:4000/me2110/">&lt;p&gt;&lt;br /&gt;
 Junior year of my time at Georgia Tech in 2017, I took an infamous class called ME 2110 (Creative Decisions and Design). This class is infamous because it culminates in a competition between the teams of 3 or 4. Each team builds and programs a mechatronics robot to compete in an arena with 3 other teams. There are several different ways to gain or lose points, and the objective is to get the highest score. I highlight this as one of my projects because it was formative for my engineering experience. My team placed in the top 20 of seventy teams. This class was one of funnest and toughest classes I’ve taken.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -404,7 +567,7 @@ I absolutely loved this project. It was a lot of fun. I did all the coding. I he
 &lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-This project pushes students to try their best. I left the final competition knowing that I’d given it my all. I don’t always want that experience, but I know that I will devliver under pressure. Additionally, during seasons like this I typically learn a lot of skills. I find that I am more creative when I am under pressure to create solutions quickly. This was not an exception. Now I know that it is valuable to put myself into situations where I need to act quickly to create solutions. Teamwork was an essential part of this process. A good team allows each member to be more effective. There is a caviat here. Depending on the team, good leadership makes a big difference. In this project, my teams never established good leadership. I think leadership allows each project to be more sreamlined.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Junior year of my time at Georgia Tech in 2017, I took an infamous class called ME 2110 (Creative Decisions and Design). This class is infamous because it culminates in a competition between the teams of 3 or 4. Each team builds and programs a mechatronics robot to compete in an arena with 3 other teams. There are several different ways to gain or lose points, and the objective is to get the highest score. I highlight this as one of my projects because it was formative for my engineering experience. My team placed in the top 20 of seventy teams. This class was one of funnest and toughest classes I’ve taken.</summary></entry><entry><title type="html">Electric Longboard</title><link href="http://localhost:4000/electricLongboard/" rel="alternate" type="text/html" title="Electric Longboard" /><published>2017-12-01T00:00:00-08:00</published><updated>2017-12-01T00:00:00-08:00</updated><id>http://localhost:4000/Electric-Longboard</id><content type="html" xml:base="http://localhost:4000/electricLongboard/">&lt;p&gt;&lt;br /&gt;
+This project pushes students to try their best. I left the final competition knowing that I’d given it my all. I don’t always want that experience, but I know that I will devliver under pressure. Additionally, during seasons like this I typically learn a lot of skills. I find that I am more creative when I am under pressure to create solutions quickly. This was not an exception. Now I know that it is valuable to put myself into situations where I need to act quickly to create solutions. Teamwork was an essential part of this process. A good team allows each member to be more effective. There is a caviat here. Depending on the team, good leadership makes a big difference. In this project, my teams never established good leadership. I think leadership allows each project to be more sreamlined.&lt;/p&gt;</content><author><name>Mateo Atwi</name></author><summary type="html">Junior year of my time at Georgia Tech in 2017, I took an infamous class called ME 2110 (Creative Decisions and Design). This class is infamous because it culminates in a competition between the teams of 3 or 4. Each team builds and programs a mechatronics robot to compete in an arena with 3 other teams. There are several different ways to gain or lose points, and the objective is to get the highest score. I highlight this as one of my projects because it was formative for my engineering experience. My team placed in the top 20 of seventy teams. This class was one of funnest and toughest classes I’ve taken.</summary></entry><entry><title type="html">Electric Longboard</title><link href="http://localhost:4000/electricLongboard/" rel="alternate" type="text/html" title="Electric Longboard" /><published>2017-12-01T00:00:00-06:00</published><updated>2017-12-01T00:00:00-06:00</updated><id>http://localhost:4000/Electric-Longboard</id><content type="html" xml:base="http://localhost:4000/electricLongboard/">&lt;p&gt;&lt;br /&gt;
 This is one of my favorite projects. My friend Chris and I jointly developed an electric longboard using a maker grant at the Georgia Tech Invention Studio where we are both prototyping instructors. This longboard had severval innovative design features. Our first design had a lot of flaws, but I attribute this to the extent that we tried to innovate. Our innovations include batteries imbeded into the deck of the longboard and a fiberglass bottom. Additionally, we tried to build most things in house with the motor mounts and the deck.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;

@@ -4,7 +4,7 @@ title: Intern Rocketry Club Recovery Subsystem Lead
 categories: projects
 permalink: /rocketryRecovery/
 author: Mateo Atwi
-summary: My [frist semester at NASA](/work&education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2018) I worked as the recovery subsystem lead on the intern rocket. My team designed and fabricated our own parachute for a very cheap price. It worked perfectly when we launched.
+summary: My [first semester at NASA](/work&education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2018) I worked as the recovery subsystem lead on the intern rocket. My team designed and fabricated our own parachute for a very cheap price. It worked perfectly when we launched.
 thumbnail: https://lh3.googleusercontent.com/dD5EoJ5BsAfUCFta7iQwriicFZTmu9qFngYLtPg2_F3QChwHrjOW661YyUZ2UFjh1IzH5p7lFd_AoB1nvg6ORn8uq6I-pJc0z_tvr8Efsrh1bOq0w9RjnpIu412dhrqkFsIOV0ChYdQ=w2400
 ---
 
@@ -47,7 +47,7 @@ Here are my design requirements that I developed with the other people in my tea
 After doing my research, I decided to make my own parachute. It would be more fun to make my own. Once I had a general idea of the size and weight of the rocket, I used [a website to calculate the radius required](https://descentratecalculator.onlinetesting.net/) for a descent rate of around 15 feet per second. Because it was easier to cut, I decided to make a hexagonal parachute. Additionally, that made it very simple to find points for mounting the shroud lines.
 
 \\
-Another intern and I went to Wallmart and purchased a purple tablecloth. We used an exacto knife to cut it into a hexagon. Next, we reinforced the corners with duct tape first then we clamped metal grommits onto the duct tape patches. The duct tape served to destribute the load from the shroud lines that would be tied to the metal grommits.
+Another intern and I went to Wallmart and purchased a purple tablecloth. We used an exacto knife to cut it into a hexagon. Next, we reinforced the corners with duct tape first then we clamped metal grommets onto the duct tape patches. The duct tape served to distribute the load from the shroud lines that would be tied to the metal grommets.
 
 <br>
 
@@ -78,4 +78,4 @@ Here's some more testing:
 ### Lessons Learned
 
 \\
-This was a great project. We got to see our product from start to finish. The biggest flaw in our system was that we didn't have a good way to attach to the 3D printed nosecone. I highly reccomend having a strong tab on your nosecone to tie your shock cable to. It is worth it!
+This was a great project. We got to see our product from start to finish. The biggest flaw in our system was that we didn't have a good way to attach to the 3D printed nosecone. I highly recommend having a strong tab on your nosecone to tie your shock cable to. It is worth it!
