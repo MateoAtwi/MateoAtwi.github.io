@@ -17,6 +17,8 @@ collections:
         link: /books&movies/
       - name: Quotes
         link: /quotes/
+      - name: Words
+        link: /words/
       - name: Recepies
         link: /recepies/
       - name: Websites
