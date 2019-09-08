@@ -13,8 +13,11 @@ title: Mateo Atwi
 
 <br>
 
-* TOC
-{:toc}
+* [Work and Education](/work&education/)
+* [Projects](/projects/)
+* [Skills List](#skills-list)
+* [Goals](#goals)
+* [Interests](#interests)
 
 <br>
 
@@ -27,9 +30,9 @@ Checkout my [Work & Education](/work&education/) tab for more detailed informati
 
 <div class="separator" style="clear: both; text-align: center;">
 	<img src="/assets/images/logos/gt.png" alt="Georgia Institute of Technology" style="width: 78%;"/>
-	<img src="/assets/images/logos/meatball.png" alt="NASA JSC" style="width: 26%; position: relative;"/> 
-	<img src="/assets/images/logos/landisGyr.png" alt="Landis + Gyr" style="width: 26%; border-radius: 0px; position: relative;"/> 
-	<img src="/assets/images/logos/stuller.png" alt="Stuller" style="width: 26%; position: relative;"/> 
+	<img src="/assets/images/logos/meatball.png" alt="NASA JSC" style="width: 26%; position: relative;"/>
+	<img src="/assets/images/logos/landisGyr.png" alt="Landis + Gyr" style="width: 26%; border-radius: 0px; position: relative;"/>
+	<img src="/assets/images/logos/stuller.png" alt="Stuller" style="width: 26%; position: relative;"/>
 </div>
 
 <br>
@@ -73,7 +76,7 @@ Although I am a mechanical engineering student, I have tried many different thin
 <br>
 * Work in the space industry at a fast paced company
 * Give back to communities
-* Challange myself in my work
+* Challenge myself in my work
 * Practice and take on technical leadership roles
 
 <br>
@@ -83,7 +86,7 @@ Although I am a mechanical engineering student, I have tried many different thin
 <br>
 * Space industry
 * Challenging development work
-* Data aquisition and sensors
+* Data acquisition and sensors
 * Programming
 * Prototyping & fabrication
 * Design & analysis

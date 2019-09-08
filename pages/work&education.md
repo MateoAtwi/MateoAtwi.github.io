@@ -14,14 +14,31 @@ This is a summary of all my work and education. Checkout [my projects page](/pro
 ---
 
 <br>
-## Current: Research & Development Intern at Stuller
+## Research & Development Intern at Stuller
 > Stuller, Inc. is the #1 supplier of fine jewelry, findings, mountings, tools, packaging, diamonds & gemstones for today's retail jeweler.
 
 <br>
 *Summer 2019*
 
 <br>
-More information after I am finished with the internship.
+### Skills: Python, Inventor, Electronics, Research, Technical Writing, Repair, Design, and 3D Printing
+
+<br>
+### Summary
+* AMR research and white paper
+* $7000 cost saving repair
+* Camera head counting project ([Link to project](/headcount/))
+* 3D printing fixtures
+
+<br>
+<details><summary><h3 style="margin: 0px; display: inline">Description</h3></summary>
+<p>
+
+Stuller is one of the largest suppliers of jewelry and jewelry related products in the US. I interned in their R&D group researching Autonomous Mobile Robots (AMRs) and doing a few other side jobs. Stuller is looking to AMRs to assist in moving their product around their manufacturing lines. I researched more than 20 companies and then down selected to 5. My team and I reached out to those 5 vendors and set up meetings to learn about their AMRs. I compiled notes, brochures, and created a decision matrix from all the information. This allowed us to identify 4 companies having products we would like to see. Towards the end of the semester, I started arraigning company demos, presented my findings to management, and wrote an executive summary. To collect data for the project, I coded a hallway head counter using a Raspberry Pi 3 B+, a webcam, and the openCV library for $100. This gave us a rough estimate of the hallway traffic throughout the day. Additionally, I coded a $15 door open/close sensor and logger to calculate how many times doors were being opened in the hallways. Besides my main task, I designed and 3D printed two laser engraver fixtures and repaired a $7000 engraver fixture. The biggest thing I learned at Stuller was the importance of foundation for understand and proceeding with a project.
+
+</p>
+</details>
+
 
 <br>
 ## Advanced Exercise Intern at NASA Johnson Space Center (Spring 2019)
@@ -125,7 +142,7 @@ private void RequesterWork()
 
 <br>
 ### Summary
-* Project managing and team leading for a group of 5 interns 
+* Project managing and team leading for a group of 5 interns
 * Developed and demonstrated flight exercise software in LabView to test exercise equipment and sensors
 * Designed test rig to convert Miniature Exercise Device 2 (MED-2) into a rowing machine
 * Coded software in python for getting data from biosensors and displaying the raw data in a GUI
