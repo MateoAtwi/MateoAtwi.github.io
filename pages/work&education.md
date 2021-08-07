@@ -12,6 +12,47 @@ This is a summary of all my work and education. Checkout [my projects page](/pro
 <br>
 # Work
 ---
+<br>
+## Co-founder of [Boxy](www.boxyconstruction.com)
+> Boxy is a modular construction and design company.
+
+<br>
+*April 2021 - Current*
+
+<br>
+### Skills: Starting up a business, leadership, sales, marketing, accounting, engineering, drawing
+
+<br>
+### Summary
+* Started Boxy with Tiago Atwi
+* Stay tune for more!
+
+<br>
+## Special Projects Lead, VP of Operations, and Operations Manager at BMarko Structures
+> BMarko Structures is a forward thinking modular construction company.
+
+<br>
+*February 2020 – April 2021*
+
+<br>
+### Skills: Leadership, project management, construction, estimating, client facing relationships, modular construction, welding, design
+
+<br>
+### Summary
+* Constructed of one of the largest paint booths in the south
+* Project managed the construction of 48 hospital rooms for COVID-19 in four weeks
+* Developed new operations paradigm for manufacturing at BMarko Structures
+* Project management (schedule and client interface) for 20+ projects and more than $1,000,000 in budgets
+* Heavily involved with the design and production of buildings including framing, welding, MEPs, and finishes
+
+<br>
+<details><summary><h3 style="margin: 0px; display: inline">Description</h3></summary>
+<p>
+
+This was one of my toughest and best experiences to date. I started out at a "special projects lead" and built a Paintbooth. Soon after I helped CEO Antony Kountouris build the two GEMA projects in a staggering 4 weeks. After that I stayed in the roll of VP of Operations and built many different kinds of projects. I'll detail some of those projects more specifically in my Projects tab.
+
+</p>
+</details>
 
 <br>
 ## Research & Development Intern at Stuller

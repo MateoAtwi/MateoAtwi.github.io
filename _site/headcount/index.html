@@ -2,23 +2,25 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Headcount Camera Project | Mateo Atwi</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v4.0.1" />
 <meta property="og:title" content="Headcount Camera Project" />
 <meta name="author" content="Mateo Atwi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This summer at Stuller, we wanted to see the flow of traffic through our hallways in order to understand the times where there might be higher traffic. I was tasked with coming up with a way to count the heads coming through the hallway. I decided to do so using a Raspberry Pi 3 B+ and a web cam. My $100 solution gave us a reasonable estimate for the traffic through our hallways during the day." />
 <meta property="og:description" content="This summer at Stuller, we wanted to see the flow of traffic through our hallways in order to understand the times where there might be higher traffic. I was tasked with coming up with a way to count the heads coming through the hallway. I decided to do so using a Raspberry Pi 3 B+ and a web cam. My $100 solution gave us a reasonable estimate for the traffic through our hallways during the day." />
-<link rel="canonical" href="http://localhost:4000/headcount/" />
-<meta property="og:url" content="http://localhost:4000/headcount/" />
+<link rel="canonical" href="mateoatwi.com/headcount/" />
+<meta property="og:url" content="mateoatwi.com/headcount/" />
 <meta property="og:site_name" content="Mateo Atwi" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-08-10T00:00:00-05:00" />
+<meta property="article:published_time" content="2019-08-10T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Headcount Camera Project" />
 <script type="application/ld+json">
-{"description":"This summer at Stuller, we wanted to see the flow of traffic through our hallways in order to understand the times where there might be higher traffic. I was tasked with coming up with a way to count the heads coming through the hallway. I decided to do so using a Raspberry Pi 3 B+ and a web cam. My $100 solution gave us a reasonable estimate for the traffic through our hallways during the day.","author":{"@type":"Person","name":"Mateo Atwi"},"@type":"BlogPosting","url":"http://localhost:4000/headcount/","headline":"Headcount Camera Project","dateModified":"2019-08-10T00:00:00-05:00","datePublished":"2019-08-10T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/headcount/"},"@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"mateoatwi.com/headcount/"},"author":{"@type":"Person","name":"Mateo Atwi"},"@type":"BlogPosting","description":"This summer at Stuller, we wanted to see the flow of traffic through our hallways in order to understand the times where there might be higher traffic. I was tasked with coming up with a way to count the heads coming through the hallway. I decided to do so using a Raspberry Pi 3 B+ and a web cam. My $100 solution gave us a reasonable estimate for the traffic through our hallways during the day.","url":"mateoatwi.com/headcount/","headline":"Headcount Camera Project","dateModified":"2019-08-10T00:00:00-04:00","datePublished":"2019-08-10T00:00:00-04:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Mateo Atwi" /></head>
+<link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="mateoatwi.com/feed.xml" title="Mateo Atwi" /></head>
 <body>
 
     <header class="site-header" role= "banner">
@@ -197,12 +199,12 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">"Data/"</span> <span class="o">+</span> <span class="n">timeNow</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d_</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"_logfile.log"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">"Data/"</span> <span class="o">+</span> <span class="n">timeNow</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y-%m-%d_%H:%M:%S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"_logfile.log"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'%(asctime)s %(message)s'</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s">'%Y-%m-%d %I:%M:%S %p'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Created "</span> <span class="o">+</span> <span class="n">timeNow</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d_</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"-HeadCount.csv"</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Type, Number"</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Entrances, 0"</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Exits, 0"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Created "</span> <span class="o">+</span> <span class="n">timeNow</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y-%m-%d_%H:%M:%S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"-HeadCount.csv"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Type, Number"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Entrances, 0"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Exits, 0"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -252,19 +254,19 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 <p><br /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#start capturing footage
-</span><span class="n">camera</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class="n">camera</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">#force 640x480 webcam resolution
-</span><span class="n">camera</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">720</span><span class="p">)</span>
-<span class="n">camera</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">480</span><span class="p">)</span>
+</span><span class="n">camera</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">720</span><span class="p">)</span>
+<span class="n">camera</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">480</span><span class="p">)</span>
 
-<span class="n">BinaryFrame1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">480</span><span class="p">,</span> <span class="mi">640</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">BinaryFrame1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">480</span><span class="p">,</span> <span class="mi">640</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="n">ContourData</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">ActiveContours</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1">#The webcam maybe get some time / captured frames to adapt to ambience lighting. For this reason, some frames are grabbed and discarded.
 </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
-    <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">ReferenceFrame</span> <span class="o">=</span> <span class="n">ProcessGrayFrame</span><span class="p">(</span><span class="n">Frame</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -286,10 +288,10 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
 
-<span class="n">height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">#if cannot grab a frame, this program ends here.
 </span><span class="k">if</span> <span class="ow">not</span> <span class="n">grabbed</span><span class="p">:</span>
@@ -310,7 +312,7 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -327,7 +329,7 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">GrayFrame</span><span class="p">,</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">GrayFrame</span><span class="p">,</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -344,7 +346,7 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FrameDelta</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">absdiff</span><span class="p">(</span><span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">GrayFrame</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FrameDelta</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">absdiff</span><span class="p">(</span><span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">GrayFrame</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -373,7 +375,7 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FrameThresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">FrameDelta</span><span class="p">,</span> <span class="n">BinarizationThreshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FrameThresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">FrameDelta</span><span class="p">,</span> <span class="n">BinarizationThreshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -390,7 +392,7 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FrameDilate</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">dilate</span><span class="p">(</span><span class="n">FrameThresh</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FrameDilate</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">dilate</span><span class="p">(</span><span class="n">FrameThresh</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -407,7 +409,7 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BinaryFrameCombo</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_or</span><span class="p">(</span><span class="n">BinaryFrame1</span><span class="p">,</span> <span class="n">BinaryFrame2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BinaryFrameCombo</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">bitwise_or</span><span class="p">(</span><span class="n">BinaryFrame1</span><span class="p">,</span> <span class="n">BinaryFrame2</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -444,7 +446,7 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">BinaryFrameCombo</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">BinaryFrameCombo</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -459,11 +461,11 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
     <span class="c1">#if a contour has small area, it'll be ignored
-</span>    <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MinContourArea</span><span class="p">:</span>
+</span>    <span class="k">if</span> <span class="n">cv2</span><span class="p">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MinContourArea</span><span class="p">:</span>
         <span class="k">continue</span>
 
     <span class="c1">#draw an rectangle "around" the object
-</span>    <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span>    <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 
     <span class="c1">#find object's centroid
 </span>    <span class="n">CoordXCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
@@ -495,7 +497,7 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 </span><span class="k">def</span> <span class="nf">ContourCompare</span><span class="p">(</span><span class="n">contour1</span><span class="p">,</span> <span class="n">contour2</span><span class="p">):</span>
     <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">contour2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">)</span> <span class="o">=</span> <span class="n">contour1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">distance</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">cx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">cy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">cx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">cy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="c1">#print(str(distance))
 </span>    <span class="k">return</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">MovementTolerance</span>
 </code></pre></div></div>
@@ -554,32 +556,32 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 <span class="n">BinarizationThreshold</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1">#Adjust ths value according to your usage
 </span><span class="n">ReferenceFrame</span> <span class="o">=</span> <span class="bp">None</span> <span class="c1">#ReferenceFrame
 </span>
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">"Data/"</span> <span class="o">+</span> <span class="n">timeNow</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d_</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"_logfile.log"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">"Data/"</span> <span class="o">+</span> <span class="n">timeNow</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y-%m-%d_%H:%M:%S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"_logfile.log"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'%(asctime)s %(message)s'</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s">'%Y-%m-%d %I:%M:%S %p'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Created "</span> <span class="o">+</span> <span class="n">timeNow</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d_</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"-HeadCount.csv"</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Type, Number"</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Entrances, 0"</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Exits, 0"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Created "</span> <span class="o">+</span> <span class="n">timeNow</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y-%m-%d_%H:%M:%S'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"-HeadCount.csv"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Type, Number"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Entrances, 0"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Exits, 0"</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">ProcessGrayFrame</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
     <span class="c1">#gray-scale convertion and Gaussian blur filter applying
-</span>    <span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
-    <span class="n">GausFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">GrayFrame</span><span class="p">,</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+</span>    <span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+    <span class="n">GausFrame</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">GrayFrame</span><span class="p">,</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">GausFrame</span>
 
 <span class="k">def</span> <span class="nf">ProcessThreshFrame</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
     <span class="n">GrayFrame</span> <span class="o">=</span> <span class="n">ProcessGrayFrame</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
     <span class="c1">#Background subtraction and image binarization
-</span>    <span class="n">FrameDelta</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">absdiff</span><span class="p">(</span><span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">GrayFrame</span><span class="p">)</span>
-    <span class="n">FrameThresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">FrameDelta</span><span class="p">,</span> <span class="n">BinarizationThreshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">FrameDilate</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">dilate</span><span class="p">(</span><span class="n">FrameThresh</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="c1">#Dilate image and find all the contours
+</span>    <span class="n">FrameDelta</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">absdiff</span><span class="p">(</span><span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">GrayFrame</span><span class="p">)</span>
+    <span class="n">FrameThresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">FrameDelta</span><span class="p">,</span> <span class="n">BinarizationThreshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">FrameDilate</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">dilate</span><span class="p">(</span><span class="n">FrameThresh</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="c1">#Dilate image and find all the contours
 </span>    <span class="k">return</span> <span class="n">FrameDilate</span>
 
 <span class="c1"># This function compares 2 contours to see if they could possibly be the same contours
 </span><span class="k">def</span> <span class="nf">ContourCompare</span><span class="p">(</span><span class="n">contour1</span><span class="p">,</span> <span class="n">contour2</span><span class="p">):</span>
     <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">contour2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">)</span> <span class="o">=</span> <span class="n">contour1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">distance</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">cx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">cy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">cx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">cy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="c1">#print(str(distance))
 </span>    <span class="k">return</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">MovementTolerance</span>
 
@@ -596,30 +598,30 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 
 <span class="c1">#start capturing footage
-</span><span class="n">camera</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class="n">camera</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">#force 640x480 webcam resolution
-</span><span class="n">camera</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">720</span><span class="p">)</span>
-<span class="n">camera</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">480</span><span class="p">)</span>
+</span><span class="n">camera</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">720</span><span class="p">)</span>
+<span class="n">camera</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">480</span><span class="p">)</span>
 
-<span class="n">BinaryFrame1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">480</span><span class="p">,</span> <span class="mi">640</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">BinaryFrame1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">480</span><span class="p">,</span> <span class="mi">640</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="n">ContourData</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">ActiveContours</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1">#The webcam maybe get some time / captured frames to adapt to ambience lighting. For this reason, some frames are grabbed and discarted.
 </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
-    <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">ReferenceFrame</span> <span class="o">=</span> <span class="n">ProcessGrayFrame</span><span class="p">(</span><span class="n">Frame</span><span class="p">)</span>
 
 <span class="c1">#encapsulate infinite while block inside a try statement
 </span><span class="k">try</span><span class="p">:</span>
     <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
 
-        <span class="n">timeNow</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">timeNow</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
 
-        <span class="n">height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="c1">#if cannot grab a frame, this program ends here.
 </span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">grabbed</span><span class="p">:</span>
@@ -627,33 +629,33 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 
         <span class="n">BinaryFrame2</span> <span class="o">=</span> <span class="n">ProcessThreshFrame</span><span class="p">(</span><span class="n">Frame</span><span class="p">)</span>
 
-        <span class="n">BinaryFrameCombo</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_or</span><span class="p">(</span><span class="n">BinaryFrame1</span><span class="p">,</span> <span class="n">BinaryFrame2</span><span class="p">)</span>
+        <span class="n">BinaryFrameCombo</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">bitwise_or</span><span class="p">(</span><span class="n">BinaryFrame1</span><span class="p">,</span> <span class="n">BinaryFrame2</span><span class="p">)</span>
 
         <span class="c1"># combine the last two frames and fine the contours
-</span>        <span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">BinaryFrameCombo</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+</span>        <span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">BinaryFrameCombo</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
         <span class="n">BinaryFrame1</span> <span class="o">=</span> <span class="n">BinaryFrame2</span>
 
         <span class="c1">#plot reference lines (entrance and exit lines)
-</span>        <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">LineWidth</span><span class="p">)</span>
+</span>        <span class="n">cv2</span><span class="p">.</span><span class="n">line</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">LineWidth</span><span class="p">)</span>
 
 
         <span class="c1">#check all found countours
 </span>        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
             <span class="c1">#if a contour has small area, it'll be ignored
-</span>            <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MinContourArea</span><span class="p">:</span>
+</span>            <span class="k">if</span> <span class="n">cv2</span><span class="p">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MinContourArea</span><span class="p">:</span>
                 <span class="k">continue</span>
 
             <span class="c1">#draw an rectangle "around" the object
-</span>            <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span>            <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
             <span class="n">rectBounds</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
-            <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="p">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 
             <span class="c1">#find object's centroid
 </span>            <span class="n">CoordXCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
             <span class="n">CoordYCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
             <span class="n">ObjectCentroid</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">CoordXCentroid</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">CoordYCentroid</span><span class="p">))</span>
-            <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">ObjectCentroid</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
-            <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">ObjectCentroid</span><span class="p">,</span> <span class="n">MovementTolerance</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="p">.</span><span class="n">circle</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">ObjectCentroid</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="p">.</span><span class="n">circle</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="n">ObjectCentroid</span><span class="p">,</span> <span class="n">MovementTolerance</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
 
             <span class="n">crossedBoundary</span> <span class="o">=</span> <span class="bp">False</span>
 
@@ -664,7 +666,7 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
 </span>            <span class="n">cResult</span> <span class="o">=</span> <span class="n">ContourTrack</span><span class="p">(</span><span class="n">ContourTuple</span><span class="p">,</span> <span class="n">ContourData</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">cResult</span> <span class="ow">is</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-                <span class="n">ActiveContours</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ContourTuple</span><span class="p">)</span>
+                <span class="n">ActiveContours</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">ContourTuple</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span> <span class="c1"># replace the previous contour data with the new contour data
 </span>                <span class="c1">#Check to see if you crossed the line in the middle
 </span>                <span class="k">if</span> <span class="n">ContourData</span><span class="p">[</span><span class="n">cResult</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span> <span class="c1">#tracked object has already crossed the line
@@ -673,33 +675,33 @@ sudo </span>apt <span class="nb">install </span>python3-opencv
                     <span class="k">if</span> <span class="ow">not</span> <span class="n">ContourData</span><span class="p">[</span><span class="n">cResult</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
                         <span class="n">EntranceCounter</span> <span class="o">=</span> <span class="n">EntranceCounter</span> <span class="o">+</span> <span class="mi">1</span>
                         <span class="n">ContourTuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">ContourTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
-                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Entrances, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">EntranceCounter</span><span class="p">))</span>
+                        <span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Entrances, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">EntranceCounter</span><span class="p">))</span>
                 <span class="k">elif</span> <span class="p">(</span><span class="n">ContourData</span><span class="p">[</span><span class="n">cResult</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span> <span class="ow">and</span> <span class="n">ContourTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
                     <span class="k">if</span> <span class="ow">not</span> <span class="n">ContourData</span><span class="p">[</span><span class="n">cResult</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
                         <span class="n">ExitCounter</span> <span class="o">=</span> <span class="n">ExitCounter</span> <span class="o">+</span> <span class="mi">1</span>
                         <span class="n">ContourTuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">ContourTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
-                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Exits, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ExitCounter</span><span class="p">))</span>
+                        <span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">"Exits, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ExitCounter</span><span class="p">))</span>
 
-                <span class="n">ActiveContours</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ContourTuple</span><span class="p">)</span>
+                <span class="n">ActiveContours</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">ContourTuple</span><span class="p">)</span>
 
 
         <span class="n">ContourData</span> <span class="o">=</span> <span class="n">ActiveContours</span>
         <span class="n">ActiveContours</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="c1">#Write entrance and exit counter values on frame and shows it
-</span>        <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="s">"Entrances: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">EntranceCounter</span><span class="p">)),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
-                    <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="s">"Exits: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ExitCounter</span><span class="p">)),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span>
-                    <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+</span>        <span class="n">cv2</span><span class="p">.</span><span class="n">putText</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="s">"Entrances: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">EntranceCounter</span><span class="p">)),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+                    <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">cv2</span><span class="p">.</span><span class="n">putText</span><span class="p">(</span><span class="n">Frame</span><span class="p">,</span> <span class="s">"Exits: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ExitCounter</span><span class="p">)),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span>
+                    <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 
-        <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Original Frame"</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span>
+        <span class="n">cv2</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Original Frame"</span><span class="p">,</span> <span class="n">Frame</span><span class="p">)</span>
 
-        <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">cv2</span><span class="p">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="k">except</span> <span class="nb">KeyboardInterrupt</span><span class="p">:</span>
     <span class="c1"># cleanup the camera and close any open windows
-</span>    <span class="n">camera</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
-    <span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</span>    <span class="n">camera</span><span class="p">.</span><span class="n">release</span><span class="p">()</span>
+    <span class="n">cv2</span><span class="p">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
 </code></pre></div></div>
 
 </article>

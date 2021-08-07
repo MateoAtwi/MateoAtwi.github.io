@@ -1,0 +1,200 @@
+I"5+<p>This is a chronological summary of some of my biggest projects. Checkout <a href="/work&amp;education/">my work and education page</a> for more background details. I am still working on adding content to some of them.</p>
+
+<body>
+    <ul style="margin: 0px;">
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">Headcount Camera Project</h3></summary>
+				<br />
+				<p>
+					<img src="/assets/images/tutorials/headCount/10FinalFrame.jpg" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						This summer at Stuller, we wanted to see the flow of traffic through our hallways in order to understand the times where there might be higher traffic. I was tasked with coming up with a way to count the heads coming through the hallway. I decided to do so using a Raspberry Pi 3 B+ and a web cam. My $100 solution gave us a reasonable estimate for the traffic through our hallways during the day.
+					</p> 
+					<a href="/headcount/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">Video Games for NEEMO 23</h3></summary>
+				<br />
+				<p>
+					<img src="https://lh3.googleusercontent.com/pwStv6sF32ZreBRNx7gkt2hZkOzbPVFA7RTb21JwgVDJj3oaHmDdKinIvs4lEUHkz-nFLWFSzHDXchLSeCd5BCqWgLggO5OkbLvysR--B-bXMGbq-f_tlog6oKe1W7lfNzM33-mhHIs=w2400" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						At NASA in the Spring of 2019, I was tasked with creating <a href="/work&amp;education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2019">video games to be tested at NEEMO 23</a>. I created two games. The first game used the position telemetry from the MED-2 to map to a character position in the game. The second game received heart rate data from MoBI and used that to control the character’s position vertically. I then went on to run operations at NEEMO 23 with a crew including an astronaut, an astronaut candidate, and two scientists.
+					</p> 
+					<a href="/kibosh/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">Intern Rocketry Club Lead</h3></summary>
+				<br />
+				<p>
+					<img src="https://lh3.googleusercontent.com/_qNgmfYvtn2PJ3feoesPVS698iB-m7Bgg0JBcV22KBhIRWMQAUKW7ZUAv5NAz1T52Yx7k0HnWYrVY0n85SyidAuT6bAQxsX0ib0cEf5CQd6WgPLMrqNpqCOtsGt1-k3g_rf6dOsyDeI=w2400" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						At NASA JSC I had the honor of leading the intern effort to build and fly model rockets. This Spring we successfully designed and flew a rocket two seperate times. The second launch featured a live stream from the camera and live telemetry streamed down to a launch box. For more information about the team please visit the <a href="https://www.internspaceprogram.com/">intern space program website</a>.
+					</p> 
+					<a href="/internSpaceProgram/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">Hopper 3 Test Plan</h3></summary>
+				<br />
+				<p>
+					<img src="" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						This was one of my projects at <a href="/work&amp;education/">NASA during the spring of 2019</a>. My branch, ER3, received new exercise hardware from a company called IHMC. ER3 is setting up a database of exercise equipment as it comes through to be able to quickly compare and contrast hardware to each other. I created a test plan to catalogue new devices.
+					</p> 
+					<a href="/testPlan/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">Hall Effect Sensor Test Rig</h3></summary>
+				<br />
+				<p>
+					<img src="https://lh3.googleusercontent.com/Cbmrc8F1Ao1XPzyBhq5GreNGpWejB78jsHWB_zRzkzs_eyqjl3wU69cod3c4ZeSVoUasuNCfsDLRcX3MtMwqfKwz7WE6BtXwYxWM3ieBInu1JsLQQd5jzCYO9BiShV_mONXTE8oxmrU=w2400" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						Fall of 2019 I designed a test rig to mount a hall effect sensor near an electric motor with toothed wheel attached to the output shaft. The goal was to find ways to measure RPM on a spinning system. I created this both <a href="/dataAquisition/">for GTOR</a> and for a mechanical engineering class called Experimental Methods. It was a lot of fun to CAD then create a fully functioning rig with a powerful electrical motor.
+					</p> 
+					<a href="/testRig/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">GTOR Data Aquisition</h3></summary>
+				<br />
+				<p>
+					<img src="https://lh3.googleusercontent.com/-xPSbxPmCXSmiOEUU-GuTUuSVhsFzuh1PRHNzlldgMbKkTq4RmCMwVXmammgft4B3GkYAsUnmCSXfZ-SKlr80U-oa5aZcu_BYv8iKC-ifpQwUvMPFrf_BMY-FMKiUDiDkva0OotTExg=w2400" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						In the Fall of 2019, I joined the Georgia Tech Off Road (GTOR) club to help as a Data Aquisition Engineer. GTOR develops and builds a new off road car every year to compete with. The data aquisition team started this semester. There was a little bit of work done prior, but not much. It was a lot of fun to research the best ways to gather data and different sensors to use. It also made me realize that it is very tricky to get good sensor data.
+					</p> 
+					<a href="/dataAquisition/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">Intern Rocketry Club Recovery Subsystem Lead</h3></summary>
+				<br />
+				<p>
+					<img src="https://lh3.googleusercontent.com/dD5EoJ5BsAfUCFta7iQwriicFZTmu9qFngYLtPg2_F3QChwHrjOW661YyUZ2UFjh1IzH5p7lFd_AoB1nvg6ORn8uq6I-pJc0z_tvr8Efsrh1bOq0w9RjnpIu412dhrqkFsIOV0ChYdQ=w2400" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						My <a href="/work&amp;education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2018">first semester at NASA</a> I worked as the recovery subsystem lead on the intern rocket. My team designed and fabricated our own parachute for a very cheap price. It worked perfectly when we launched.
+					</p> 
+					<a href="/rocketryRecovery/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">MED-2 Rowing Tower</h3></summary>
+				<br />
+				<p>
+					<img src="https://lh3.googleusercontent.com/DLuD1HV43sSFl_t4C-M474_4zG0JJGX4Zo5yyvE4n5dsDMHqie6oUndwhhBrzQVAKZue_yJU2nRwjFGRmBcSFlYmFBaL_KbwdangHN1DmKjfey61hMF0trnxrB22jSChh6TGKTEwYl0=w2400" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						At <a href="/work&amp;education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2018">NASA in the Spring of 2018</a>, I was tasked with designing a rig that would transform the MED-2 into a rowing machine on earth. Currently, the MED-2 can we be used in zero-g to row, but we would like to be able to test that here on the ground. This projet was really fun, and even though I started it pretty late into the semester the interns of the next few semesters built it.
+					</p> 
+					<a href="/rowingTower/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">ME 2110</h3></summary>
+				<br />
+				<p>
+					<img src="https://lh3.googleusercontent.com/XgnlTO0TOqc2XkbojIgJGiWlljRrYbKPsVHWPgnQ0pL4pj_ZmkvTXuPzK56l7XAZ1zZnNJWbgjeKa7-jUQTAHsZ3xxIPtmBTGmsufes_QMRWgFTybjdXyu1LaxMkXjkLS0Yhpx-_bgU=w2400" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						Junior year of my time at Georgia Tech in 2017, I took an infamous class called ME 2110 (Creative Decisions and Design). This class is infamous because it culminates in a competition between the teams of 3 or 4. Each team builds and programs a mechatronics robot to compete in an arena with 3 other teams. There are several different ways to gain or lose points, and the objective is to get the highest score. I highlight this as one of my projects because it was formative for my engineering experience. My team placed in the top 20 of seventy teams. This class was one of funnest and toughest classes I’ve taken.
+					</p> 
+					<a href="/me2110/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">Electric Longboard</h3></summary>
+				<br />
+				<p>
+					<img src="https://lh3.googleusercontent.com/vvG6P-gkoaJ9x_K3ZMgJfLk3DpRCNdKFHRLyPfdg740rMgZhFr4zrOokMUkLOQ4qw6RJRDD1pXCh8JaspXODiWDf9M6OSq3TNfQ77TQ40F4ON0n5a0Z4XGMXX2oO1hmIWhBKsm5TSvs=w2400" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						This is one of my favorite projects. My friend Chris and I jointly developed an electric longboard using a maker grant at the Georgia Tech Invention Studio where we are both prototyping instructors. This longboard had severval innovative design features. Our first design had a lot of flaws, but I attribute this to the extent that we tried to innovate. Our innovations include batteries imbeded into the deck of the longboard and a fiberglass bottom. Additionally, we tried to build most things in house with the motor mounts and the deck.
+					</p> 
+					<a href="/electricLongboard/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	    	<details><summary><h3 style="margin: 0px; display: inline;">IP-67 Testing</h3></summary>
+				<br />
+				<p>
+					<img src="https://lh3.googleusercontent.com/AgSiFduwgZooWvZXXuzW3Aw4SzVSyDqzd9qoykczsDeVBrvYoU2StY_n5VDc-fpvpNdsvx4liBekSrweQt2X6XssHm0DISpQG1L_FhxM4LVmcfk_7a0HwzGbg9sJXgsV18RMoPRNZw8=w2400" style="max-width: 250px; max-height: 250px; border-radius: 0px; display: inline; float: right" />
+					<p>
+						When I worked at <a href="work&amp;education/#mechanical-intern-at-landisgyr">Landis+Gyr</a>, one of my tasks was to develop a test rig to test some connectors to see if they meet the IP-67 standard. I used tubes of water and 3-D printed components to test the connectors.
+					</p> 
+					<a href="/underwater/">More on this project</a>
+				</p>
+				<br />
+			</details>
+		
+	  
+	  	
+	  	<!--Use this previous line to filter out all the personal projects-->
+	  	
+	  
+	  	
+	  	<!--Use this previous line to filter out all the personal projects-->
+	  	
+	  
+	</ul>
+</body>
+:ET

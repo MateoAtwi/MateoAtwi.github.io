@@ -41,7 +41,7 @@ plugins:
 
 #collections:
 #  authors:
-#  
+#
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -55,3 +55,6 @@ exclude: [Tutorial/minima-2.5.0]
 #   - vendor/gems/
 #   - vendor/ruby/
 #   - Tutorial/minima-2.5.0
+
+# Google Analytics
+google_analytics: G-QMGPRF8HTC

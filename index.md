@@ -13,6 +13,10 @@ title: Mateo Atwi
 
 <br>
 
+My brother, Tiago, and I currently run Boxy. [Boxy](https://boxyconstruction.com/) is a modular construction company that strives to rethink how we approach construction. Our ultimate goal being to decrease cost, increase quality, and create satisfying good jobs for hard workers.
+
+<br>
+
 * [Work and Education](/work&education/)
 * [Projects](/projects/)
 * [Skills List](#skills-list)
@@ -33,6 +37,7 @@ Checkout my [Work & Education](/work&education/) tab for more detailed informati
 	<img src="/assets/images/logos/meatball.png" alt="NASA JSC" style="width: 26%; position: relative;"/>
 	<img src="/assets/images/logos/landisGyr.png" alt="Landis + Gyr" style="width: 26%; border-radius: 0px; position: relative;"/>
 	<img src="/assets/images/logos/stuller.png" alt="Stuller" style="width: 26%; position: relative;"/>
+	<img src="/assets/images/logos/bmarko.png" alt="BMarko Structures" style="width: 26%; position: relative;"/>
 </div>
 
 <br>
@@ -74,6 +79,7 @@ Although I am a mechanical engineering student, I have tried many different thin
 ## **Goals**
 ---
 <br>
+* Grow Boxy to the point where it is an industry leading modular construction company
 * Work in the space industry at a fast paced company
 * Give back to communities
 * Challenge myself in my work
@@ -84,6 +90,8 @@ Although I am a mechanical engineering student, I have tried many different thin
 ## **Interests**
 ---
 <br>
+* Construction
+* Modular
 * Space industry
 * Challenging development work
 * Data acquisition and sensors
