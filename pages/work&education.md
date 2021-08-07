@@ -13,7 +13,7 @@ This is a summary of all my work and education. Checkout [my projects page](/pro
 # Work
 ---
 <br>
-## Co-founder of [Boxy](www.boxyconstruction.com)
+## Co-founder of [Boxy](https://boxyconstruction.com/)
 > Boxy is a modular construction and design company.
 
 <br>
