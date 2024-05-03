@@ -13,7 +13,7 @@ title: Mateo Atwi
 
 <br>
 
-My brother, Tiago, and I currently run Boxy. [Boxy](https://boxyconstruction.com/) is a modular construction company that strives to rethink how we approach construction. Our ultimate goal being to decrease cost, increase quality, and create satisfying good jobs for hard workers.
+My brother, Tiago, and I currently run US Frame Factory. [US Frame Factory](https://usframefactory.com/) is an on demand manufacturer and full service framing supply company that strives to rethink how we approach construction. Our ultimate goal being to decrease cost, increase quality, and create satisfying good jobs for hard workers. You can also buy accessory steel framing products at [our online accessories store](https://clips.usframefactory.com/).
 
 <br>
 
