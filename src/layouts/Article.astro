@@ -1,0 +1,48 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  eyebrow?: string;
+  back?: { href: string; label: string };
+  noindex?: boolean;
+}
+
+const { title, description, image, eyebrow, back, noindex } = Astro.props;
+---
+
+<Base title={title} description={description} image={image} noindex={noindex} type="article">
+  <article class="wrap article">
+    <header class="page-head">
+      {back && <a class="back" href={back.href}>← {back.label}</a>}
+      {eyebrow && <p class="eyebrow"><span class="dot"></span>{eyebrow}</p>}
+      <h1>{title}</h1>
+      <slot name="lede" />
+    </header>
+    <slot name="before" />
+    <slot />
+    <slot name="after" />
+  </article>
+</Base>
+
+<style>
+  .article :global(.page-head h1) {
+    font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem);
+    max-width: 22ch;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    color: var(--muted);
+  }
+
+  .back:hover {
+    color: var(--accent);
+  }
+</style>

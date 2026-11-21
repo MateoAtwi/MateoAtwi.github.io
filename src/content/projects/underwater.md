@@ -1,0 +1,31 @@
+---
+title: IP-67 Testing
+date: 2017-04-19
+slug: underwater
+summary: When I worked at [Landis+Gyr](/work&education/#mechanical-intern-at-landisgyr), one of my tasks was to develop a test rig to test some connectors to see if they meet the IP-67 standard. I used tubes of water and 3-D printed components to test the connectors.
+thumbnail: ../../assets/projects/underwater.jpg
+---
+
+<div class="separator">
+<a href='https://photos.app.goo.gl/oJPYvrxmZWSg9j7X9'><img src='https://lh3.googleusercontent.com/AgSiFduwgZooWvZXXuzW3Aw4SzVSyDqzd9qoykczsDeVBrvYoU2StY_n5VDc-fpvpNdsvx4liBekSrweQt2X6XssHm0DISpQG1L_FhxM4LVmcfk_7a0HwzGbg9sJXgsV18RMoPRNZw8=w1600'/></a>
+</div>
+
+### Skills Learned and Used
+
+* Test Design
+* CAD
+* 3D Printing
+
+### Background
+
+Landis+Gyr makes electrical meters and access points to other meters. Different criteria are used when selecting the components and part suppliers for different devices. The device I was working with required some external connectors; however, we wanted the entire device to be IP-67. IP-67 means that a device will not leak if submerged in one meter of water for 30 minutes. So my task was to design an experiement to simulate submerging a plug in 1 meter of water for 30 minutes. This process helps inform connector selection for mass production. The goal is to find a connector that meets our requirements and is cheaper than other connectors.
+
+### Design and Test
+
+I cut a pvc pipe slightly longer than 1 meter. I measured the outer diameter then modeled an adapter that fits between the connector and the pvc pipe. After 3D printing it, I used the slip nut that comes with the connector to screw it onto the adapter. Then I used caulk around the edges to create a seal.
+
+To run the test I filled up the pvc pipe with water and clamped it such that the pvc pipe supported it's own weight. I set a timer for 30 minutes and checked periodically to see if the connector was leaking water. This procedure allowed me to inform my mentors which plugs were reliable and which plugs were not.
+
+### Lessons Learned
+
+This project allowed me to see the usefulness to testing. I learned how to isolate a problem and test it without too many confounding factors. It was also a great opportunity to apply 3D printing.

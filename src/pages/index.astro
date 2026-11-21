@@ -1,0 +1,395 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/site/portrait.jpg';
+import { getProjects } from '../lib/content';
+
+const projects = (await getProjects()).filter((p) => p.data.thumbnail).slice(0, 6);
+
+const logos = [
+  { src: '/assets/images/logos/gt.png', alt: 'Georgia Institute of Technology', href: '/work&education/#current-bachelors-in-mechanical-engineering-at-georgia-tech' },
+  { src: '/assets/images/logos/meatball.png', alt: 'NASA Johnson Space Center', href: '/work&education/#advanced-exercise-intern-at-nasa-johnson-space-center-spring-2019' },
+  { src: '/assets/images/logos/landisGyr.png', alt: 'Landis+Gyr', href: '/work&education/#mechanical-intern-at-landisgyr' },
+  { src: '/assets/images/logos/stuller.png', alt: 'Stuller', href: '/work&education/#research--development-intern-at-stuller' },
+  { src: '/assets/images/logos/bmarko.png', alt: 'BMarko Structures', href: '/work&education/#special-projects-lead-vp-of-operations-and-operations-manager-at-bmarko-structures' },
+];
+
+const skills = {
+  Hardware: [
+    ['CAD', 'Solidworks, Creo Parametric, Fusion'],
+    ['Prototyping & fabrication', 'Waterjet, laser cutters'],
+    ['3D printing', 'Test parts, mounts'],
+    ['Testing', 'IP-67, hardware test plans'],
+    ['Design', 'Sensor & motor mounts, electric longboard, model rockets'],
+    ['Sensors', 'I2C, SPI, analog'],
+    ['Fuel cell systems', ''],
+    ['Analysis', 'Classwork, HOMER, Ansys'],
+    ['Documentation', 'Test plans, GitLab'],
+  ],
+  Software: [
+    ['MATLAB', 'Post-analysis'],
+    ['Python', 'Raspberry Pi sensor reading, ZMQ, Protobuf'],
+    ['LabVIEW', 'Mechatronics, data acquisition'],
+    ['C#', 'Unity game development'],
+    ['ZMQ', 'Sending/receiving data and commands'],
+    ['Protobuf', 'Serializing data'],
+    ['Java', 'Classwork'],
+    ['C', 'Basic understanding'],
+    ['Linux', ''],
+  ],
+};
+
+const goals = [
+  'Grow Boxy to the point where it is an industry leading modular construction company',
+  'Work in the space industry at a fast paced company',
+  'Give back to communities',
+  'Challenge myself in my work',
+  'Practice and take on technical leadership roles',
+];
+
+const interests = [
+  'Construction',
+  'Modular',
+  'Space industry',
+  'Challenging development work',
+  'Data acquisition and sensors',
+  'Programming',
+  'Prototyping & fabrication',
+  'Design & analysis',
+];
+---
+
+<Base>
+  <section class="hero blueprint">
+    <div class="wrap hero-grid">
+      <div class="intro">
+        <p class="eyebrow"><span class="dot"></span>Engineer · Builder · US Frame Factory</p>
+        <h1>Mateo Atwi</h1>
+        <p class="statement">
+          A determined and inquisitive engineer looking to use my skills and energy to make a positive impact on the
+          communities that I work and live in.
+        </p>
+        <p class="body">
+          My brother, Tiago, and I currently run <a href="https://usframefactory.com/">US Frame Factory</a>, an on demand
+          manufacturer and full service framing supply company that strives to rethink how we approach construction. Our
+          ultimate goal: decrease cost, increase quality, and create satisfying, good jobs for hard workers. You can also
+          buy accessory steel framing products at <a href="https://clips.usframefactory.com/">our online accessories store</a>.
+        </p>
+        <div class="actions">
+          <a class="button" href="/work&education/">Work &amp; Education <span aria-hidden="true">→</span></a>
+          <a class="button ghost" href="/projects/">See projects</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <Image src={portrait} alt="Portrait of Mateo Atwi" widths={[320, 640]} sizes="20rem" loading="eager" fetchpriority="high" />
+        <figcaption class="mono" aria-hidden="true">
+          <span>REV. 2026</span><span>SCALE 1:1</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Experience</p>
+          <h2>Where I've worked and studied</h2>
+        </div>
+        <a class="more" href="/work&education/">Full history →</a>
+      </div>
+      <ul class="logos" role="list">
+        {
+          logos.map((l) => (
+            <li>
+              <a href={l.href}>
+                <img src={l.src} alt={l.alt} loading="lazy" decoding="async" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Projects</p>
+          <h2>Things I've designed, built &amp; tested</h2>
+        </div>
+        <a class="more" href="/projects/">All projects →</a>
+      </div>
+      <p class="section-intro">
+        I have experience in team management, hardware development, and software development. Here are a few highlights.
+      </p>
+      <div class="cards">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills-list">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Toolbox</p>
+          <h2>Skills</h2>
+        </div>
+      </div>
+      <p class="section-intro">
+        Although I trained as a mechanical engineer, I have tried many different things in different fields, highlighting
+        my ability to learn.
+      </p>
+      <div class="skills">
+        {
+          Object.entries(skills).map(([group, items]) => (
+            <div class="skill-col">
+              <h3 class="eyebrow">{group}</h3>
+              <dl>
+                {items.map(([name, detail]) => (
+                  <div>
+                    <dt>{name}</dt>
+                    {detail && <dd>{detail}</dd>}
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap two-up">
+      <div id="goals">
+        <p class="eyebrow"><span class="dot"></span>Goals</p>
+        <ol class="numbered">
+          {goals.map((g) => <li>{g}</li>)}
+        </ol>
+      </div>
+      <div id="interests">
+        <p class="eyebrow"><span class="dot"></span>Interests</p>
+        <ul class="chips big">
+          {interests.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    border-bottom: 1px solid var(--line);
+    padding-block: clamp(3rem, 9vw, 7rem) clamp(3rem, 7vw, 5.5rem);
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 56rem) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 4rem;
+    }
+  }
+
+  h1 {
+    font-size: clamp(3rem, 1.6rem + 7vw, 6.5rem);
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+    margin-top: 1rem;
+  }
+
+  .statement {
+    font-size: clamp(1.2rem, 1rem + 0.9vw, 1.6rem);
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    max-width: 38rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .body {
+    max-width: 40rem;
+    color: var(--muted);
+    margin: 1.25rem 0 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .portrait {
+    margin: 0;
+    justify-self: start;
+    position: relative;
+    padding: 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    width: min(100%, 20rem);
+  }
+
+  @media (min-width: 56rem) {
+    .portrait {
+      justify-self: end;
+    }
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .portrait figcaption {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0.25rem 0;
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  .section-intro {
+    max-width: 42rem;
+    color: var(--muted);
+    margin: -0.75rem 0 2rem;
+  }
+
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .logos a {
+    display: grid;
+    place-items: center;
+    height: 6.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    /* Logos are dark artwork on transparent backgrounds, so keep their tile light in both schemes */
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .logos a:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  .logos img {
+    width: 100%;
+    height: 4.25rem;
+    object-fit: contain;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: 1.25rem;
+  }
+
+  .skills {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 48rem) {
+    .skills {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .skill-col h3 {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  dl > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.15rem 1rem;
+    padding-block: 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    text-align: end;
+  }
+
+  .two-up {
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 48rem) {
+    .two-up {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .numbered {
+    counter-reset: goal;
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+  }
+
+  .numbered li {
+    counter-increment: goal;
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    padding-block: 0.8rem;
+    border-bottom: 1px solid var(--line);
+    font-weight: 500;
+  }
+
+  .numbered li::before {
+    content: counter(goal, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--accent);
+    padding-top: 0.2rem;
+  }
+
+  .chips.big {
+    margin-top: 1.25rem;
+  }
+
+  .chips.big li {
+    font-size: 0.9375rem;
+    padding: 0.5rem 0.9rem;
+  }
+</style>

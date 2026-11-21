@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getProjects } from '../lib/content';
+
+const projects = await getProjects();
+---
+
+<Base title="Projects" description="A chronological summary of Mateo Atwi's biggest engineering projects, from NASA exercise hardware to an electric longboard.">
+  <header class="wrap page-head">
+    <p class="eyebrow"><span class="dot"></span>{projects.length} projects</p>
+    <h1>Projects</h1>
+    <p class="lede">
+      A chronological summary of some of my biggest projects. Check out <a href="/work&education/">my work and education
+      page</a> for more background details.
+    </p>
+  </header>
+  <div class="wrap">
+    <div class="cards">
+      {projects.map((project) => <ProjectCard project={project} headingLevel="h2" />)}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: 1.25rem;
+  }
+</style>

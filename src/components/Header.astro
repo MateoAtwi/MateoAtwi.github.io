@@ -1,0 +1,143 @@
+---
+import { NAV, SITE } from '../lib/site';
+
+const path = decodeURI(Astro.url.pathname).replace(/\/?$/, '/');
+const isCurrent = (href: string) => path === href;
+const isSection = (href: string) => path.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-current={path === '/' ? 'page' : undefined}>
+      <span class="mark" aria-hidden="true">MA</span>
+      <span class="name">{SITE.title}</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        {
+          NAV.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={isCurrent(item.href) ? 'page' : undefined}
+                data-section={!isCurrent(item.href) && isSection(item.href) ? '' : undefined}
+              >
+                <span class="long">{item.label}</span>
+                <span class="short" aria-hidden="true">
+                  {item.short}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--paper) 86%, transparent);
+    backdrop-filter: saturate(1.4) blur(12px);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px);
+    border-bottom: 1px solid var(--line);
+    view-transition-name: site-header;
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+  }
+
+  .mark {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 7px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  ul {
+    display: flex;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 550;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+    transition: color 0.15s ease, background-color 0.15s ease;
+  }
+
+  nav a:hover {
+    color: var(--ink);
+    background: var(--surface-2);
+  }
+
+  nav a[aria-current='page'],
+  nav a[data-section] {
+    color: var(--ink);
+    background: var(--surface-2);
+    box-shadow: inset 0 -2px 0 var(--accent);
+  }
+
+  .short {
+    display: none;
+  }
+
+  @media (max-width: 47.99rem) {
+    .long {
+      display: none;
+    }
+    .short {
+      display: inline;
+    }
+  }
+
+  @media (max-width: 35.99rem) {
+    .name {
+      display: none;
+    }
+    nav a {
+      padding-inline: 0.55rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (forced-colors: active) {
+    nav a[aria-current='page'] {
+      outline: 1px solid CanvasText;
+    }
+  }
+</style>

@@ -1,0 +1,98 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import Article from '../layouts/Article.astro';
+import Pager from '../components/Pager.astro';
+import { getProjects } from '../lib/content';
+import { formatDate, inlineMarkdown, isoDate, plainText } from '../lib/format';
+
+/**
+ * Projects and personal collection pages both live at the site root to keep the
+ * permalinks from the original Jekyll site working (/electricLongboard/, /quotes/, …).
+ */
+export const getStaticPaths = (async () => {
+  const projects = await getProjects();
+  const pages = await getCollection('pages');
+  return [
+    ...projects.map((entry, i) => ({
+      params: { slug: entry.data.slug },
+      props: {
+        kind: 'project' as const,
+        entry,
+        // projects are sorted newest first
+        newer: projects[i - 1] && { href: `/${projects[i - 1].data.slug}/`, title: projects[i - 1].data.title },
+        older: projects[i + 1] && { href: `/${projects[i + 1].data.slug}/`, title: projects[i + 1].data.title },
+      },
+    })),
+    ...pages.map((entry) => ({ params: { slug: entry.data.slug }, props: { kind: 'page' as const, entry } })),
+  ];
+}) satisfies GetStaticPaths;
+
+const props = Astro.props;
+const { Content, headings } = await render(props.entry);
+---
+
+{
+  props.kind === 'project' ? (
+    <Article
+      title={props.entry.data.title}
+      description={plainText(props.entry.data.summary)}
+      image={props.entry.data.thumbnail?.src}
+      back={{ href: '/projects/', label: 'All projects' }}
+    >
+      <p class="eyebrow" slot="lede">
+        <time datetime={isoDate(props.entry.data.date)}>{formatDate(props.entry.data.date)}</time>
+      </p>
+      <p class="lede" slot="lede" set:html={inlineMarkdown(props.entry.data.summary)} />
+      <div class="prose">
+        <Content />
+      </div>
+      <Pager slot="after" prev={props.older} next={props.newer} prevLabel="Older project" nextLabel="Newer project" />
+    </Article>
+  ) : (
+    <Article
+      title={props.entry.data.title}
+      description={props.entry.data.description}
+      back={{ href: '/collections/', label: 'Collections' }}
+    >
+      {props.entry.data.toc && headings.filter((h) => h.depth === 2).length > 1 && (
+        <nav class="toc" aria-label="On this page" slot="before">
+          <ul class="chips">
+            {headings
+              .filter((h) => h.depth === 2)
+              .map((h) => (
+                <li>
+                  <a href={`#${h.slug}`}>{h.text}</a>
+                </li>
+              ))}
+          </ul>
+        </nav>
+      )}
+      <div class="prose">
+        <Content />
+      </div>
+    </Article>
+  )
+}
+
+<style>
+  .lede {
+    max-width: 44rem;
+    margin: 1.1rem 0 0;
+    font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem);
+    color: var(--muted);
+  }
+
+  .eyebrow {
+    margin-top: 1rem;
+  }
+
+  .toc {
+    margin-bottom: 2.5rem;
+  }
+
+  .toc a {
+    color: inherit;
+    text-decoration: none;
+  }
+</style>

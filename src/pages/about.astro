@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import Article from '../layouts/Article.astro';
+import photo from '../assets/site/about.jpg';
+
+const album =
+  'https://photos.google.com/share/AF1QipOBBrieGUoRrDkJScEY713R-i3KcgfZQqs1U7IBTZBLSFZuD7cQxYH45lweTz0QEA?key=RUtDV0dCaC1rY3FtUndFbU5FSlJVV1BrYTZUM053&source=ctrlq.org';
+const hobbies = [
+  'Woodworking',
+  'Playing piano',
+  'Picking blueberries',
+  'Cooking',
+  'Singing',
+  'Dancing',
+  'Longboarding',
+  'Drawing',
+  'Painting',
+  'Building websites',
+];
+---
+
+<Article title="About me" description="Born in New Iberia, Louisiana, Georgia Tech mechanical engineer, and builder." eyebrow="About">
+  <figure class="photo" slot="before">
+    <a href={album}><Image src={photo} alt="Mateo Atwi" widths={[640, 1200, 1800]} sizes="(min-width: 60rem) 56rem, 100vw" loading="eager" fetchpriority="high" /></a>
+  </figure>
+  <div class="prose">
+    <p>
+      My name is Mateo Atwi. I was born in New Iberia, Louisiana in 1999. I was homeschooled until 6th grade, and after
+      that I went to school at the Episcopal School of Acadiana. I studied Mechanical Engineering at the Georgia Institute of
+      Technology.
+    </p>
+    <p>
+      I enjoy programming, engineering, learning, music, and just about anything that is interesting and requires doing!
+    </p>
+    <ul class="chips">
+      {hobbies.map((h) => <li>{h}</li>)}
+    </ul>
+    <blockquote>
+      <p>I am also a devout Christian. I dedicate this website and my work to God's glory and honor.</p>
+    </blockquote>
+  </div>
+</Article>
+
+<style>
+  .photo {
+    margin: 0 0 2.5rem;
+    max-width: 56rem;
+  }
+
+  .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 36rem;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+  }
+
+  .chips li {
+    font-size: 0.9375rem;
+    padding: 0.45rem 0.85rem;
+  }
+</style>

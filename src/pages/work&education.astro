@@ -1,0 +1,315 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { getWork } from '../lib/content';
+import { Image } from 'astro:assets';
+
+const entries = await getWork();
+const rendered = await Promise.all(
+  entries.map(async (entry) => ({ entry, ...(await render(entry)), hasBody: Boolean(entry.body?.trim()) })),
+);
+const orgCount = new Map<string, number>();
+for (const { entry } of rendered) orgCount.set(entry.data.org, (orgCount.get(entry.data.org) ?? 0) + 1);
+const jumpLabel = (d: (typeof entries)[number]['data']) =>
+  (orgCount.get(d.org) ?? 0) > 1 ? `${d.org} (${d.period})` : d.org;
+
+const groups = [
+  { id: 'work', title: 'Work', items: rendered.filter((r) => r.entry.data.kind === 'work') },
+  { id: 'education', title: 'Education', items: rendered.filter((r) => r.entry.data.kind === 'education') },
+];
+---
+
+<Base
+  title="Work & Education"
+  description="Mateo Atwi's work history and education: US Frame Factory, Boxy, BMarko Structures, Stuller, NASA Johnson Space Center, Landis+Gyr and Georgia Tech."
+>
+  <header class="wrap page-head">
+    <p class="eyebrow"><span class="dot"></span>Résumé</p>
+    <h1>Work &amp; Education</h1>
+    <p class="lede">
+      A summary of my work and education. Check out <a href="/projects/">my projects</a> for more fleshed out descriptions
+      and examples from the last few years.
+    </p>
+    <nav class="jump" aria-label="On this page">
+      <ul class="chips">
+        {
+          rendered.map(({ entry }) => (
+            <li>
+              <a href={`#${entry.id}`}>{jumpLabel(entry.data)}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </header>
+
+  {
+    groups.map((group) => (
+      <section class="wrap group" aria-labelledby={group.id}>
+        <h2 id={group.id} class="group-title">
+          {group.title}
+        </h2>
+        <ol class="timeline">
+          {group.items.map(({ entry, Content, hasBody }) => {
+            const d = entry.data;
+            return (
+              <li>
+                <article id={entry.id} class="entry">
+                  <div class="rail" aria-hidden="true">
+                    <span class="node" />
+                  </div>
+                  <div class="content">
+                    <header class="entry-head">
+                      {d.logo && (
+                        <span class="logo">
+                          <img src={d.logo} alt="" loading="lazy" decoding="async" />
+                        </span>
+                      )}
+                      <div>
+                        <p class="period mono">{d.period}</p>
+                        <h3>
+                          {d.role && <span class="role">{d.role}</span>}
+                          <span class="org">
+                            {d.role && <span class="at">at </span>}
+                            {d.orgUrl ? <a href={d.orgUrl}>{d.org}</a> : d.org}
+                          </span>
+                        </h3>
+                      </div>
+                    </header>
+                    {d.blurb && <p class="blurb">{d.blurb}</p>}
+                    {d.highlights.length > 0 && (
+                      <ul class="highlights">
+                        {d.highlights.map((h) => (
+                          <li set:html={h} />
+                        ))}
+                      </ul>
+                    )}
+                    {d.skills.length > 0 && (
+                      <div class="skills">
+                        <p class="visually-hidden">Skills</p>
+                        <ul class="chips">
+                          {d.skills.map((s) => (
+                            <li>{s}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {hasBody && (
+                      <details class="disclosure">
+                        <summary>Full description{entry.body?.includes('```') && ' & code sample'}</summary>
+                        <div class="prose">
+                          <Content />
+                        </div>
+                      </details>
+                    )}
+                    {d.photos.length > 0 && (
+                      <div class="photos">
+                        {d.photos.map((p) => (
+                          <a href={p.href ?? p.src.src}>
+                            <Image src={p.src} alt={`Photo from ${d.org}`} widths={[480, 900]} sizes="(min-width: 48rem) 23rem, 100vw" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  .jump {
+    margin-top: 1.75rem;
+  }
+
+  .jump a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .jump li:hover {
+    border-color: var(--accent);
+  }
+
+  .group {
+    margin-top: 2.5rem;
+  }
+
+  .group-title {
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    gap: 0 1rem;
+  }
+
+  @media (min-width: 48rem) {
+    .entry {
+      grid-template-columns: 2.5rem minmax(0, 1fr);
+      gap: 0 1.5rem;
+    }
+  }
+
+  .rail {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rail::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    width: 1px;
+    background: var(--line);
+  }
+
+  li:last-child .rail::before {
+    inset-block-end: auto;
+    height: 2.6rem;
+  }
+
+  .node {
+    position: relative;
+    margin-top: 2.35rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 3px;
+    background: var(--paper);
+    border: 2px solid var(--accent);
+    rotate: 45deg;
+  }
+
+  .content {
+    padding-block: 2rem;
+    border-bottom: 1px solid var(--line);
+    min-width: 0;
+  }
+
+  li:last-child .content {
+    border-bottom: 0;
+  }
+
+  .entry-head {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 2.9rem;
+    object-fit: contain;
+  }
+
+  .period {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.8125rem;
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem);
+    margin-top: 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+  }
+
+  .org {
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .org a {
+    color: inherit;
+  }
+
+  .org a:hover {
+    color: var(--accent);
+  }
+
+  .blurb {
+    margin: 1rem 0 0;
+    max-width: 44rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .highlights {
+    margin: 1rem 0 0;
+    padding-inline-start: 1.2rem;
+    max-width: 46rem;
+  }
+
+  .highlights li + li {
+    margin-top: 0.3rem;
+  }
+
+  .highlights li::marker {
+    color: var(--accent);
+  }
+
+  .skills {
+    margin-top: 1.25rem;
+  }
+
+  .disclosure .prose {
+    padding-bottom: 1rem;
+  }
+
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    max-width: 46rem;
+  }
+
+  .photos a {
+    display: block;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+  }
+
+  .photos img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: scale 0.3s ease;
+  }
+
+  .photos a:hover img {
+    scale: 1.03;
+  }
+</style>

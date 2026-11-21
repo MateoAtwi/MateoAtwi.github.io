@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /anna/
+Allow: /
+
+Sitemap: https://mateoatwi.com/sitemap-index.xml

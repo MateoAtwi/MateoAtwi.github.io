@@ -1,0 +1,510 @@
+@import '@fontsource-variable/inter-tight';
+@import '@fontsource-variable/jetbrains-mono';
+
+/* ------------------------------------------------------------------ tokens */
+:root {
+  color-scheme: light dark;
+
+  --paper: light-dark(#f6f4ef, #101214);
+  --surface: light-dark(#ffffff, #171a1d);
+  --surface-2: light-dark(#efece5, #1e2226);
+  --ink: light-dark(#16181b, #ebe8e2);
+  --muted: light-dark(#5a5f67, #a1a6ad);
+  --line: light-dark(#dcd8ce, #2b3035);
+  --grid: light-dark(rgb(22 24 27 / 0.06), rgb(235 232 226 / 0.05));
+  --accent: light-dark(#b93d0b, #fb923c);
+  --accent-ink: light-dark(#ffffff, #1a0d05);
+  --accent-soft: light-dark(#fbe3d3, #3a2416);
+
+  --font-sans: 'Inter Tight Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --max: 72rem;
+  --prose: 44rem;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -12px rgb(0 0 0 / 0.18);
+}
+
+/* ------------------------------------------------------------------ base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  line-height: 1.65;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  flex: 1;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -3rem;
+  z-index: 100;
+  padding: 0.5rem 0.9rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+  inset-block-start: 1rem;
+}
+
+.visually-hidden {
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ small parts */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eyebrow .dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-inline-end: 0.5rem;
+  border-radius: 2px;
+  background: var(--accent);
+  vertical-align: 0.05em;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.chips li {
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button.ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.button.ghost:hover {
+  border-color: var(--ink);
+}
+
+.section {
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem);
+  margin-top: 0.4rem;
+}
+
+.section-head .more {
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.page-head {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.page-head h1 {
+  font-size: clamp(2.2rem, 1.4rem + 3.4vw, 4rem);
+  margin-top: 0.75rem;
+}
+
+.page-head .lede {
+  max-width: 44rem;
+  margin: 1.1rem 0 0;
+  font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem);
+  color: var(--muted);
+}
+
+.blueprint {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+}
+
+/* ------------------------------------------------------------------ disclosure (details/summary) */
+details.disclosure {
+  border-top: 1px solid var(--line);
+  margin-top: 1.25rem;
+}
+
+details.disclosure > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5ch;
+  padding-block: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+details.disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.disclosure > summary::before {
+  content: '';
+  inline-size: 1em;
+  block-size: 1em;
+  flex-shrink: 0;
+  background-color: var(--accent);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+  rotate: -90deg;
+}
+
+details.disclosure > summary:dir(rtl)::before {
+  rotate: 90deg;
+}
+
+details.disclosure[open] > summary::before {
+  rotate: 0deg;
+}
+
+details.disclosure > summary:hover {
+  color: var(--accent);
+}
+
+details.disclosure::details-content {
+  interpolate-size: allow-keywords;
+  overflow: clip;
+  contain: layout;
+}
+
+details.disclosure:not([open])::details-content {
+  block-size: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  details.disclosure > summary::before {
+    transition: rotate 0.2s;
+  }
+  details.disclosure::details-content {
+    transition: block-size, content-visibility;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-behavior: allow-discrete;
+  }
+}
+
+/* ------------------------------------------------------------------ prose (Markdown content) */
+.prose {
+  max-width: var(--prose);
+}
+
+.prose > * + * {
+  margin-top: 1.1em;
+}
+
+.prose :where(p, ul, ol, blockquote, pre, table, figure) {
+  margin-block: 0;
+}
+
+.prose > :where(p, ul, ol, blockquote, pre, table, figure, div) + * {
+  margin-top: 1.1em;
+}
+
+.prose h2 {
+  font-size: 1.6rem;
+  margin-top: 2.4em;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  margin-top: 2em;
+}
+
+.prose h4 {
+  font-size: 1.05rem;
+  margin-top: 1.6em;
+}
+
+.prose :is(h2, h3, h4) + * {
+  margin-top: 0.7em;
+}
+
+.prose ul,
+.prose ol {
+  padding-inline-start: 1.35em;
+}
+
+.prose li + li {
+  margin-top: 0.3em;
+}
+
+.prose li::marker {
+  color: var(--muted);
+}
+
+.prose blockquote {
+  margin-inline: 0;
+  padding: 0.25rem 0 0.25rem 1.1rem;
+  border-inline-start: 3px solid var(--accent);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin-block: 2.5em;
+}
+
+.prose code:not(pre code) {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  padding: 0.12em 0.35em;
+  border-radius: 5px;
+  background: var(--surface-2);
+}
+
+.prose pre,
+pre.astro-code {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  overflow-x: auto;
+  tab-size: 4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+  }
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.prose :is(th, td) {
+  text-align: start;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.prose img {
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+/* Legacy image rows from the old site: <div class="separator"><a><img></a>…</div> */
+.prose .separator,
+.prose .media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.prose .separator > a,
+.prose .separator > img {
+  flex: 1 1 16rem;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.prose .separator img {
+  width: auto;
+  max-height: 34rem;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+.prose .separator:empty {
+  display: none;
+}
+
+.prose video {
+  max-width: 100%;
+  border-radius: var(--radius-sm);
+}
+
+.video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Blogger exports (CSP posts) are mostly inline text + .separator image rows */
+.prose.blogger .separator {
+  margin-block: 1.1rem;
+}
+
+.prose.blogger .separator:not(:has(img)) {
+  display: block;
+}
+
+@media (forced-colors: active) {
+  .chips li,
+  .button {
+    border: 1px solid CanvasText;
+  }
+}
