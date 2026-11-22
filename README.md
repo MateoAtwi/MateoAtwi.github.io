@@ -17,6 +17,7 @@ Requires Node 22.23.4 or newer.
 
 | What | Where |
 | --- | --- |
+| Blog posts (served at `/blog/<file-name>/`) | `src/content/blog/` |
 | Projects (one Markdown file each, served at `/<slug>/`) | `src/content/projects/` |
 | Work & education entries (file name = `#anchor` on the page) | `src/content/work/` |
 | Collection pages (books, quotes, words, 3D printing) | `src/content/pages/` |
@@ -42,6 +43,23 @@ draft: false               # true = only visible in `npm run dev`
 
 Markdown body…
 ```
+
+### Write a blog post
+
+Copy `src/content/blog/example-post.md` to a new file such as `src/content/blog/my-first-post.md`
+(the file name becomes the URL: `/blog/my-first-post/`), then edit the front matter:
+
+```md
+---
+title: My First Post
+date: 2026-11-22
+category: Ideologies        # Ideologies | Operating Principles | Commentary
+summary: One or two sentences shown on the blog page and in link previews.
+draft: false                # true = only visible in `npm run dev`
+---
+```
+
+The categories and their one-line descriptions live in `src/lib/site.ts`.
 
 ## Deploy
 

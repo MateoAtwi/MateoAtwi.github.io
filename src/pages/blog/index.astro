@@ -1,0 +1,107 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BLOG_CATEGORIES, BLOG_CATEGORY_NOTES } from '../../lib/site';
+import { categorySlug, getBlogPosts } from '../../lib/content';
+import { formatDate } from '../../lib/format';
+
+const posts = await getBlogPosts();
+const groups = BLOG_CATEGORIES.map((category) => ({
+  category,
+  id: categorySlug(category),
+  note: BLOG_CATEGORY_NOTES[category],
+  posts: posts.filter((p) => p.data.category === category),
+}));
+---
+
+<Base title="Blog" description="Mateo Atwi's blog: ideologies, operating principles, and commentary.">
+  <article class="card">
+    <h1>Blog</h1>
+    <p>A place for my ideologies, the principles I try to operate by, and commentary on things that are on my mind.</p>
+
+    <nav aria-label="Categories">
+      <ul>
+        {
+          groups.map((g) => (
+            <li>
+              <a href={`#${g.id}`}>{g.category}</a> <span class="post-meta">({g.posts.length})</span>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    {
+      groups.map((g) => (
+        <section aria-labelledby={g.id}>
+          <h2 class="section-title" id={g.id}>
+            {g.category}
+          </h2>
+          <p class="note">
+            <em>{g.note}</em>
+          </p>
+          {g.posts.length > 0 ? (
+            <ul class="post-list">
+              {g.posts.map((post) => (
+                <li>
+                  <h3>
+                    <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+                    {post.data.draft && <span class="draft">Draft</span>}
+                  </h3>
+                  <p class="post-meta">{formatDate(post.data.date)}</p>
+                  <p>{post.data.summary}</p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p class="empty">No posts yet. Check back soon.</p>
+          )}
+        </section>
+      ))
+    }
+  </article>
+</Base>
+
+<style>
+  section {
+    margin-top: 1.75em;
+  }
+
+  section > * + * {
+    margin-top: 0.6em;
+  }
+
+  .post-list {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .post-list li {
+    padding-block: 12px;
+  }
+
+  .post-list li + li {
+    border-top: 1px solid #c3dbe6;
+  }
+
+  .post-list h3 {
+    font-size: 20px;
+  }
+
+  .post-list p {
+    margin-top: 2px;
+  }
+
+  .empty {
+    color: var(--grey);
+  }
+
+  .draft {
+    margin-left: 8px;
+    padding: 1px 6px;
+    font-size: 12px;
+    vertical-align: middle;
+    color: #8a5300;
+    background: #ffe9b3;
+    border-radius: 4px;
+  }
+</style>

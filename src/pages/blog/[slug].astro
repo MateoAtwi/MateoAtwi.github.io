@@ -1,0 +1,42 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+import Pager from '../../components/Pager.astro';
+import { categorySlug, getBlogPosts } from '../../lib/content';
+import { formatDate } from '../../lib/format';
+
+export const getStaticPaths = (async () => {
+  const posts = await getBlogPosts(); // newest first
+  return posts.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      newer: posts[i - 1] && { href: `/blog/${posts[i - 1].id}/`, title: posts[i - 1].data.title },
+      older: posts[i + 1] && { href: `/blog/${posts[i + 1].id}/`, title: posts[i + 1].data.title },
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry, newer, older } = Astro.props;
+const { Content } = await render(entry);
+const { title, date, updated, category, summary } = entry.data;
+---
+
+<Article title={title} description={summary} section="/blog/">
+  <p class="post-meta">
+    {formatDate(date)} - Mateo Atwi · <a href={`/blog/#${categorySlug(category)}`}>{category}</a>
+    {updated && <span> · Updated {formatDate(updated)}</span>}
+  </p>
+  <div class="prose">
+    <Content />
+  </div>
+  <Pager
+    slot="after"
+    prev={older}
+    next={newer}
+    prevLabel="Older"
+    nextLabel="Newer"
+    back={{ href: '/blog/', title: 'Back to the blog' }}
+  />
+</Article>

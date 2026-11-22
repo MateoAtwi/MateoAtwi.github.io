@@ -5,6 +5,13 @@ export async function getProjects() {
   return all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
+export async function getBlogPosts() {
+  const all = await getCollection('blog', ({ data }) => import.meta.env.DEV || !data.draft);
+  return all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+}
+
+export const categorySlug = (category: string) => category.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
 export async function getCspPosts() {
   const all = await getCollection('csp');
   return all.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());

@@ -1,13 +1,21 @@
 import rss from '@astrojs/rss';
 import type { APIContext } from 'astro';
 import { SITE } from '../lib/site';
-import { getCspPosts, getProjects } from '../lib/content';
+import { getBlogPosts, getCspPosts, getProjects } from '../lib/content';
 import { excerpt, plainText } from '../lib/format';
 
 export async function GET(context: APIContext) {
   const projects = await getProjects();
   const csp = await getCspPosts();
+  const blog = (await getBlogPosts()).filter((p) => !p.data.draft);
   const items = [
+    ...blog.map((p) => ({
+      title: p.data.title,
+      pubDate: p.data.date,
+      description: p.data.summary,
+      link: `/blog/${p.id}/`,
+      categories: ['Blog', p.data.category],
+    })),
     ...projects.map((p) => ({
       title: p.data.title,
       pubDate: p.data.date,

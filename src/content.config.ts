@@ -3,6 +3,7 @@ import { glob, type Loader } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { readdir, readFile } from 'node:fs/promises';
 import { parse as parseYaml } from 'yaml';
+import { BLOG_CATEGORIES } from './lib/site';
 
 /** Projects: long-form write-ups, each served at its own legacy permalink (e.g. /electricLongboard/). */
 const projects = defineCollection({
@@ -13,6 +14,21 @@ const projects = defineCollection({
     slug: z.string(),
     summary: z.string(),
     thumbnail: image().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+/** Blog: ideologies, operating principles and commentary. Served at /blog/<file-name>/. */
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    category: z.enum(BLOG_CATEGORIES),
+    /** One or two sentences shown on the blog index and in link previews. */
+    summary: z.string(),
+    updated: z.coerce.date().optional(),
+    /** Drafts are visible in `npm run dev` but are not published. */
     draft: z.boolean().default(false),
   }),
 });
@@ -112,4 +128,4 @@ const csp = defineCollection({
   }),
 });
 
-export const collections = { projects, work, pages, csp };
+export const collections = { projects, work, pages, csp, blog };
