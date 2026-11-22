@@ -3,7 +3,7 @@ import { glob, type Loader } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { readdir, readFile } from 'node:fs/promises';
 import { parse as parseYaml } from 'yaml';
-import { BLOG_CATEGORIES } from './lib/site';
+import { BLOG_TOPICS } from './lib/site';
 
 /** Projects: long-form write-ups, each served at its own legacy permalink (e.g. /electricLongboard/). */
 const projects = defineCollection({
@@ -18,15 +18,23 @@ const projects = defineCollection({
   }),
 });
 
-/** Blog: ideologies, operating principles and commentary. Served at /blog/<file-name>/. */
+/**
+ * Blog: articles on ideologies, operating principles and commentary.
+ * Posts written here are served at /blog/<file-name>/. Setting `link` instead lists an
+ * article published elsewhere: it links straight out and gets no page on this site.
+ */
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
-    category: z.enum(BLOG_CATEGORIES),
-    /** One or two sentences shown on the blog index and in link previews. */
+    topics: z.array(z.enum(BLOG_TOPICS)).min(1),
+    /** One or two sentences shown in the article list and in link previews. */
     summary: z.string(),
+    /** URL of an article published somewhere else (Medium, LinkedIn, a newspaper…). */
+    link: z.url().optional(),
+    /** Where the external article was published, e.g. "LinkedIn". */
+    publisher: z.string().optional(),
     updated: z.coerce.date().optional(),
     /** Drafts are visible in `npm run dev` but are not published. */
     draft: z.boolean().default(false),

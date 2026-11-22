@@ -4,8 +4,11 @@
 # Drafts only appear when previewing locally with `npm run dev`; they are never published.
 title: Example post title
 date: 2026-11-22
-category: Operating Principles   # Ideologies | Operating Principles | Commentary
-summary: One or two sentences that describe the post. Shown on the blog page and in link previews.
+topics: [Operating Principles]   # one or more of: Ideologies, Operating Principles, Commentary
+summary: One or two sentences that describe the post. Shown in the article list and in link previews.
+# To list an article you published somewhere else, add its URL (and leave the body empty):
+# link: https://www.linkedin.com/pulse/...
+# publisher: LinkedIn
 draft: true
 ---
 

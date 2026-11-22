@@ -10,7 +10,7 @@ export async function getBlogPosts() {
   return all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
-export const categorySlug = (category: string) => category.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+export const topicSlug = (topic: string) => topic.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
 export async function getCspPosts() {
   const all = await getCollection('csp');

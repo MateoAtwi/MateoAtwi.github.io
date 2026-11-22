@@ -3,11 +3,12 @@ import type { GetStaticPaths } from 'astro';
 import { render } from 'astro:content';
 import Article from '../../layouts/Article.astro';
 import Pager from '../../components/Pager.astro';
-import { categorySlug, getBlogPosts } from '../../lib/content';
+import { getBlogPosts, topicSlug } from '../../lib/content';
 import { formatDate } from '../../lib/format';
 
 export const getStaticPaths = (async () => {
-  const posts = await getBlogPosts(); // newest first
+  // Articles hosted elsewhere (`link`) link straight out and get no page here.
+  const posts = (await getBlogPosts()).filter((p) => !p.data.link); // newest first
   return posts.map((entry, i) => ({
     params: { slug: entry.id },
     props: {
@@ -20,12 +21,20 @@ export const getStaticPaths = (async () => {
 
 const { entry, newer, older } = Astro.props;
 const { Content } = await render(entry);
-const { title, date, updated, category, summary } = entry.data;
+const { title, date, updated, topics, summary } = entry.data;
 ---
 
 <Article title={title} description={summary} section="/blog/">
   <p class="post-meta">
-    {formatDate(date)} - Mateo Atwi · <a href={`/blog/#${categorySlug(category)}`}>{category}</a>
+    {formatDate(date)} - Mateo Atwi ·{' '}
+    {
+      topics.map((t, i) => (
+        <>
+          {i > 0 && ', '}
+          <a href={`/blog/#${topicSlug(t)}`}>{t}</a>
+        </>
+      ))
+    }
     {updated && <span> · Updated {formatDate(updated)}</span>}
   </p>
   <div class="prose">

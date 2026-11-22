@@ -1,73 +1,136 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { BLOG_CATEGORIES, BLOG_CATEGORY_NOTES } from '../../lib/site';
-import { categorySlug, getBlogPosts } from '../../lib/content';
+import { BLOG_TOPICS, BLOG_TOPIC_NOTES } from '../../lib/site';
+import { getBlogPosts, topicSlug } from '../../lib/content';
 import { formatDate } from '../../lib/format';
 
 const posts = await getBlogPosts();
-const groups = BLOG_CATEGORIES.map((category) => ({
-  category,
-  id: categorySlug(category),
-  note: BLOG_CATEGORY_NOTES[category],
-  posts: posts.filter((p) => p.data.category === category),
+const topics = BLOG_TOPICS.map((topic) => ({
+  topic,
+  id: topicSlug(topic),
+  note: BLOG_TOPIC_NOTES[topic],
+  count: posts.filter((p) => p.data.topics.includes(topic)).length,
 }));
 ---
 
-<Base title="Blog" description="Mateo Atwi's blog: ideologies, operating principles, and commentary.">
+<Base title="Blog" description="Articles by Mateo Atwi on ideologies, operating principles, and commentary.">
   <article class="card">
     <h1>Blog</h1>
-    <p>A place for my ideologies, the principles I try to operate by, and commentary on things that are on my mind.</p>
+    <p>Articles and blog posts about my ideologies, the principles I try to operate by, and my commentary on things that are on my mind.</p>
 
-    <nav aria-label="Categories">
-      <ul>
-        {
-          groups.map((g) => (
-            <li>
-              <a href={`#${g.id}`}>{g.category}</a> <span class="post-meta">({g.posts.length})</span>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <div class="filters" role="group" aria-label="Filter by topic">
+      <button type="button" data-topic="" aria-pressed="true">All <span class="count">({posts.length})</span></button>
+      {
+        topics.map((t) => (
+          <button type="button" data-topic={t.id} aria-pressed="false">
+            {t.topic} <span class="count">({t.count})</span>
+          </button>
+        ))
+      }
+    </div>
+    <p class="post-meta topic-note" id="topic-note" aria-live="polite"></p>
 
     {
-      groups.map((g) => (
-        <section aria-labelledby={g.id}>
-          <h2 class="section-title" id={g.id}>
-            {g.category}
-          </h2>
-          <p class="note">
-            <em>{g.note}</em>
-          </p>
-          {g.posts.length > 0 ? (
-            <ul class="post-list">
-              {g.posts.map((post) => (
-                <li>
-                  <h3>
-                    <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-                    {post.data.draft && <span class="draft">Draft</span>}
-                  </h3>
-                  <p class="post-meta">{formatDate(post.data.date)}</p>
-                  <p>{post.data.summary}</p>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p class="empty">No posts yet. Check back soon.</p>
-          )}
-        </section>
-      ))
+      posts.length > 0 ? (
+        <ul class="post-list" id="post-list">
+          {posts.map((post) => {
+            const href = post.data.link ?? `/blog/${post.id}/`;
+            return (
+              <li data-topics={post.data.topics.map(topicSlug).join(' ')}>
+                <h2>
+                  <a href={href}>{post.data.title}</a>
+                  {post.data.link && <span class="external"> ↗</span>}
+                  {post.data.draft && <span class="draft">Draft</span>}
+                </h2>
+                <p class="post-meta">
+                  {formatDate(post.data.date)}
+                  {post.data.publisher && <> · {post.data.publisher}</>}
+                  {' · '}
+                  {post.data.topics.map((t, i) => (
+                    <>
+                      {i > 0 && ', '}
+                      <a href={`/blog/#${topicSlug(t)}`} data-topic-link={topicSlug(t)}>
+                        {t}
+                      </a>
+                    </>
+                  ))}
+                </p>
+                <p>{post.data.summary}</p>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p class="empty">No articles yet. Check back soon.</p>
+      )
     }
+    <p class="empty" id="no-match" hidden>No articles on this topic yet.</p>
   </article>
 </Base>
 
-<style>
-  section {
-    margin-top: 1.75em;
+<script define:vars={{ notes: Object.fromEntries(topics.map((t) => [t.id, t.note])) }}>
+  const buttons = [...document.querySelectorAll('.filters button')];
+  const items = [...document.querySelectorAll('#post-list > li')];
+  const note = document.getElementById('topic-note');
+  const noMatch = document.getElementById('no-match');
+
+  function show(topic) {
+    if (topic && !(topic in notes)) topic = '';
+    for (const b of buttons) b.setAttribute('aria-pressed', String(b.dataset.topic === topic));
+    let shown = 0;
+    for (const li of items) {
+      const match = !topic || li.dataset.topics.split(' ').includes(topic);
+      li.hidden = !match;
+      if (match) shown++;
+    }
+    note.textContent = topic ? notes[topic] : '';
+    noMatch.hidden = !(topic && shown === 0 && items.length > 0);
   }
 
-  section > * + * {
-    margin-top: 0.6em;
+  for (const b of buttons) {
+    b.addEventListener('click', () => {
+      const topic = b.dataset.topic;
+      history.replaceState(null, '', topic ? `#${topic}` : location.pathname);
+      show(topic);
+    });
+  }
+  addEventListener('hashchange', () => show(location.hash.slice(1)));
+  show(location.hash.slice(1));
+</script>
+
+<style>
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filters button {
+    font: inherit;
+    padding: 5px 12px;
+    color: var(--header-bg);
+    background: rgb(255 255 255 / 0.6);
+    border: 1px solid #c3dbe6;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  .filters button:hover {
+    border-color: var(--header-bg);
+  }
+
+  .filters button[aria-pressed='true'] {
+    color: #fff;
+    background: var(--header-bg);
+    border-color: var(--header-border);
+  }
+
+  .filters .count {
+    opacity: 0.75;
+  }
+
+  .topic-note:empty {
+    display: none;
   }
 
   .post-list {
@@ -76,19 +139,29 @@ const groups = BLOG_CATEGORIES.map((category) => ({
   }
 
   .post-list li {
-    padding-block: 12px;
+    padding-block: 14px;
   }
 
   .post-list li + li {
     border-top: 1px solid #c3dbe6;
   }
 
-  .post-list h3 {
-    font-size: 20px;
+  .post-list li[hidden] {
+    display: none;
+  }
+
+  .post-list h2 {
+    font-size: 21px;
+    font-weight: 600;
   }
 
   .post-list p {
-    margin-top: 2px;
+    margin-top: 3px;
+  }
+
+  .external {
+    color: var(--grey);
+    font-size: 0.8em;
   }
 
   .empty {
@@ -99,6 +172,7 @@ const groups = BLOG_CATEGORIES.map((category) => ({
     margin-left: 8px;
     padding: 1px 6px;
     font-size: 12px;
+    font-weight: 400;
     vertical-align: middle;
     color: #8a5300;
     background: #ffe9b3;

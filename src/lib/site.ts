@@ -17,9 +17,11 @@ export const NAV = [
   { label: 'About', href: '/about/' },
 ] as const;
 
-export const BLOG_CATEGORIES = ['Ideologies', 'Operating Principles', 'Commentary'] as const;
+export const BLOG_TOPICS = ['Ideologies', 'Operating Principles', 'Commentary'] as const;
 
-export const BLOG_CATEGORY_NOTES: Record<(typeof BLOG_CATEGORIES)[number], string> = {
+export type BlogTopic = (typeof BLOG_TOPICS)[number];
+
+export const BLOG_TOPIC_NOTES: Record<BlogTopic, string> = {
   Ideologies: 'What I believe and why.',
   'Operating Principles': 'How I try to work, lead, and make decisions.',
   Commentary: 'My take on things I read, see, and run into.',

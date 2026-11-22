@@ -13,8 +13,8 @@ export async function GET(context: APIContext) {
       title: p.data.title,
       pubDate: p.data.date,
       description: p.data.summary,
-      link: `/blog/${p.id}/`,
-      categories: ['Blog', p.data.category],
+      link: p.data.link ?? `/blog/${p.id}/`,
+      categories: ['Blog', ...p.data.topics],
     })),
     ...projects.map((p) => ({
       title: p.data.title,

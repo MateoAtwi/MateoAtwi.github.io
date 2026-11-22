@@ -44,7 +44,7 @@ draft: false               # true = only visible in `npm run dev`
 Markdown body…
 ```
 
-### Write a blog post
+### Add a blog article
 
 Copy `src/content/blog/example-post.md` to a new file such as `src/content/blog/my-first-post.md`
 (the file name becomes the URL: `/blog/my-first-post/`), then edit the front matter:
@@ -53,13 +53,19 @@ Copy `src/content/blog/example-post.md` to a new file such as `src/content/blog/
 ---
 title: My First Post
 date: 2026-11-22
-category: Ideologies        # Ideologies | Operating Principles | Commentary
-summary: One or two sentences shown on the blog page and in link previews.
-draft: false                # true = only visible in `npm run dev`
+topics: [Ideologies, Commentary]   # one or more of: Ideologies, Operating Principles, Commentary
+summary: One or two sentences shown in the article list and in link previews.
+draft: false                       # true = only visible in `npm run dev`
 ---
+
+The article, in Markdown.
 ```
 
-The categories and their one-line descriptions live in `src/lib/site.ts`.
+To list an article published somewhere else (LinkedIn, Medium, a newspaper…), add
+`link: https://…` and optionally `publisher: LinkedIn`, and leave the body empty. It shows up in the
+list and links straight to that site.
+
+The topics and their one-line descriptions live in `src/lib/site.ts`.
 
 ## Deploy
 
