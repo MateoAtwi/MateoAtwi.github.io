@@ -11,10 +11,12 @@ interface Props {
   image?: string;
   noindex?: boolean;
   type?: 'website' | 'article';
+  /** Nav item to mark as the current section (defaults to the current URL). */
+  section?: string;
 }
 
-const { title, description = SITE.description, image = portrait.src, noindex = false, type = 'website' } = Astro.props;
-const fullTitle = title ? `${title} · ${SITE.title}` : `${SITE.title} · Engineer & builder`;
+const { title, description = SITE.description, image = portrait.src, noindex = false, type = 'website', section } = Astro.props;
+const fullTitle = title && title !== SITE.title ? `${title} | ${SITE.title}` : SITE.title;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const gaId = SITE.googleAnalyticsId;
 ---
@@ -24,9 +26,7 @@ const gaId = SITE.googleAnalyticsId;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#101214" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#3949ab" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -42,7 +42,7 @@ const gaId = SITE.googleAnalyticsId;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
 
     {
       import.meta.env.PROD && gaId && (
@@ -59,13 +59,14 @@ const gaId = SITE.googleAnalyticsId;
         </>
       )
     }
-    <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <Header />
-    <main id="main">
-      <slot />
+    <Header section={section} />
+    <main id="main" class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <slot />
+      </div>
     </main>
     <Footer />
   </body>

@@ -8,14 +8,13 @@ import { Content } from '../private/anna.md';
   client-side curtain (exactly as before): it is not real access control.
 -->
 <Base title="Anna" noindex>
-  <article class="wrap">
-    <header class="page-head">
-      <h1>Anna</h1>
-      <p class="lede">This website is only for Anna. Please use the password to unlock.</p>
+  <article class="card">
+    <header>
+      <p>This website is only for Anna. Please use the password to unlock.</p>
       <form class="gate" id="gate">
         <label class="visually-hidden" for="password">Password</label>
         <input id="password" name="password" type="password" placeholder="Password" autocomplete="off" required />
-        <button class="button" type="submit">Unlock</button>
+        <button type="submit">Unlock</button>
         <p class="error" id="gate-error" role="alert" hidden>That's not it. Try again.</p>
       </form>
     </header>
@@ -66,30 +65,32 @@ import { Content } from '../private/anna.md';
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: 1.75rem;
+    margin-top: 10px;
   }
 
-  .gate input {
+  .gate input,
+  .gate button {
     font: inherit;
-    padding: 0.65rem 1rem;
-    border-radius: 999px;
-    border: 1px solid var(--line);
-    background: var(--surface);
-    color: var(--ink);
-    min-width: 0;
-    flex: 0 1 16rem;
+    padding: 4px 8px;
+    border: 1px solid #9ab;
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  .gate button {
+    cursor: pointer;
   }
 
   .error {
     flex-basis: 100%;
     margin: 0;
-    color: var(--accent);
+    color: #c62828;
   }
 
   .countdown {
     text-align: center;
-    color: var(--accent);
-    font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem);
+    color: #008080;
+    font-size: 30px;
     font-weight: 700;
     margin: 0 0 1rem;
   }

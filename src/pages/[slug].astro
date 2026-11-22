@@ -4,7 +4,7 @@ import { getCollection, render } from 'astro:content';
 import Article from '../layouts/Article.astro';
 import Pager from '../components/Pager.astro';
 import { getProjects } from '../lib/content';
-import { formatDate, inlineMarkdown, isoDate, plainText } from '../lib/format';
+import { formatDate, inlineMarkdown, plainText } from '../lib/format';
 
 /**
  * Projects and personal collection pages both live at the site root to keep the
@@ -30,6 +30,7 @@ export const getStaticPaths = (async () => {
 
 const props = Astro.props;
 const { Content, headings } = await render(props.entry);
+const tocHeadings = headings.filter((h) => h.depth === 2);
 ---
 
 {
@@ -38,33 +39,32 @@ const { Content, headings } = await render(props.entry);
       title={props.entry.data.title}
       description={plainText(props.entry.data.summary)}
       image={props.entry.data.thumbnail?.src}
-      back={{ href: '/projects/', label: 'All projects' }}
+      meta={`${formatDate(props.entry.data.date)} - Mateo Atwi`}
+      section="/projects/"
     >
-      <p class="eyebrow" slot="lede">
-        <time datetime={isoDate(props.entry.data.date)}>{formatDate(props.entry.data.date)}</time>
-      </p>
-      <p class="lede" slot="lede" set:html={inlineMarkdown(props.entry.data.summary)} />
+      <p set:html={inlineMarkdown(props.entry.data.summary)} />
       <div class="prose">
         <Content />
       </div>
-      <Pager slot="after" prev={props.older} next={props.newer} prevLabel="Older project" nextLabel="Newer project" />
+      <Pager
+        slot="after"
+        prev={props.older}
+        next={props.newer}
+        prevLabel="Older"
+        nextLabel="Newer"
+        back={{ href: '/projects/', title: 'Back to all projects' }}
+      />
     </Article>
   ) : (
-    <Article
-      title={props.entry.data.title}
-      description={props.entry.data.description}
-      back={{ href: '/collections/', label: 'Collections' }}
-    >
-      {props.entry.data.toc && headings.filter((h) => h.depth === 2).length > 1 && (
-        <nav class="toc" aria-label="On this page" slot="before">
-          <ul class="chips">
-            {headings
-              .filter((h) => h.depth === 2)
-              .map((h) => (
-                <li>
-                  <a href={`#${h.slug}`}>{h.text}</a>
-                </li>
-              ))}
+    <Article title={props.entry.data.title} description={props.entry.data.description} section="/collections/">
+      {props.entry.data.toc && tocHeadings.length > 1 && (
+        <nav aria-label="On this page">
+          <ul>
+            {tocHeadings.map((h) => (
+              <li>
+                <a href={`#${h.slug}`}>{h.text}</a>
+              </li>
+            ))}
           </ul>
         </nav>
       )}
@@ -74,25 +74,3 @@ const { Content, headings } = await render(props.entry);
     </Article>
   )
 }
-
-<style>
-  .lede {
-    max-width: 44rem;
-    margin: 1.1rem 0 0;
-    font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem);
-    color: var(--muted);
-  }
-
-  .eyebrow {
-    margin-top: 1rem;
-  }
-
-  .toc {
-    margin-bottom: 2.5rem;
-  }
-
-  .toc a {
-    color: inherit;
-    text-decoration: none;
-  }
-</style>

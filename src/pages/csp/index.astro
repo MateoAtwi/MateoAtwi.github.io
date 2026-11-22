@@ -1,126 +1,66 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { cspThumb, getCspPosts } from '../../lib/content';
-import { excerpt, formatDate, isoDate } from '../../lib/format';
+import { excerpt, formatDate } from '../../lib/format';
 
 const posts = await getCspPosts();
 ---
 
-<Base title="China Summer Program" description="Mateo Atwi's 2017 China Summer Program blog: Tianjin, Beijing, Xi'an, Shenzhen, Guilin, Hong Kong, Hangzhou, Shanghai and more.">
-  <header class="wrap page-head">
-    <a class="back" href="/collections/">← Collections</a>
-    <p class="eyebrow"><span class="dot"></span>Travel · Summer 2017</p>
-    <h1>China Summer Program</h1>
-    <p class="lede">
-      Ten weeks across China with Georgia Tech's China Summer Program: {posts.length} posts written along the way, from the
-      first day in Tianjin to the Yangtze River and Zhangjiajie.
-    </p>
-  </header>
-
-  <ol class="wrap posts">
-    {
-      posts.map((post, i) => (
-        <li>
-          <article>
-            <span class="num mono" aria-hidden="true">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <div class="text">
-              <time class="eyebrow" datetime={isoDate(post.data.date)}>
-                {formatDate(post.data.date)}
-              </time>
+<Base
+  title="China Summer Program Blog"
+  section="/collections/"
+  description="Mateo Atwi's 2017 China Summer Program blog: Tianjin, Beijing, Xi'an, Shenzhen, Guilin, Hong Kong, Hangzhou, Shanghai and more."
+>
+  <article class="card">
+    <h1>China Summer Program Blog</h1>
+    <p>Posts from the summer of 2017, when Tiago and I traveled across China with the Georgia Tech China Summer Program.</p>
+    <ul class="post-list">
+      {
+        posts.map((post) => (
+          <li>
+            {post.data.thumbnail && <img src={cspThumb(post.data.thumbnail, 160)} alt="" width="72" height="72" loading="lazy" decoding="async" />}
+            <div>
               <h2>
                 <a href={`/csp/${post.id}/`}>{post.data.title}</a>
               </h2>
-              <p>{excerpt(post.body ?? '', 32)}</p>
+              <p class="post-meta">{formatDate(post.data.date)}</p>
+              <p>{excerpt(post.body ?? '', 60)}</p>
             </div>
-            {post.data.thumbnail && <img src={cspThumb(post.data.thumbnail, 320)} alt="" loading="lazy" decoding="async" width="160" height="160" />}
-          </article>
-        </li>
-      ))
-    }
-  </ol>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
 </Base>
 
 <style>
-  .back {
-    display: inline-block;
-    margin-bottom: 1.25rem;
-    font-weight: 600;
-    font-size: 0.9375rem;
-    text-decoration: none;
-    color: var(--muted);
-  }
-
-  .back:hover {
-    color: var(--accent);
-  }
-
-  .posts {
+  .post-list {
     list-style: none;
-    margin-block: 0;
+    margin-left: 0;
   }
 
-  article {
-    position: relative;
-    display: grid;
-    grid-template-columns: 2.5rem minmax(0, 1fr) auto;
-    gap: 1rem 1.5rem;
-    align-items: start;
-    padding-block: 1.5rem;
-    border-top: 1px solid var(--line);
+  .post-list li {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding-block: 15px;
   }
 
-  .num {
-    color: var(--accent);
-    padding-top: 0.1rem;
+  .post-list li + li {
+    border-top: 1px solid #c3dbe6;
   }
 
-  h2 {
-    font-size: 1.3rem;
-    margin-top: 0.35rem;
-  }
-
-  h2 a {
-    color: var(--ink);
-    text-decoration: none;
-  }
-
-  h2 a::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-  }
-
-  article:hover h2 a {
-    color: var(--accent);
-  }
-
-  p {
-    margin: 0.5rem 0 0;
-    color: var(--muted);
-    font-size: 0.9375rem;
-    max-width: 40rem;
-  }
-
-  img {
-    width: 6rem;
-    height: 6rem;
+  .post-list img {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
     object-fit: cover;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--line);
+    border-radius: 50%;
+    max-width: none;
+    margin: 0;
   }
 
-  @media (max-width: 36rem) {
-    article {
-      grid-template-columns: minmax(0, 1fr) auto;
-    }
-    .num {
-      display: none;
-    }
-    img {
-      width: 4.5rem;
-      height: 4.5rem;
-    }
+  .post-list h2 {
+    font-size: 22px;
   }
 </style>

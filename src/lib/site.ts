@@ -1,16 +1,17 @@
 export const SITE = {
   title: 'Mateo Atwi',
-  description:
-    "Engineer and builder. I run US Frame Factory with my brother, Tiago. This site collects the work and projects I've done along the way.",
+  description: "This website is here for me to summarize and collect all that I've done and worked on. Enjoy!",
   url: 'https://mateoatwi.com',
   email: 'mateoatwi@gmail.com',
   github: 'https://github.com/MateoAtwi',
+  githubUser: 'MateoAtwi',
   googleAnalyticsId: 'G-QMGPRF8HTC',
 } as const;
 
 export const NAV = [
-  { label: 'Work & Education', short: 'Work', href: '/work&education/' },
-  { label: 'Projects', short: 'Projects', href: '/projects/' },
-  { label: 'Collections', short: 'Collections', href: '/collections/' },
-  { label: 'About', short: 'About', href: '/about/' },
+  { label: 'Home', href: '/' },
+  { label: 'Work & Education', href: '/work&education/' },
+  { label: 'Projects', href: '/projects/' },
+  { label: 'Collections', href: '/collections/' },
+  { label: 'About', href: '/about/' },
 ] as const;

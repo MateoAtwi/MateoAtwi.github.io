@@ -1,31 +1,134 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import ProjectCard from '../components/ProjectCard.astro';
 import { getProjects } from '../lib/content';
+import { formatMonth, inlineMarkdown } from '../lib/format';
 
 const projects = await getProjects();
 ---
 
 <Base title="Projects" description="A chronological summary of Mateo Atwi's biggest engineering projects, from NASA exercise hardware to an electric longboard.">
-  <header class="wrap page-head">
-    <p class="eyebrow"><span class="dot"></span>{projects.length} projects</p>
-    <h1>Projects</h1>
-    <p class="lede">
-      A chronological summary of some of my biggest projects. Check out <a href="/work&education/">my work and education
-      page</a> for more background details.
+  <article class="card">
+    <p>
+      This is a chronological summary of some of my biggest projects. Check out <a href="/work&education/">my work and
+      education page</a> for more background details. I am still working on adding content to some of them.
     </p>
-  </header>
-  <div class="wrap">
-    <div class="cards">
-      {projects.map((project) => <ProjectCard project={project} headingLevel="h2" />)}
+    <div class="list">
+      {
+        projects.map(({ data }) => (
+          <details class="disclosure">
+            <summary>
+              <span class="t">{data.title}</span>
+              <span class="post-meta">{formatMonth(data.date)}</span>
+            </summary>
+            <div class="details-body">
+              {data.thumbnail && (
+                <a href={`/${data.slug}/`} class="thumb" tabindex="-1" aria-hidden="true">
+                  <Image src={data.thumbnail} alt="" widths={[250, 500]} sizes="250px" />
+                </a>
+              )}
+              <p set:html={inlineMarkdown(data.summary)} />
+              <p>
+                <a href={`/${data.slug}/`}>More on this project</a>
+              </p>
+            </div>
+          </details>
+        ))
+      }
     </div>
-  </div>
+    <p class="expand-all">
+      <button type="button" id="toggle-all" aria-expanded="false">
+        <span class="expand">Expand all</span><span class="collapse">Collapse all</span>
+      </button>
+    </p>
+  </article>
 </Base>
 
+<script>
+  const button = document.getElementById('toggle-all')!;
+  const items = () => document.querySelectorAll<HTMLDetailsElement>('.list > details');
+  button.addEventListener('click', () => {
+    const expand = button.getAttribute('aria-expanded') !== 'true';
+    for (const d of items()) d.open = expand;
+  });
+  document.addEventListener(
+    'toggle',
+    (event) => {
+      if (!(event.target as Element).matches?.('.list > details')) return;
+      button.setAttribute('aria-expanded', String([...items()].every((d) => d.open)));
+    },
+    { capture: true },
+  );
+</script>
+
 <style>
-  .cards {
+  .list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-    gap: 1.25rem;
+    gap: 6px;
+  }
+
+  .list > details {
+    margin-top: 0;
+  }
+
+  summary .t {
+    flex: 1;
+  }
+
+  summary .post-meta {
+    white-space: nowrap;
+  }
+
+  .thumb {
+    float: right;
+    margin: 0 0 8px 12px;
+  }
+
+  .thumb :global(img) {
+    max-width: 250px;
+    max-height: 250px;
+    width: auto;
+    border-radius: 0;
+  }
+
+  .details-body::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .expand-all {
+    text-align: right;
+  }
+
+  button {
+    font: inherit;
+    font-size: 13px;
+    color: var(--brand);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: var(--text);
+    text-decoration: underline;
+  }
+
+  [aria-expanded='true'] .expand,
+  [aria-expanded='false'] .collapse {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .thumb {
+      float: none;
+      display: block;
+      margin: 0 0 8px;
+    }
+    .thumb :global(img) {
+      max-width: 100%;
+    }
   }
 </style>

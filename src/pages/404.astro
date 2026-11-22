@@ -3,29 +3,25 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="Page not found" noindex>
-  <section class="wrap page-head nf blueprint">
-    <p class="eyebrow"><span class="dot"></span>Error 404</p>
-    <h1>This page isn't on the drawings.</h1>
-    <p class="lede">The page you requested could not be found. It may have moved when the site was rebuilt.</p>
-    <p class="actions">
-      <a class="button" href="/">Go home</a>
-      <a class="button ghost" href="/projects/">Browse projects</a>
-    </p>
-  </section>
+  <div class="card nf">
+    <h1>404</h1>
+    <p><strong>Page not found :(</strong></p>
+    <p>The requested page could not be found.</p>
+    <p><a href="/">Go to the home page</a></p>
+  </div>
 </Base>
 
 <style>
   .nf {
-    margin-top: 2rem;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: clamp(2rem, 6vw, 4rem);
+    text-align: center;
+    max-width: 600px;
+    margin: 10px auto;
   }
 
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 2rem;
+  .nf h1 {
+    margin: 20px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
   }
 </style>
