@@ -31,6 +31,21 @@ const blog = defineCollection({
     topics: z.array(z.enum(BLOG_TOPICS)).min(1),
     /** One or two sentences shown in the article list and in link previews. */
     summary: z.string(),
+    /** The quote the essay is built around, shown at the top of the article and in the list. */
+    quote: z
+      .object({
+        text: z.string(),
+        author: z.string(),
+        /** Book, talk, interview… */
+        source: z.string().optional(),
+        /** Link to the original source. */
+        url: z.url().optional(),
+      })
+      .optional(),
+    /** Name of the series this essay belongs to, e.g. "Quotes I Live By". */
+    series: z.string().optional(),
+    /** Closing acknowledgement, e.g. "Tiago Atwi for reading drafts of this." */
+    thanks: z.string().optional(),
     /** URL of an article published somewhere else (Medium, LinkedIn, a newspaper…). */
     link: z.url().optional(),
     /** Where the external article was published, e.g. "LinkedIn". */

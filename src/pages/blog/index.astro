@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { BLOG_TOPICS, BLOG_TOPIC_NOTES } from '../../lib/site';
 import { getBlogPosts, topicSlug } from '../../lib/content';
-import { formatDate } from '../../lib/format';
+import { formatMonthYear } from '../../lib/format';
 
 const posts = await getBlogPosts();
 const topics = BLOG_TOPICS.map((topic) => ({
@@ -11,12 +11,21 @@ const topics = BLOG_TOPICS.map((topic) => ({
   note: BLOG_TOPIC_NOTES[topic],
   count: posts.filter((p) => p.data.topics.includes(topic)).length,
 }));
+const seriesNames = [...new Set(posts.map((p) => p.data.series).filter((s): s is string => Boolean(s)))];
+const series = seriesNames.map((name) => ({
+  name,
+  id: `series-${topicSlug(name)}`,
+  count: posts.filter((p) => p.data.series === name).length,
+}));
 ---
 
 <Base title="Blog" description="Articles by Mateo Atwi on ideologies, operating principles, and commentary.">
   <article class="card">
     <h1>Blog</h1>
-    <p>Articles and blog posts about my ideologies, the principles I try to operate by, and my commentary on things that are on my mind.</p>
+    <p>
+      Essays about my ideologies, the principles I try to operate by, and my commentary on things that are on my mind. Most
+      start from a single quote.
+    </p>
 
     <div class="filters" role="group" aria-label="Filter by topic">
       <button type="button" data-topic="" aria-pressed="true">All <span class="count">({posts.length})</span></button>
@@ -24,6 +33,13 @@ const topics = BLOG_TOPICS.map((topic) => ({
         topics.map((t) => (
           <button type="button" data-topic={t.id} aria-pressed="false">
             {t.topic} <span class="count">({t.count})</span>
+          </button>
+        ))
+      }
+      {
+        series.map((s) => (
+          <button type="button" data-topic={s.id} aria-pressed="false">
+            Series: {s.name} <span class="count">({s.count})</span>
           </button>
         ))
       }
@@ -36,15 +52,18 @@ const topics = BLOG_TOPICS.map((topic) => ({
           {posts.map((post) => {
             const href = post.data.link ?? `/blog/${post.id}/`;
             return (
-              <li data-topics={post.data.topics.map(topicSlug).join(' ')}>
+              <li
+                data-topics={[...post.data.topics.map(topicSlug), ...(post.data.series ? [`series-${topicSlug(post.data.series)}`] : [])].join(' ')}
+              >
                 <h2>
                   <a href={href}>{post.data.title}</a>
                   {post.data.link && <span class="external"> ↗</span>}
                   {post.data.draft && <span class="draft">Draft</span>}
                 </h2>
                 <p class="post-meta">
-                  {formatDate(post.data.date)}
+                  {formatMonthYear(post.data.date)}
                   {post.data.publisher && <> · {post.data.publisher}</>}
+                  {post.data.series && <> · {post.data.series}</>}
                   {' · '}
                   {post.data.topics.map((t, i) => (
                     <>
@@ -55,6 +74,11 @@ const topics = BLOG_TOPICS.map((topic) => ({
                     </>
                   ))}
                 </p>
+                {post.data.quote && (
+                  <p class="quote">
+                    “{post.data.quote.text}” <span class="by">— {post.data.quote.author}</span>
+                  </p>
+                )}
                 <p>{post.data.summary}</p>
               </li>
             );
@@ -68,7 +92,14 @@ const topics = BLOG_TOPICS.map((topic) => ({
   </article>
 </Base>
 
-<script define:vars={{ notes: Object.fromEntries(topics.map((t) => [t.id, t.note])) }}>
+<script
+  define:vars={{
+    notes: Object.fromEntries([
+      ...topics.map((t) => [t.id, t.note]),
+      ...series.map((s) => [s.id, `Essays in the “${s.name}” series.`]),
+    ]),
+  }}
+>
   const buttons = [...document.querySelectorAll('.filters button')];
   const items = [...document.querySelectorAll('#post-list > li')];
   const note = document.getElementById('topic-note');
@@ -157,6 +188,17 @@ const topics = BLOG_TOPICS.map((topic) => ({
 
   .post-list p {
     margin-top: 3px;
+  }
+
+  .quote {
+    font-style: italic;
+    color: var(--header-border);
+    opacity: 0.8;
+  }
+
+  .quote .by {
+    font-style: normal;
+    white-space: nowrap;
   }
 
   .external {

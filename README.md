@@ -44,22 +44,34 @@ draft: false               # true = only visible in `npm run dev`
 Markdown body…
 ```
 
-### Add a blog article
+### Write an essay for the blog
 
-Copy `src/content/blog/example-post.md` to a new file such as `src/content/blog/my-first-post.md`
-(the file name becomes the URL: `/blog/my-first-post/`), then edit the front matter:
+Copy `src/content/blog/example-post.md` to a new file such as `src/content/blog/avoid-stupidity.md`
+(the file name becomes the URL: `/blog/avoid-stupidity/`). The example shows every option:
 
 ```md
 ---
-title: My First Post
-date: 2026-11-22
-topics: [Ideologies, Commentary]   # one or more of: Ideologies, Operating Principles, Commentary
+title: Avoid Stupidity
+date: 2026-11-25
+topics: [Ideologies]               # one or more of: Ideologies, Operating Principles, Commentary
 summary: One or two sentences shown in the article list and in link previews.
+quote:                             # optional: the quote the essay is built around
+  text: The quote, word for word.
+  author: Who said it
+  source: Book, talk or interview   # optional
+  url: https://…                    # optional link to the original
+series: Quotes I Live By           # optional: essays with the same series name link to each other
+thanks: Tiago Atwi for reading drafts of this.   # optional closing line
 draft: false                       # true = only visible in `npm run dev`
 ---
 
-The article, in Markdown.
+The essay, in Markdown. Add notes with [^1] and define them at the end:
+
+[^1]: The note text.
 ```
+
+Essay pages follow Paul Graham's layout: the date as month and year, the quote at the top, numbered
+notes at the end, and an optional thanks line. Essays in the same series list each other.
 
 To list an article published somewhere else (LinkedIn, Medium, a newspaper…), add
 `link: https://…` and optionally `publisher: LinkedIn`, and leave the body empty. It shows up in the

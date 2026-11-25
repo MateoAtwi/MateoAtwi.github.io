@@ -4,7 +4,7 @@ import { render } from 'astro:content';
 import Article from '../../layouts/Article.astro';
 import Pager from '../../components/Pager.astro';
 import { getBlogPosts, topicSlug } from '../../lib/content';
-import { formatDate } from '../../lib/format';
+import { formatMonthYear } from '../../lib/format';
 
 export const getStaticPaths = (async () => {
   // Articles hosted elsewhere (`link`) link straight out and get no page here.
@@ -15,18 +15,23 @@ export const getStaticPaths = (async () => {
       entry,
       newer: posts[i - 1] && { href: `/blog/${posts[i - 1].id}/`, title: posts[i - 1].data.title },
       older: posts[i + 1] && { href: `/blog/${posts[i + 1].id}/`, title: posts[i + 1].data.title },
+      // Other essays in the same series, oldest first so the series reads in order.
+      seriesPosts: entry.data.series
+        ? posts.filter((p) => p.data.series === entry.data.series).reverse().map((p) => ({ id: p.id, title: p.data.title }))
+        : [],
     },
   }));
 }) satisfies GetStaticPaths;
 
-const { entry, newer, older } = Astro.props;
+const { entry, newer, older, seriesPosts } = Astro.props;
 const { Content } = await render(entry);
-const { title, date, updated, topics, summary } = entry.data;
+const { title, date, updated, topics, summary, quote, series, thanks } = entry.data;
 ---
 
 <Article title={title} description={summary} section="/blog/">
   <p class="post-meta">
-    {formatDate(date)} - Mateo Atwi ·{' '}
+    {formatMonthYear(date)}
+    {updated && <span> (updated {formatMonthYear(updated)})</span>} ·{' '}
     {
       topics.map((t, i) => (
         <>
@@ -35,11 +40,51 @@ const { title, date, updated, topics, summary } = entry.data;
         </>
       ))
     }
-    {updated && <span> · Updated {formatDate(updated)}</span>}
   </p>
-  <div class="prose">
+
+  {
+    quote && (
+      <figure class="epigraph">
+        <blockquote>
+          <p>{quote.text}</p>
+        </blockquote>
+        <figcaption>
+          — {quote.author}
+          {quote.source && (
+            <>
+              , <cite>{quote.url ? <a href={quote.url}>{quote.source}</a> : quote.source}</cite>
+            </>
+          )}
+        </figcaption>
+      </figure>
+    )
+  }
+
+  <div class="prose essay">
     <Content />
   </div>
+
+  {
+    thanks && (
+      <p class="thanks">
+        <strong>Thanks</strong> to {thanks}
+      </p>
+    )
+  }
+
+  {
+    series && seriesPosts.length > 1 && (
+      <nav class="series" aria-labelledby="series-title">
+        <h2 id="series-title">{series}</h2>
+        <ol>
+          {seriesPosts.map((p) => (
+            <li>{p.id === entry.id ? <span aria-current="page">{p.title}</span> : <a href={`/blog/${p.id}/`}>{p.title}</a>}</li>
+          ))}
+        </ol>
+      </nav>
+    )
+  }
+
   <Pager
     slot="after"
     prev={older}
@@ -49,3 +94,111 @@ const { title, date, updated, topics, summary } = entry.data;
     back={{ href: '/blog/', title: 'Back to the blog' }}
   />
 </Article>
+
+<style>
+  .epigraph {
+    margin: 1.4em 0 1.6em;
+  }
+
+  .epigraph blockquote {
+    font-size: 19px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    opacity: 0.85;
+  }
+
+  .epigraph figcaption {
+    margin-top: 6px;
+    padding-left: 19px;
+    font-size: 14px;
+    color: var(--grey-dark);
+  }
+
+  .essay {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .essay > :global(* + *) {
+    margin-top: 1em;
+  }
+
+  /* Footnote references look like [1], as in Paul Graham's essays */
+  .essay :global(sup a) {
+    font-size: 0.85em;
+  }
+
+  .essay :global(sup a)::before {
+    content: '[';
+  }
+
+  .essay :global(sup a)::after {
+    content: ']';
+  }
+
+  .essay :global(sup) {
+    vertical-align: baseline;
+    font-size: 1em;
+  }
+
+  .essay :global(.footnotes) {
+    margin-top: 2.5em;
+    font-size: 14.5px;
+  }
+
+  /* Astro's footnote heading ("Footnotes") is marked sr-only; show it as a small heading instead */
+  .essay :global(.footnotes > h2) {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0.6em;
+  }
+
+  .essay :global(.footnotes ol) {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    counter-reset: note;
+  }
+
+  .essay :global(.data-footnote-backref) {
+    text-decoration: none;
+  }
+
+  .essay :global(.footnotes li) {
+    counter-increment: note;
+    margin-top: 0.8em;
+  }
+
+  .essay :global(.footnotes li)::before {
+    content: '[' counter(note) '] ';
+  }
+
+  .essay :global(.footnotes li > p) {
+    display: inline;
+  }
+
+  .thanks {
+    margin-top: 2em;
+    font-size: 14.5px;
+  }
+
+  .series {
+    margin-top: 2em;
+    padding: 10px 14px;
+    background: rgb(255 255 255 / 0.55);
+    border: 1px solid #c3dbe6;
+    border-radius: 8px;
+  }
+
+  .series h2 {
+    font-size: 16px;
+  }
+
+  .series ol {
+    margin-top: 6px;
+  }
+
+  .series [aria-current] {
+    font-weight: 600;
+  }
+</style>

@@ -30,3 +30,7 @@ export const formatDate = (d: Date) => dateFmt.format(d);
 export const formatMonth = (d: Date) => monthFmt.format(d);
 export const isoDate = (d: Date) => d.toISOString().slice(0, 10);
 
+
+const monthYearFmt = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' });
+/** "November 2026", the way Paul Graham dates his essays. */
+export const formatMonthYear = (d: Date) => monthYearFmt.format(d);
